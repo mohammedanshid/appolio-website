@@ -38,7 +38,7 @@ const companyInfo = {
 
 const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Projects', 'FAQ', 'Contact'];
 
-// Product Collections Data (Matching the form's exact services list)
+// Product Collections Data
 const collectionsPhotos = [
   { id: 1, src: assets.steelDoorGallery, title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
   { id: 2, src: assets.upvcDoorGallery, title: 'UPVC Window Systems', category: 'UPVC Windows' },
@@ -185,7 +185,6 @@ function App() {
             <Products onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <WhyChoose />
             <FaqSection />
-            <Consultation />
           </>
         )}
       </main>
@@ -262,7 +261,13 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
           </a>
           <a
             href="#contact"
-            onClick={() => onNavigate('home')}
+            onClick={() => {
+              onNavigate('home');
+              setTimeout(() => {
+                const el = document.getElementById('footer-contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }, 50);
+            }}
             className="rounded-sm bg-apollio-orange px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition hover:bg-[#dd6816]"
           >
             Get a Quote
@@ -323,33 +328,34 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
   );
 }
 
+// Minimal Hero Text (Restored as before)
 const heroSlides = [
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-clean.jpg',
-    eyebrow: 'ESTABLISHED 2023 • ALL INDIA SERVICE',
-    titleLine1: 'APPOLIO',
-    titleLine2: 'INDUSTRIES',
-    tagline: 'Steel Windows & Doors Manufacturing Company',
-    description: 'We provide customised production for steel doors, folding windows, UPVC windows, sliding windows, laser cutting, and aluminium section windows.',
+    eyebrow: 'PREMIUM',
+    titleLine1: 'DOOR',
+    titleLine2: 'SOLUTIONS',
+    tagline: 'Durable  |  Stylish  |  Timeless',
+    description: 'Doors that add strength, style and value to every space.',
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-slide-2.jpg',
-    eyebrow: 'CUSTOMISED PRODUCTION',
-    titleLine1: 'STEEL & UPVC',
-    titleLine2: 'WINDOWS',
-    tagline: 'Customised  |  Durable  |  Weatherproof',
-    description: 'Tailor-made steel windows & doors built to your exact measurements with superior structural strength.',
+    eyebrow: 'STATEMENT',
+    titleLine1: 'BRONZE &',
+    titleLine2: 'STEEL',
+    tagline: 'Sculptural  |  Elegant  |  Secure',
+    description: 'A sculptural double-door profile designed for luxury entrances.',
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-slide-3.jpg',
-    eyebrow: 'PRECISION MANUFACTURING',
-    titleLine1: 'LASER CUTTING',
-    titleLine2: '& SECTIONS',
-    tagline: 'Folding Windows  |  Sliding Windows  |  Laser Cutting',
-    description: 'Advanced CNC laser cutting panels, bi-fold doors, and aluminium section windows crafted in Kottayam.',
+    eyebrow: 'EXECUTIVE',
+    titleLine1: 'MODERN',
+    titleLine2: 'SERIES',
+    tagline: 'Precision  |  Timber  |  Armor',
+    description: 'Precise vertical textures and mixed materials with a composed face.',
   },
 ];
 
@@ -390,7 +396,7 @@ function Hero({ onOpenCollections }) {
           className="hero-text-container absolute top-[64%] inset-x-0 bottom-10 md:inset-0 flex flex-col justify-start md:justify-center items-start px-5 sm:px-12 lg:px-20 pt-1 md:pt-0 pb-4 md:pb-0 pointer-events-none z-20"
         >
           <div className="w-full max-w-sm md:max-w-xl text-apollio-ink pointer-events-auto text-left border-0 md:border-l-4 border-apollio-ink/80 pl-0 md:pl-6 pt-0">
-            <p className="eyebrow text-[10px] sm:text-sm tracking-[0.2em] font-semibold text-apollio-charcoal uppercase mb-0.5 sm:mb-2 hero-text-rise hero-text-rise-delay-1">
+            <p className="eyebrow text-[10px] sm:text-sm tracking-[0.25em] font-semibold text-apollio-charcoal uppercase mb-0.5 sm:mb-2 hero-text-rise hero-text-rise-delay-1">
               {heroSlides[currentSlide].eyebrow}
             </p>
             <h1 className="text-xl sm:text-5xl lg:text-7xl font-extrabold uppercase tracking-tight leading-tight md:leading-[0.9] text-apollio-ink mb-1 sm:mb-4 hero-text-rise hero-text-rise-delay-2">
@@ -403,26 +409,16 @@ function Hero({ onOpenCollections }) {
             <p className="text-[10px] sm:text-sm lg:text-base text-apollio-charcoal/85 max-w-xs sm:max-w-md mb-2.5 sm:mb-6 leading-tight sm:leading-relaxed hero-text-rise hero-text-rise-delay-3">
               {heroSlides[currentSlide].description}
             </p>
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => onOpenCollections('All')}
-                className="inline-flex w-auto items-center justify-center gap-2 rounded-sm bg-apollio-orange px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#dd6816] shadow-md hero-text-rise hero-text-rise-delay-4"
-              >
-                Explore Services
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-              <a
-                href={companyInfo.links.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-auto items-center justify-center gap-1.5 rounded-sm bg-[#25D366] px-3.5 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#20ba5a] shadow-md hero-text-rise hero-text-rise-delay-4"
-              >
-                WhatsApp Us
-              </a>
-            </div>
+            <button
+              type="button"
+              onClick={() => onOpenCollections('All')}
+              className="inline-flex w-auto items-center justify-center gap-2 rounded-sm bg-apollio-orange px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#dd6816] shadow-md hero-text-rise hero-text-rise-delay-4"
+            >
+              Explore Collections
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -581,7 +577,6 @@ function CollectionsHomeSection({ onOpenCollections }) {
   return (
     <section id="collections" className="py-14 sm:py-20 bg-[#FAF7F2] border-b border-black/5">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        
         <div className="flex items-center justify-between mb-6">
           <button
             type="button"
@@ -636,7 +631,6 @@ function CollectionsHomeSection({ onOpenCollections }) {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -1042,138 +1036,74 @@ function WhyChoose() {
   );
 }
 
+// Interactive Collapsible Accordion FAQ (E-commerce Style)
 function FaqSection() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const faqs = [
+    {
+      q: 'Do you have customised windows & doors available?',
+      a: 'Yes, absolutely! At Appolio Industries, we provide customised production. Whether you require custom Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting panels, or Aluminium Section Windows, every product is manufactured according to your specified dimensions, colors, and design preferences.',
+    },
+    {
+      q: 'What manufacturing services do you provide?',
+      a: 'We manufacture Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Precision CNC Laser Cutting, and Aluminium Section Windows for residential, commercial, and architectural projects.',
+    },
+    {
+      q: 'What is your service area and business hours?',
+      a: 'We supply customized products across All India. Our manufacturing unit and office hours in Bharananganam, Kottayam, Kerala are from 9:00 AM to 7:00 PM.',
+    },
+  ];
+
   return (
-    <section id="faq" className="py-14 sm:py-20 bg-[#FAF7F2] border-t border-black/5">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <div data-reveal className="reveal text-center max-w-2xl mx-auto mb-10">
+    <section id="faq" className="py-12 sm:py-16 bg-[#FAF7F2] border-t border-black/5">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <div data-reveal className="reveal text-center max-w-xl mx-auto mb-8">
           <p className="eyebrow">Frequently Asked Questions</p>
-          <h2 className="section-title mt-2">GOT QUESTIONS? WE HAVE ANSWERS.</h2>
-        </div>
-
-        <div className="bg-white border border-black/10 p-6 sm:p-8 shadow-sm">
-          <div className="flex gap-4 items-start">
-            <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-apollio-orange text-white font-bold text-sm">
-              Q
-            </span>
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-apollio-ink">
-                Do you have customised windows & doors available?
-              </h3>
-              <p className="mt-2 text-sm sm:text-base text-apollio-charcoal leading-relaxed">
-                <strong>Yes, absolutely!</strong> At Appolio Industries, <strong>we provide customised production</strong>. Whether you require custom Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting panels, or Aluminium Section Windows, every product is manufactured according to your specified dimensions, colors, and design preferences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Consultation() {
-  return (
-    <section id="contact" className="section bg-apollio-ink text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
-        <div data-reveal className="reveal space-y-4">
-          <p className="eyebrow text-apollio-orange">Contact Details</p>
-          <h2 className="max-w-3xl text-3xl sm:text-5xl font-semibold tracking-tight">
-            Connect with {companyInfo.name}
+          <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink mt-1">
+            GOT QUESTIONS? WE HAVE ANSWERS.
           </h2>
-          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-xl">
-            {companyInfo.type}. Established in {companyInfo.established}, supplying customised products across {companyInfo.serviceArea}.
-          </p>
-
-          <div className="pt-4 space-y-3.5 text-sm sm:text-base text-white/90">
-            <div className="flex items-start gap-3">
-              <span className="text-apollio-orange font-bold text-lg">📍</span>
-              <div>
-                <strong className="block text-white text-xs uppercase tracking-wider">Office Address:</strong>
-                <span>{companyInfo.address}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-apollio-orange font-bold text-lg">📞</span>
-              <div>
-                <strong className="block text-white text-xs uppercase tracking-wider">Phone Number:</strong>
-                <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
-                  {companyInfo.phoneFormatted}
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-apollio-orange font-bold text-lg">✉️</span>
-              <div>
-                <strong className="block text-white text-xs uppercase tracking-wider">Email Address:</strong>
-                <a href={`mailto:${companyInfo.email}`} className="hover:text-apollio-orange transition">
-                  {companyInfo.email}
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-apollio-orange font-bold text-lg">⏰</span>
-              <div>
-                <strong className="block text-white text-xs uppercase tracking-wider">Business Hours:</strong>
-                <span>{companyInfo.businessHours}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-apollio-orange font-bold text-lg">🌐</span>
-              <div>
-                <strong className="block text-white text-xs uppercase tracking-wider">Service Area:</strong>
-                <span>{companyInfo.serviceArea}</span>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div data-reveal className="reveal flex flex-col gap-3.5 rounded-sm border border-white/10 bg-white/[0.04] p-6 sm:p-8">
-          <h3 className="text-lg font-bold text-white uppercase tracking-wider mb-2">
-            Get Quick Quote & Order
-          </h3>
+        <div className="space-y-3">
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <div
+                key={idx}
+                className="bg-white border border-black/10 rounded-sm shadow-xs overflow-hidden transition-all duration-200"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left font-bold text-sm sm:text-base text-apollio-ink hover:text-apollio-orange transition-colors focus:outline-none"
+                >
+                  <span className="flex items-center gap-3 pr-2">
+                    <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-apollio-orange/10 text-apollio-orange font-bold text-xs">
+                      Q
+                    </span>
+                    {faq.q}
+                  </span>
+                  <span className="flex-shrink-0 text-apollio-orange font-extrabold text-xl ml-2">
+                    {isOpen ? '−' : '+'}
+                  </span>
+                </button>
 
-          <a
-            href={companyInfo.links.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#20ba5a] shadow-md"
-          >
-            💬 Chat on WhatsApp
-          </a>
-
-          <a
-            href={`tel:${companyInfo.phone}`}
-            className="cta-button flex items-center justify-center gap-2"
-          >
-            📞 Call {companyInfo.phoneFormatted}
-          </a>
-
-          <a
-            href={companyInfo.links.googleMaps}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-sm border border-white/20 px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-apollio-orange hover:text-apollio-orange flex items-center justify-center gap-2"
-          >
-            📍 Visit Location on Google Maps
-          </a>
-
-          <a
-            href={`mailto:${companyInfo.email}`}
-            className="rounded-sm border border-white/20 px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-apollio-orange hover:text-apollio-orange flex items-center justify-center gap-2"
-          >
-            ✉️ Email Us
-          </a>
+                {isOpen && (
+                  <div className="px-4 pb-5 pt-1 sm:px-5 sm:pb-6 text-xs sm:text-sm text-apollio-charcoal leading-relaxed border-t border-black/5 bg-[#FAF7F2]/50">
+                    <p>{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-{/* Dedicated Google Reviews Component above Footer */}
+// Google Reviews Component (Horizontal Scrolling Flow)
 function GoogleReviews() {
   const reviews = [
     {
@@ -1194,14 +1124,20 @@ function GoogleReviews() {
       rating: 5,
       review: 'Great craftsmanship in folding windows and sliding windows. Appolio Industries team is very professional and their steel door quality is extremely sturdy.',
     },
+    {
+      name: 'Suresh Menon',
+      location: 'Ernakulam, Kerala',
+      rating: 5,
+      review: 'Superior quality aluminium section windows and custom laser cutting grill panels. Delivered right on schedule to our site.',
+    },
   ];
 
   return (
-    <section id="google-reviews" className="py-14 sm:py-20 bg-white border-t border-black/10">
+    <section id="google-reviews" className="py-12 sm:py-16 bg-white border-t border-black/10">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         
-        {/* Header Header & Badge */}
-        <div data-reveal className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        {/* Header & Rating Badge */}
+        <div data-reveal className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
               <svg className="w-4 h-4 fill-current text-blue-600" viewBox="0 0 24 24">
@@ -1229,12 +1165,12 @@ function GoogleReviews() {
           </div>
         </div>
 
-        {/* Reviews Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        {/* Horizontal Flowing Reviews Slider */}
+        <div className="flex gap-5 overflow-x-auto pb-6 pt-1 snap-x snap-mandatory scrollbar-none -mx-5 px-5 sm:mx-0 sm:px-0">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="bg-[#FAF7F2] border border-black/10 p-6 rounded-none flex flex-col justify-between shadow-xs transition hover:shadow-md"
+              className="flex-shrink-0 w-[290px] sm:w-[340px] snap-start bg-[#FAF7F2] border border-black/10 p-5 rounded-none flex flex-col justify-between shadow-xs transition hover:shadow-md"
             >
               <div>
                 <div className="flex text-amber-500 text-sm mb-3">
@@ -1244,7 +1180,7 @@ function GoogleReviews() {
                   "{rev.review}"
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between">
+              <div className="mt-5 pt-3.5 border-t border-black/10 flex items-center justify-between">
                 <div>
                   <h4 className="text-xs font-bold text-apollio-ink uppercase">{rev.name}</h4>
                   <p className="text-[11px] text-apollio-orange font-semibold">{rev.location}</p>
@@ -1258,7 +1194,7 @@ function GoogleReviews() {
         </div>
 
         {/* Action Buttons to Google Profile */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
           <a
             href={companyInfo.links.googleReview}
             target="_blank"
@@ -1288,13 +1224,13 @@ function GoogleReviews() {
 
 function Footer({ onNavigate }) {
   return (
-    <footer className="bg-apollio-ink text-white">
+    <footer id="footer-contact" className="bg-apollio-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-3 lg:px-10">
         
-        {/* Brand & About */}
+        {/* Brand & About (Logo with background removed) */}
         <div className="space-y-4">
           <button type="button" onClick={() => onNavigate('home')} className="focus:outline-none">
-            <img src={assets.logo} alt="Appolio Industries logo" className="h-14 w-48 object-contain object-left bg-white p-1 rounded-xs" />
+            <img src={assets.logo} alt="Appolio Industries logo" className="h-14 w-48 object-contain object-left" />
           </button>
           <p className="text-xs sm:text-sm leading-relaxed text-white/80">
             <strong>{companyInfo.name}</strong> — {companyInfo.type}. Established in {companyInfo.established} in Bharananganam, Kottayam. {companyInfo.whyChooseUs}
@@ -1304,46 +1240,73 @@ function Footer({ onNavigate }) {
           </p>
         </div>
 
-        {/* Quick Contact & Hours */}
-        <div className="space-y-3 text-xs sm:text-sm text-white/85">
+        {/* Quick Contact Info with Orange SVG Icons */}
+        <div className="space-y-3.5 text-xs sm:text-sm text-white/85">
           <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">
             Contact Info
           </h3>
-          <p className="leading-relaxed">
-            📍 <strong>Office Address:</strong><br />
-            {companyInfo.address}
-          </p>
-          <p>
-            📞 <strong>Phone:</strong>{' '}
-            <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
-              {companyInfo.phoneFormatted}
-            </a>
-          </p>
-          <p>
-            ✉️ <strong>Email:</strong>{' '}
-            <a href={`mailto:${companyInfo.email}`} className="hover:text-apollio-orange transition">
-              {companyInfo.email}
-            </a>
-          </p>
-          <p>
-            ⏰ <strong>Business Hours:</strong> {companyInfo.businessHours}
-          </p>
+
+          <div className="flex items-start gap-3">
+            <svg className="w-4 h-4 text-apollio-orange flex-shrink-0 mt-1 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <div className="leading-relaxed">
+              <strong className="block text-white text-[11px] uppercase tracking-wider">Office Address:</strong>
+              {companyInfo.address}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <svg className="w-4 h-4 text-apollio-orange flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <div>
+              <strong className="block text-white text-[11px] uppercase tracking-wider">Phone:</strong>
+              <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
+                {companyInfo.phoneFormatted}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <svg className="w-4 h-4 text-apollio-orange flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <div>
+              <strong className="block text-white text-[11px] uppercase tracking-wider">Email:</strong>
+              <a href={`mailto:${companyInfo.email}`} className="hover:text-apollio-orange transition">
+                {companyInfo.email}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <svg className="w-4 h-4 text-apollio-orange flex-shrink-0 fill-current" viewBox="0 0 24 24">
+              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+            </svg>
+            <div>
+              <strong className="block text-white text-[11px] uppercase tracking-wider">Business Hours:</strong>
+              {companyInfo.businessHours}
+            </div>
+          </div>
         </div>
 
-        {/* Social Links & Navigation */}
+        {/* Social Links & Google Profile with Orange SVG Icons */}
         <div className="space-y-4">
           <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">
-            Social Links & Google
+            Social Links & Profiles
           </h3>
 
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-3">
             <a
               href={companyInfo.links.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+              className="inline-flex items-center gap-2.5 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
             >
-              <span className="w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center text-[10px] font-bold">IG</span>
+              <svg className="w-4 h-4 text-apollio-orange fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
               Follow on Instagram
             </a>
 
@@ -1351,9 +1314,11 @@ function Footer({ onNavigate }) {
               href={companyInfo.links.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+              className="inline-flex items-center gap-2.5 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
             >
-              <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">FB</span>
+              <svg className="w-4 h-4 text-apollio-orange fill-current" viewBox="0 0 24 24">
+                <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/>
+              </svg>
               Like on Facebook
             </a>
 
@@ -1361,9 +1326,11 @@ function Footer({ onNavigate }) {
               href={companyInfo.links.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+              className="inline-flex items-center gap-2.5 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
             >
-              <span className="w-6 h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center text-[10px] font-bold">WA</span>
+              <svg className="w-4 h-4 text-apollio-orange fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
               Chat on WhatsApp
             </a>
 
@@ -1371,9 +1338,11 @@ function Footer({ onNavigate }) {
               href={companyInfo.links.googleMaps}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+              className="inline-flex items-center gap-2.5 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
             >
-              <span className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center text-[10px] font-bold">MAP</span>
+              <svg className="w-4 h-4 text-apollio-orange fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
               Visit Location on Google Maps
             </a>
 
@@ -1381,9 +1350,11 @@ function Footer({ onNavigate }) {
               href={companyInfo.links.googleReview}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+              className="inline-flex items-center gap-2.5 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
             >
-              <span className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] font-bold">★</span>
+              <svg className="w-4 h-4 text-apollio-orange fill-current" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+              </svg>
               Google Reviews & Ratings
             </a>
           </div>
