@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const assets = {
   logo: '/assets/apollio-logo.png',
+  logoTransparent: '/assets/apollio-logo-transparent.png',
   heroDesktop: '/assets/hero-desktop-clean.jpg',
   heroMobile: '/assets/hero-mobile-clean.jpg',
   introDoor: '/assets/product-panel-portrait.png',
@@ -1230,7 +1231,7 @@ function Footer({ onNavigate }) {
         {/* Brand & About (Logo with background removed) */}
         <div className="space-y-4">
           <button type="button" onClick={() => onNavigate('home')} className="focus:outline-none">
-            <img src={assets.logo} alt="Appolio Industries logo" className="h-14 w-48 object-contain object-left" />
+            <img src={assets.logoTransparent} alt="Appolio Industries logo" className="h-14 w-48 object-contain object-left" />
           </button>
           <p className="text-xs sm:text-sm leading-relaxed text-white/80">
             <strong>{companyInfo.name}</strong> — {companyInfo.type}. Established in {companyInfo.established} in Bharananganam, Kottayam. {companyInfo.whyChooseUs}
