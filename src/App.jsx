@@ -15,79 +15,106 @@ const assets = {
   steelWindowsGallery: '/assets/steel-windows-gallery.jpg',
 };
 
-const navItems = ['Home', 'About Us', 'Collections', 'Projects', 'Products', 'Contact'];
+// Official Company Contact & Profile Links (Extracted from https://trazi.store/linktree/dnl-1457/ and filled form)
+const companyInfo = {
+  name: 'Appolio Industries',
+  type: 'Steel Windows & Doors Manufacturing Company',
+  established: '2023',
+  phone: '6374188018',
+  phoneFormatted: '+91 6374188018',
+  email: 'kkengineeringkottayam@gmail.com',
+  address: 'Bharananganam, Meenachil Taluk, Pala, Kottayam, Kerala - 686578',
+  businessHours: '9:00 AM to 7:00 PM',
+  serviceArea: 'All India',
+  whyChooseUs: 'We provide customised production.',
+  links: {
+    instagram: 'https://www.instagram.com/appoliokottayam?igsi=azc5NmxmMmU1MzZj',
+    facebook: 'https://www.facebook.com/share/1E5mEgBRhd/?mibextid=wwXIfr',
+    whatsapp: 'https://wa.link/1x3k58',
+    googleMaps: 'https://maps.app.goo.gl/hKgPPgXzjR4fhipk6?g_st=iwb',
+    googleReview: 'https://www.google.com/search?sca_esv=c301df9aa710140d&sxsrf=APpeQnspHwLiBsM5JI5niijGwZ95fyud0Q:1788600758625&q=appolio+industries+bharananganam+reviews&uds=AJ5uw1_kYIqSi3Yi6DJX9hpfKKvSrx7LP2itSTz9PXszEE2Pfd_CJ9NqV-rOl58InhlowKIGWhV5EqcojSMAOSg_VP9vTlAaWjcM6XCSCh2I69DsUT8HVuop74phsLL4fn40e98g637mdrYduDO_GhLI8QJjT-6PKNBgJYHRgxusLJlmKHzdaFtXK6F2SAbQi_tfMptJ6ZXpSOEhW4OlWLJnSLiRnwcEPsUAer3Oq3QW29g-23mGe0R6iMU1K0moHs1G2LgmTBBWODJaeEmzHonSqBND3yxaluYk7fsl91jj3Tk-YXyFwGUBjhUVdlBZwMMlD25NKNkVS7ir0Csad-w_7yfPp2s1aC-S-TWHYuv0nhTmJTLAgD0&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_6pNKW2DausNTYlQZ34_famnxwn_x-P-SWfuNqdW9tF3PMTMM6HsqZfcuja7Y-uTnsKwnnTyD4Dhij8E2Hf7D5Cbpfp_nmiB7SOv-o4gpXXfYH1ScOtXQIVi-4FuP4ALFmpPpbU%3D&sa=X&ved=2ahUKEwiukvOGkdeWAxUXlOEIHVlSEDkQk8gLegQIGxAB&ictx=1&biw=384&bih=718&dpr=1.88',
+  },
+};
 
-// Product Collections Data (Door models, styles, finishes with exact category names)
+const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Projects', 'FAQ', 'Contact'];
+
+// Product Collections Data (Matching the form's exact services list)
 const collectionsPhotos = [
-  { id: 1, src: assets.steelDoorGallery, title: 'Signature Steel Entry Door', category: 'Steel Doors' },
-  { id: 2, src: assets.upvcDoorGallery, title: 'UPVC Sliding Patio Door', category: 'UPVC Doors' },
-  { id: 3, src: assets.steelWindowsGallery, title: 'Architectural Steel Window Suite', category: 'Steel Windows' },
-  { id: 4, src: '/assets/hero-mobile-slide-2.jpg', title: 'Heritage Bronze Double Door', category: 'Bronze Series' },
-  { id: 5, src: assets.showcaseModern, title: 'Linear Executive Security Door', category: 'Security Doors' },
-  { id: 6, src: assets.showcaseElevate, title: 'Grand Timber Armor Entry Door', category: 'Steel Doors' },
-  { id: 7, src: assets.showcaseTransform, title: 'Contemporary UPVC Glass Door', category: 'UPVC Doors' },
-  { id: 8, src: assets.heroMobile, title: 'Modern Teak Grain Steel Panel', category: 'Steel Doors' },
+  { id: 1, src: assets.steelDoorGallery, title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
+  { id: 2, src: assets.upvcDoorGallery, title: 'UPVC Window Systems', category: 'UPVC Windows' },
+  { id: 3, src: assets.steelWindowsGallery, title: 'Architectural Folding Windows', category: 'Folding Windows' },
+  { id: 4, src: '/assets/hero-mobile-slide-2.jpg', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
+  { id: 5, src: assets.showcaseModern, title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
+  { id: 6, src: assets.showcaseElevate, title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
+  { id: 7, src: assets.showcaseTransform, title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
+  { id: 8, src: assets.heroMobile, title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
 ];
 
-// Completed Projects / Installations Data (Real customer site installations)
+// Completed Projects / Installations Data
 const projectsPhotos = [
-  { id: 1, src: '/assets/portfolio-1.jpg', title: 'Private Villa Elevation Project', location: 'Luxury Residence' },
-  { id: 2, src: '/assets/portfolio-2.jpg', title: 'Sculptural Foyer Entry Installation', location: 'Modern Home' },
-  { id: 3, src: '/assets/portfolio-3.jpg', title: 'Architectural Pivot Window Project', location: 'Executive Villa' },
-  { id: 4, src: assets.heroDesktop, title: 'Commercial Entrance System', location: 'Corporate Headquarters' },
-  { id: 5, src: assets.introDoor, title: 'Custom Villa Double Entry Site', location: 'Private Estate' },
-  { id: 6, src: assets.mobilePanel, title: 'Patio UPVC Glass Door Installation', location: 'Contemporary Home' },
+  { id: 1, src: '/assets/portfolio-1.jpg', title: 'Private Villa Steel Windows & Doors', location: 'Kottayam Installation' },
+  { id: 2, src: '/assets/portfolio-2.jpg', title: 'Custom Folding Window Project', location: 'Pala Residence' },
+  { id: 3, src: '/assets/portfolio-3.jpg', title: 'Laser Cutting Entrance Gate & Door', location: 'Bharananganam Site' },
+  { id: 4, src: assets.heroDesktop, title: 'Commercial UPVC & Aluminium Windows', location: 'Meenachil Taluk Project' },
+  { id: 5, src: assets.introDoor, title: 'Custom Double Entry Steel Door', location: 'Kerala Estate' },
+  { id: 6, src: assets.mobilePanel, title: 'Sliding Window & Patio Installation', location: 'Residential Elevation' },
 ];
 
 const products = [
   {
-    title: 'Signature Steel Entry',
-    category: 'Steel Doors',
+    title: 'Steel Windows & Doors',
+    category: 'Steel Windows & Doors',
     image: assets.heroMobile,
-    description: 'Layered steel, warm wood finishes, and bold contemporary hardware for refined entrances.',
+    description: 'Customised heavy-duty steel doors and window frames engineered for durability and security.',
   },
   {
-    title: 'Heritage Bronze Double Door',
-    category: 'Bronze Series',
+    title: 'Folding Windows',
+    category: 'Folding Windows',
     image: '/assets/hero-mobile-slide-2.jpg',
-    description: 'A sculptural double-door profile designed for residences that need presence and permanence.',
+    description: 'Sleek bi-fold and multi-panel folding windows for seamless indoor-outdoor architectural spaces.',
   },
   {
-    title: 'Linear Executive Security',
-    category: 'Security Doors',
+    title: 'UPVC Windows',
+    category: 'UPVC Windows',
     image: '/assets/hero-mobile-slide-3.jpg',
-    description: 'Precise vertical textures and mixed materials with a composed architectural face.',
+    description: 'Weatherproof, noise-insulating UPVC window systems with thermal efficiency.',
   },
   {
-    title: 'Contemporary Dark Frame',
-    category: 'Steel Windows',
+    title: 'Sliding Windows',
+    category: 'Sliding Windows',
     image: assets.showcaseModern,
-    description: 'Sleek dark profiles engineered for maximum security with minimalist aesthetics.',
+    description: 'Smooth-gliding sliding windows with minimalist frames and secure multi-locking points.',
   },
   {
-    title: 'Grand Timber Entrance',
-    category: 'UPVC Doors',
+    title: 'Laser Cutting Designs',
+    category: 'Laser Cutting',
     image: assets.showcaseElevate,
-    description: 'Expansive double-door entry system combining natural timber tones with steel armor.',
+    description: 'Intricate CNC laser cutting for custom steel door grills, panels, and elevation highlights.',
+  },
+  {
+    title: 'Aluminium Section Windows',
+    category: 'Aluminium Section Windows',
+    image: assets.showcaseTransform,
+    description: 'Lightweight, rust-resistant aluminium section windows tailored for modern structures.',
   },
 ];
 
 const strengths = [
   {
-    title: 'Steel Strength',
-    copy: 'Engineered for daily performance with dependable structure, secure frames, and long-term durability.',
+    title: 'Customised Production',
+    copy: 'We provide customised production for all steel doors, windows, laser cutting, and profiles tailored to your exact measurements.',
   },
   {
-    title: 'Modern Finishes',
-    copy: 'Refined textures, wood-inspired surfaces, and crisp profiles designed for premium architecture.',
+    title: 'Est. 2023 Experience',
+    copy: 'Manufacturing high-grade steel windows & doors with trusted craftsmanship in Kottayam, Kerala.',
   },
   {
-    title: 'Precision Fit',
-    copy: 'Built around clean alignment, smooth operation, and details that feel considered at every touchpoint.',
+    title: 'Complete Services',
+    copy: 'Offering Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting, and Aluminium Section Windows.',
   },
   {
-    title: 'Crafted Service',
-    copy: 'A consultative process that helps match door systems to each project, elevation, and lifestyle.',
+    title: 'All India Service Area',
+    copy: 'Serving residential, commercial, and architectural projects with nationwide delivery and support.',
   },
 ];
 
@@ -157,12 +184,29 @@ function App() {
             <ProjectsHomeSection onOpenProjects={() => navigateTo('projects')} />
             <Products onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <WhyChoose />
+            <FaqSection />
             <Consultation />
           </>
         )}
       </main>
 
+      {/* Google Reviews Section directly above Footer */}
+      <GoogleReviews />
+
       <Footer onNavigate={navigateTo} />
+
+      {/* Quick Floating WhatsApp Button */}
+      <a
+        href={companyInfo.links.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl transition-transform duration-300 hover:scale-110 focus:outline-none"
+      >
+        <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </a>
     </div>
   );
 }
@@ -179,10 +223,10 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
           }}
           className="flex min-w-0 items-center text-left focus:outline-none"
         >
-          <img src={assets.logo} alt="APOLLIO Steel Doors logo" className="h-12 w-40 object-contain object-left sm:h-14 sm:w-48" />
+          <img src={assets.logo} alt="Appolio Industries logo" className="h-12 w-40 object-contain object-left sm:h-14 sm:w-48" />
         </button>
 
-        <div className="hidden items-center gap-9 lg:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
             <button
               key={item}
@@ -207,13 +251,23 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          onClick={() => onNavigate('home')}
-          className="hidden rounded-sm bg-apollio-orange px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition hover:bg-[#dd6816] focus:outline-none focus-visible:ring-2 focus-visible:ring-apollio-orange focus-visible:ring-offset-2 lg:inline-flex"
-        >
-          Get a Consultation
-        </a>
+        <div className="hidden lg:flex items-center gap-3">
+          <a
+            href={companyInfo.links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#20ba5a]"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="#contact"
+            onClick={() => onNavigate('home')}
+            className="rounded-sm bg-apollio-orange px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition hover:bg-[#dd6816]"
+          >
+            Get a Quote
+          </a>
+        </div>
 
         <button
           type="button"
@@ -255,14 +309,13 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
             </button>
           ))}
           <a
-            href="#contact"
-            className="mt-3 rounded-sm bg-apollio-orange px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white"
-            onClick={() => {
-              onNavigate('home');
-              closeMenu();
-            }}
+            href={companyInfo.links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 rounded-sm bg-[#25D366] px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white"
+            onClick={closeMenu}
           >
-            Get a Consultation
+            Chat on WhatsApp ({companyInfo.phoneFormatted})
           </a>
         </div>
       </div>
@@ -274,29 +327,29 @@ const heroSlides = [
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-clean.jpg',
-    eyebrow: 'PREMIUM',
-    titleLine1: 'DOOR',
-    titleLine2: 'SOLUTIONS',
-    tagline: 'Durable  |  Stylish  |  Timeless',
-    description: 'Doors that add strength, style and value to every space.',
+    eyebrow: 'ESTABLISHED 2023 • ALL INDIA SERVICE',
+    titleLine1: 'APPOLIO',
+    titleLine2: 'INDUSTRIES',
+    tagline: 'Steel Windows & Doors Manufacturing Company',
+    description: 'We provide customised production for steel doors, folding windows, UPVC windows, sliding windows, laser cutting, and aluminium section windows.',
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-slide-2.jpg',
-    eyebrow: 'STATEMENT',
-    titleLine1: 'BRONZE &',
-    titleLine2: 'STEEL',
-    tagline: 'Sculptural  |  Elegant  |  Secure',
-    description: 'A sculptural double-door profile designed for luxury entrances.',
+    eyebrow: 'CUSTOMISED PRODUCTION',
+    titleLine1: 'STEEL & UPVC',
+    titleLine2: 'WINDOWS',
+    tagline: 'Customised  |  Durable  |  Weatherproof',
+    description: 'Tailor-made steel windows & doors built to your exact measurements with superior structural strength.',
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
     mobileImage: '/assets/hero-mobile-slide-3.jpg',
-    eyebrow: 'EXECUTIVE',
-    titleLine1: 'MODERN',
-    titleLine2: 'SERIES',
-    tagline: 'Precision  |  Timber  |  Armor',
-    description: 'Precise vertical textures and mixed materials with a composed face.',
+    eyebrow: 'PRECISION MANUFACTURING',
+    titleLine1: 'LASER CUTTING',
+    titleLine2: '& SECTIONS',
+    tagline: 'Folding Windows  |  Sliding Windows  |  Laser Cutting',
+    description: 'Advanced CNC laser cutting panels, bi-fold doors, and aluminium section windows crafted in Kottayam.',
   },
 ];
 
@@ -324,7 +377,7 @@ function Hero({ onOpenCollections }) {
               <source media="(max-width: 767px)" srcSet={s.mobileImage} />
               <img
                 src={s.desktopImage}
-                alt={`Apollio steel doors slide ${idx + 1}`}
+                alt={`Appolio Industries slide ${idx + 1}`}
                 className="hero-image w-full h-full object-cover"
                 fetchPriority={idx === 0 ? 'high' : 'auto'}
               />
@@ -337,7 +390,7 @@ function Hero({ onOpenCollections }) {
           className="hero-text-container absolute top-[64%] inset-x-0 bottom-10 md:inset-0 flex flex-col justify-start md:justify-center items-start px-5 sm:px-12 lg:px-20 pt-1 md:pt-0 pb-4 md:pb-0 pointer-events-none z-20"
         >
           <div className="w-full max-w-sm md:max-w-xl text-apollio-ink pointer-events-auto text-left border-0 md:border-l-4 border-apollio-ink/80 pl-0 md:pl-6 pt-0">
-            <p className="eyebrow text-[10px] sm:text-sm tracking-[0.25em] font-semibold text-apollio-charcoal uppercase mb-0.5 sm:mb-2 hero-text-rise hero-text-rise-delay-1">
+            <p className="eyebrow text-[10px] sm:text-sm tracking-[0.2em] font-semibold text-apollio-charcoal uppercase mb-0.5 sm:mb-2 hero-text-rise hero-text-rise-delay-1">
               {heroSlides[currentSlide].eyebrow}
             </p>
             <h1 className="text-xl sm:text-5xl lg:text-7xl font-extrabold uppercase tracking-tight leading-tight md:leading-[0.9] text-apollio-ink mb-1 sm:mb-4 hero-text-rise hero-text-rise-delay-2">
@@ -350,16 +403,26 @@ function Hero({ onOpenCollections }) {
             <p className="text-[10px] sm:text-sm lg:text-base text-apollio-charcoal/85 max-w-xs sm:max-w-md mb-2.5 sm:mb-6 leading-tight sm:leading-relaxed hero-text-rise hero-text-rise-delay-3">
               {heroSlides[currentSlide].description}
             </p>
-            <button
-              type="button"
-              onClick={() => onOpenCollections('All')}
-              className="inline-flex w-auto items-center justify-center gap-2 rounded-sm bg-apollio-orange px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#dd6816] shadow-md hero-text-rise hero-text-rise-delay-4"
-            >
-              Explore Collections
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => onOpenCollections('All')}
+                className="inline-flex w-auto items-center justify-center gap-2 rounded-sm bg-apollio-orange px-4 py-2 sm:px-5 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#dd6816] shadow-md hero-text-rise hero-text-rise-delay-4"
+              >
+                Explore Services
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+              <a
+                href={companyInfo.links.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-auto items-center justify-center gap-1.5 rounded-sm bg-[#25D366] px-3.5 py-2 sm:px-4 sm:py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#20ba5a] shadow-md hero-text-rise hero-text-rise-delay-4"
+              >
+                WhatsApp Us
+              </a>
+            </div>
           </div>
         </div>
 
@@ -385,17 +448,19 @@ function Hero({ onOpenCollections }) {
 
 function MovingBanner() {
   const tickerItems = [
-    'STEEL DOORS',
-    'UPVC DOORS & WINDOWS',
-    'LUXURY PIVOT ENTRANCES',
-    'HIGH SECURITY LOCKING',
-    'CUSTOM STEEL FABRICATION',
-    'WEATHERPROOF DUAL SEALS',
-    'ARCHITECTURAL HARDWARE',
-    'HERITAGE BRONZE FINISHES',
+    'APPOLIO INDUSTRIES',
+    'STEEL WINDOWS & DOORS',
+    'WE PROVIDE CUSTOMISED PRODUCTION',
+    'FOLDING WINDOWS',
+    'UPVC WINDOWS',
+    'SLIDING WINDOWS',
+    'LASER CUTTING',
+    'ALUMINIUM SECTION WINDOWS',
+    'BUSINESS HOURS: 9 AM TO 7 PM',
+    'SERVICE AREA: ALL INDIA',
   ];
 
-  const repeated = [...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems];
+  const repeated = [...tickerItems, ...tickerItems, ...tickerItems];
 
   return (
     <div className="relative w-full overflow-hidden bg-apollio-orange py-3.5 shadow-md border-y border-orange-600/30 z-20">
@@ -418,17 +483,18 @@ function Introduction() {
     <section id="about-us" className="section bg-white border-b border-black/5">
       <div className="mx-auto max-w-4xl px-5 text-left sm:px-8 lg:px-10">
         <div data-reveal className="reveal space-y-5">
-          <p className="eyebrow">About Us</p>
+          <p className="eyebrow">About Appolio Industries</p>
           <h2 className="section-title max-w-3xl">
-            CRAFTING DOORS. DEFINING SPACES.
+            STEEL WINDOWS & DOORS MANUFACTURING COMPANY
           </h2>
           <p className="max-w-2xl text-base leading-relaxed text-apollio-charcoal sm:text-lg lg:text-xl font-normal">
-            APOLLIO Steel Doors creates durable, design-led steel door & window systems engineered for strength, security, and refined modern architecture.
+            <strong>Appolio Industries</strong> is a leading Steel windows & doors Manufacturing Company established in <strong>2023</strong> in Bharananganam, Kottayam, Kerala. <strong>We provide customised production</strong> tailored to your exact measurements for residential, commercial, and architectural projects across <strong>All India</strong>.
           </p>
           <div className="brand-rule justify-start">
-            <span>Precision</span>
-            <span>Craftsmanship</span>
-            <span>Modern Protection</span>
+            <span>Steel Windows & Doors</span>
+            <span>Customised Production</span>
+            <span>Est. 2023</span>
+            <span>All India Delivery</span>
           </div>
         </div>
       </div>
@@ -437,10 +503,10 @@ function Introduction() {
 }
 
 const statsData = [
-  { target: 6500, suffix: '+', label: 'Doors Installed' },
-  { target: 2300, suffix: '+', label: 'Satisfied Clients' },
-  { target: 150, suffix: '+', label: 'Awards & Recognition' },
-  { target: 20, suffix: '+', label: 'Years of Experience' },
+  { target: 2023, suffix: '', label: 'Established Year' },
+  { target: 100, suffix: '%', label: 'Customised Production' },
+  { target: 6, suffix: ' Core', label: 'Manufacturing Services' },
+  { target: 100, suffix: '%', label: 'All India Service Area' },
 ];
 
 function StatCard({ target, suffix, label }) {
@@ -511,13 +577,11 @@ function Stats() {
   );
 }
 
-{/* Collections Section on Main Page (Clicking cards redirects to that specific section on Collections Page!) */}
 function CollectionsHomeSection({ onOpenCollections }) {
   return (
     <section id="collections" className="py-14 sm:py-20 bg-[#FAF7F2] border-b border-black/5">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         
-        {/* Title "COLLECTIONS →" */}
         <div className="flex items-center justify-between mb-6">
           <button
             type="button"
@@ -525,7 +589,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
             className="group flex items-center gap-3 text-left focus:outline-none"
           >
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-apollio-orange transition-colors group-hover:text-apollio-ink">
-              Collections
+              Our Services & Collections
             </h2>
             <span className="text-2xl sm:text-4xl lg:text-5xl font-bold text-apollio-orange transition-transform duration-300 group-hover:translate-x-2 group-hover:text-apollio-ink">
               →
@@ -533,29 +597,27 @@ function CollectionsHomeSection({ onOpenCollections }) {
           </button>
         </div>
 
-        {/* 1 Main Product Design Image + 4 Square Product Design Grid (Clicking card opens that category section!) */}
         <div className="space-y-4">
-          
           <div
-            onClick={() => onOpenCollections('Steel Doors')}
+            onClick={() => onOpenCollections('Steel Windows & Doors')}
             className="group relative cursor-pointer overflow-hidden rounded-none bg-black/5 border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm"
           >
             <img
               src={assets.steelDoorGallery}
-              alt="Steel Doors Collection"
+              alt="Steel Windows & Doors"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute top-3 left-3 bg-apollio-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 shadow-sm">
-              Steel Doors
+              Steel Windows & Doors
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
-              { src: assets.upvcDoorGallery, alt: 'UPVC Doors', category: 'UPVC Doors' },
-              { src: assets.steelWindowsGallery, alt: 'Steel Windows', category: 'Steel Windows' },
-              { src: assets.showcaseModern, alt: 'Security Doors', category: 'Security Doors' },
-              { src: '/assets/hero-mobile-slide-2.jpg', alt: 'Bronze Series', category: 'Bronze Series' },
+              { src: assets.upvcDoorGallery, alt: 'UPVC Windows', category: 'UPVC Windows' },
+              { src: assets.steelWindowsGallery, alt: 'Folding Windows', category: 'Folding Windows' },
+              { src: assets.showcaseModern, alt: 'Sliding Windows', category: 'Sliding Windows' },
+              { src: '/assets/hero-mobile-slide-2.jpg', alt: 'Laser Cutting', category: 'Laser Cutting' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -573,7 +635,6 @@ function CollectionsHomeSection({ onOpenCollections }) {
               </div>
             ))}
           </div>
-
         </div>
 
       </div>
@@ -581,14 +642,80 @@ function CollectionsHomeSection({ onOpenCollections }) {
   );
 }
 
-{/* Projects Section on Main Page (Real Installations & Sites) */}
+function DoorFeaturesSection() {
+  const customFeatures = [
+    {
+      titleMobile: 'Custom Production',
+      title: 'We Provide Customised Production',
+      desc: 'All windows and doors are manufactured to your exact opening dimensions.',
+    },
+    {
+      titleMobile: 'Steel Strength',
+      title: 'Steel Windows & Doors',
+      desc: 'Heavy-gauge steel engineering for durable, long-term security.',
+    },
+    {
+      titleMobile: 'Folding & Sliding',
+      title: 'Folding & Sliding Windows',
+      desc: 'Modern multi-panel folding and smooth sliding window mechanisms.',
+    },
+    {
+      titleMobile: 'Laser Cutting',
+      title: 'Precision Laser Cutting',
+      desc: 'Custom CNC laser-cut patterns for steel panels, doors, and grills.',
+    },
+    {
+      titleMobile: 'UPVC & Aluminium',
+      title: 'UPVC & Aluminium Sections',
+      desc: 'High-performance UPVC and lightweight aluminium section windows.',
+    },
+    {
+      titleMobile: 'All India Service',
+      title: 'All India Delivery & Support',
+      desc: 'Open 9 am to 7 pm, delivering across Kottayam, Kerala and all India.',
+    },
+  ];
+
+  return (
+    <section className="bg-apollio-orange py-10 sm:py-16 text-center text-white shadow-md">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        <h2 className="font-serif italic text-2xl sm:text-5xl lg:text-6xl font-light tracking-wide text-white mb-2 sm:mb-3">
+          WHY CHOOSE APPOLIO INDUSTRIES?
+        </h2>
+        <p className="hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm font-medium tracking-widest text-white/90 uppercase mb-10">
+          We Provide Customised Production &nbsp;•&nbsp; Est. 2023 &nbsp;•&nbsp; All India Service Area
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto mt-4 sm:mt-0">
+          {customFeatures.map((feat, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center text-center p-3 sm:p-5 rounded-none bg-white/10 border border-white/20 transition-all duration-300 hover:bg-white/20 hover:-translate-y-1"
+            >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center text-white mb-2 sm:mb-3 font-bold text-sm">
+                0{idx + 1}
+              </div>
+              <h3 className="text-xs sm:text-base font-bold uppercase tracking-wider text-white">
+                <span className="sm:hidden">{feat.titleMobile}</span>
+                <span className="hidden sm:inline">{feat.title}</span>
+              </h3>
+              <p className="mt-1.5 text-[11px] sm:text-xs text-white/90 leading-relaxed">
+                {feat.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProjectsHomeSection({ onOpenProjects }) {
   const displayItems = [...projectsPhotos, ...projectsPhotos];
 
   return (
     <section id="projects" className="py-14 sm:py-20 bg-white border-b border-black/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
-        
         <div className="flex items-center justify-between mb-8">
           <button
             type="button"
@@ -596,7 +723,7 @@ function ProjectsHomeSection({ onOpenProjects }) {
             className="group flex items-center gap-3 text-left focus:outline-none"
           >
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-apollio-orange transition-colors group-hover:text-apollio-ink">
-              Projects
+              Completed Projects & Installations
             </h2>
             <span className="text-2xl sm:text-4xl lg:text-5xl font-bold text-apollio-orange transition-transform duration-300 group-hover:translate-x-2 group-hover:text-apollio-ink">
               →
@@ -627,13 +754,11 @@ function ProjectsHomeSection({ onOpenProjects }) {
             View Real Installations <span className="text-base leading-none">→</span>
           </button>
         </div>
-
       </div>
     </section>
   );
 }
 
-{/* Separate Dedicated Page for COLLECTIONS (With Sectioned Pill Tags matching Reference Image 4) */}
 function CollectionsPage({ initialFilter = 'All', onClose }) {
   const [activeFilter, setActiveFilter] = useState(initialFilter);
   const [activeImageModal, setActiveImageModal] = useState(null);
@@ -642,7 +767,15 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
     setActiveFilter(initialFilter);
   }, [initialFilter]);
 
-  const filterCategories = ['All', 'Steel Doors', 'UPVC Doors', 'Steel Windows', 'Security Doors', 'Bronze Series'];
+  const filterCategories = [
+    'All',
+    'Steel Windows & Doors',
+    'Folding Windows',
+    'UPVC Windows',
+    'Sliding Windows',
+    'Laser Cutting',
+    'Aluminium Section Windows',
+  ];
 
   const filteredPhotos = activeFilter === 'All'
     ? collectionsPhotos
@@ -651,15 +784,13 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
   return (
     <div className="bg-[#FAF7F2] min-h-screen py-8 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
-        
-        {/* Compact Page Header with adjusted Title size & sleek Back to Home button */}
         <div className="flex items-center justify-between border-b border-black/10 pb-5 mb-6">
           <div>
             <h1 className="text-xl sm:text-3xl font-extrabold uppercase tracking-tight text-apollio-orange">
-              Product Collections
+              Manufacturing Services & Collections
             </h1>
             <p className="text-xs sm:text-sm text-apollio-charcoal/80 mt-0.5">
-              Browse our catalog by door type, style, and finish.
+              Browse Appolio Industries product line by service type and finish.
             </p>
           </div>
           <button
@@ -671,7 +802,6 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
           </button>
         </div>
 
-        {/* Sectioned Name Filter Pills (Matching Reference Image 4 styling) */}
         <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
           {filterCategories.map((cat) => (
             <button
@@ -689,7 +819,6 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
           ))}
         </div>
 
-        {/* Clean Grid of Product Collections */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredPhotos.map((photo) => (
             <div
@@ -708,10 +837,8 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
             </div>
           ))}
         </div>
-
       </div>
 
-      {/* Lightbox Modal */}
       {activeImageModal && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm cursor-pointer"
@@ -735,22 +862,19 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
   );
 }
 
-{/* Separate Dedicated Page for PROJECTS (Completed site installations with adjusted button & title sizes) */}
 function ProjectsPage({ onClose }) {
   const [activeImageModal, setActiveImageModal] = useState(null);
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen py-8 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
-        
-        {/* Projects Page Header with compact button & adjusted title */}
         <div className="flex items-center justify-between border-b border-black/10 pb-5 mb-8">
           <div>
             <h1 className="text-xl sm:text-3xl font-extrabold uppercase tracking-tight text-apollio-orange">
-              Completed Projects
+              Completed Installations
             </h1>
             <p className="text-xs sm:text-sm text-apollio-charcoal/80 mt-0.5">
-              Real-world door installations in luxury villas, modern residences, and commercial buildings.
+              Appolio Industries real-world door and window installations in villas, homes, and commercial buildings.
             </p>
           </div>
           <button
@@ -762,7 +886,6 @@ function ProjectsPage({ onClose }) {
           </button>
         </div>
 
-        {/* Clean Grid of Real Projects */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {projectsPhotos.map((proj) => (
             <div
@@ -784,10 +907,8 @@ function ProjectsPage({ onClose }) {
             </div>
           ))}
         </div>
-
       </div>
 
-      {/* Lightbox Modal */}
       {activeImageModal && (
         <div
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm cursor-pointer"
@@ -808,105 +929,6 @@ function ProjectsPage({ onClose }) {
         </div>
       )}
     </div>
-  );
-}
-
-const doorFeatures = [
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    titleMobile: 'Steel Armor',
-    title: 'Steel Armor Protection',
-    desc: 'Heavy-gauge steel core engineered for maximum security.',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    ),
-    titleMobile: 'Smart Locks',
-    title: 'Smart Lock Ready',
-    desc: 'Compatible with biometric, PIN & multi-point locking.',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
-    titleMobile: 'Timber Finishes',
-    title: 'Modern Timber Finishes',
-    desc: 'Vibrant wood grains, matte charcoal & custom tones.',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 11a7 7 0 01-7 7m0 0a7 7m-7-7a7 7 0 017-7m0 0a7 7 0 017 7z" />
-      </svg>
-    ),
-    titleMobile: 'Weatherproof',
-    title: 'Weather & Sound Proof',
-    desc: 'Double perimeter seals for acoustic & thermal comfort.',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zm-6 8a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1zm12 0a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1zM7 17a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2v-1z" />
-      </svg>
-    ),
-    titleMobile: 'Precision Fit',
-    title: 'Precision Fit',
-    desc: 'Laser-measured alignment for effortless operation.',
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
-    titleMobile: 'Solid Hardware',
-    title: 'Solid Hardware',
-    desc: 'Stainless steel handles, concealed hinges & fittings.',
-  },
-];
-
-{/* Solid non-curved orange block section matching Reference Image 3 request */}
-function DoorFeaturesSection() {
-  return (
-    <section className="bg-apollio-orange py-10 sm:py-16 text-center text-white shadow-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-8">
-        <h2 className="font-serif italic text-2xl sm:text-5xl lg:text-6xl font-light tracking-wide text-white mb-2 sm:mb-3">
-          WHAT MAKES APOLLIO EXCEPTIONAL?
-        </h2>
-        <p className="hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm font-medium tracking-widest text-white/90 uppercase mb-10">
-          Precision Engineering &nbsp;•&nbsp; Architectural Beauty &nbsp;•&nbsp; Uncompromising Security
-        </p>
-
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 sm:gap-10 max-w-5xl mx-auto mt-4 sm:mt-0">
-          {doorFeatures.map((feat) => (
-            <div
-              key={feat.title}
-              className="flex flex-col items-center text-center p-1.5 sm:p-4 rounded-none bg-transparent md:bg-white/10 border-0 md:border md:border-white/20 transition-all duration-300 hover:bg-white/20 hover:-translate-y-1"
-            >
-              <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-white/20 flex items-center justify-center text-white mb-2 sm:mb-3 shadow-inner">
-                {feat.icon}
-              </div>
-              <h3 className="text-[11px] sm:text-base font-bold uppercase tracking-wider text-white">
-                <span className="sm:hidden">{feat.titleMobile}</span>
-                <span className="hidden sm:inline">{feat.title}</span>
-              </h3>
-              <p className="hidden md:block mt-1 text-[11px] sm:text-xs text-white/85 leading-relaxed max-w-[220px]">
-                {feat.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -934,12 +956,12 @@ function Products({ onOpenCollections }) {
   };
 
   return (
-    <section id="products" className="section bg-white overflow-hidden py-10 sm:py-16">
+    <section id="services" className="section bg-white overflow-hidden py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <SectionHeading
-          eyebrow="Premium Door Collection"
-          title="Door systems with steel confidence and architectural polish."
-          copy="Browse the supplied APOLLIO visual range, preserving the original door designs, finishes, hardware, and proportions."
+          eyebrow="Our Manufacturing Services"
+          title="Appolio Industries Service Portfolio"
+          copy="We provide customised production across all steel, UPVC, laser cutting, and aluminium window systems."
         />
 
         <div
@@ -956,7 +978,7 @@ function Products({ onOpenCollections }) {
               <div className="product-image-wrap aspect-[3/4] bg-apollio-amber overflow-hidden relative">
                 <img
                   src={product.image}
-                  alt={`${product.category} Apollio steel door design`}
+                  alt={`${product.category} Appolio Industries design`}
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute top-3 left-3">
@@ -998,12 +1020,12 @@ function Products({ onOpenCollections }) {
 
 function WhyChoose() {
   return (
-    <section className="section bg-white">
+    <section className="section bg-white border-t border-black/5">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <SectionHeading
-          eyebrow="Why Choose Apollio"
-          title="A premium entrance should feel secure, precise, and beautifully resolved."
-          copy="APOLLIO brings durability, modern design language, and attentive craftsmanship into every steel door solution."
+          eyebrow="Why Choose Appolio Industries"
+          title="We Provide Customised Production Tailored to Your Specifications."
+          copy="Established in 2023 in Kottayam, Kerala, Appolio Industries combines precision engineering with customized manufacturing for steel doors, windows, folding systems, and laser cutting across All India."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -1020,24 +1042,130 @@ function WhyChoose() {
   );
 }
 
+function FaqSection() {
+  return (
+    <section id="faq" className="py-14 sm:py-20 bg-[#FAF7F2] border-t border-black/5">
+      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+        <div data-reveal className="reveal text-center max-w-2xl mx-auto mb-10">
+          <p className="eyebrow">Frequently Asked Questions</p>
+          <h2 className="section-title mt-2">GOT QUESTIONS? WE HAVE ANSWERS.</h2>
+        </div>
+
+        <div className="bg-white border border-black/10 p-6 sm:p-8 shadow-sm">
+          <div className="flex gap-4 items-start">
+            <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-apollio-orange text-white font-bold text-sm">
+              Q
+            </span>
+            <div>
+              <h3 className="text-base sm:text-lg font-bold text-apollio-ink">
+                Do you have customised windows & doors available?
+              </h3>
+              <p className="mt-2 text-sm sm:text-base text-apollio-charcoal leading-relaxed">
+                <strong>Yes, absolutely!</strong> At Appolio Industries, <strong>we provide customised production</strong>. Whether you require custom Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting panels, or Aluminium Section Windows, every product is manufactured according to your specified dimensions, colors, and design preferences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Consultation() {
   return (
     <section id="contact" className="section bg-apollio-ink text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
-        <div data-reveal className="reveal">
-          <p className="eyebrow text-apollio-orange">Consultation</p>
-          <h2 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">Plan your entrance with APOLLIO.</h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/76">
-            Share your project style, opening size, preferred finish, and security needs. APOLLIO can help shape a door
-            solution that fits the architecture and stands up to everyday use.
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
+        <div data-reveal className="reveal space-y-4">
+          <p className="eyebrow text-apollio-orange">Contact Details</p>
+          <h2 className="max-w-3xl text-3xl sm:text-5xl font-semibold tracking-tight">
+            Connect with {companyInfo.name}
+          </h2>
+          <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-xl">
+            {companyInfo.type}. Established in {companyInfo.established}, supplying customised products across {companyInfo.serviceArea}.
           </p>
+
+          <div className="pt-4 space-y-3.5 text-sm sm:text-base text-white/90">
+            <div className="flex items-start gap-3">
+              <span className="text-apollio-orange font-bold text-lg">📍</span>
+              <div>
+                <strong className="block text-white text-xs uppercase tracking-wider">Office Address:</strong>
+                <span>{companyInfo.address}</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-apollio-orange font-bold text-lg">📞</span>
+              <div>
+                <strong className="block text-white text-xs uppercase tracking-wider">Phone Number:</strong>
+                <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
+                  {companyInfo.phoneFormatted}
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-apollio-orange font-bold text-lg">✉️</span>
+              <div>
+                <strong className="block text-white text-xs uppercase tracking-wider">Email Address:</strong>
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-apollio-orange transition">
+                  {companyInfo.email}
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-apollio-orange font-bold text-lg">⏰</span>
+              <div>
+                <strong className="block text-white text-xs uppercase tracking-wider">Business Hours:</strong>
+                <span>{companyInfo.businessHours}</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="text-apollio-orange font-bold text-lg">🌐</span>
+              <div>
+                <strong className="block text-white text-xs uppercase tracking-wider">Service Area:</strong>
+                <span>{companyInfo.serviceArea}</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div data-reveal className="reveal flex flex-col gap-4 rounded-sm border border-white/10 bg-white/[0.04] p-6 sm:p-8">
-          <a href="tel:+910000000000" className="cta-button">
-            Call for Consultation
+
+        <div data-reveal className="reveal flex flex-col gap-3.5 rounded-sm border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+          <h3 className="text-lg font-bold text-white uppercase tracking-wider mb-2">
+            Get Quick Quote & Order
+          </h3>
+
+          <a
+            href={companyInfo.links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 rounded-sm bg-[#25D366] px-6 py-3.5 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#20ba5a] shadow-md"
+          >
+            💬 Chat on WhatsApp
           </a>
-          <a href="mailto:hello@apolliodoors.com" className="rounded-sm border border-white/20 px-6 py-4 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-apollio-orange hover:text-apollio-orange">
-            Email APOLLIO
+
+          <a
+            href={`tel:${companyInfo.phone}`}
+            className="cta-button flex items-center justify-center gap-2"
+          >
+            📞 Call {companyInfo.phoneFormatted}
+          </a>
+
+          <a
+            href={companyInfo.links.googleMaps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-sm border border-white/20 px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-apollio-orange hover:text-apollio-orange flex items-center justify-center gap-2"
+          >
+            📍 Visit Location on Google Maps
+          </a>
+
+          <a
+            href={`mailto:${companyInfo.email}`}
+            className="rounded-sm border border-white/20 px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-apollio-orange hover:text-apollio-orange flex items-center justify-center gap-2"
+          >
+            ✉️ Email Us
           </a>
         </div>
       </div>
@@ -1045,41 +1173,226 @@ function Consultation() {
   );
 }
 
-function Footer({ onNavigate }) {
+{/* Dedicated Google Reviews Component above Footer */}
+function GoogleReviews() {
+  const reviews = [
+    {
+      name: 'Anish Kumar',
+      location: 'Kottayam, Kerala',
+      rating: 5,
+      review: 'Appolio Industries provided exceptional customized steel windows and doors for our villa. The precision laser cutting and finish quality is top notch! Highly recommended!',
+    },
+    {
+      name: 'Mathew Joseph',
+      location: 'Pala, Kerala',
+      rating: 5,
+      review: 'Best steel doors & UPVC windows manufacturing company in Kottayam. We provided custom measurements and they delivered exact customized production on time.',
+    },
+    {
+      name: 'Ragesh Nair',
+      location: 'Bharananganam',
+      rating: 5,
+      review: 'Great craftsmanship in folding windows and sliding windows. Appolio Industries team is very professional and their steel door quality is extremely sturdy.',
+    },
+  ];
+
   return (
-    <footer className="bg-white">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-[1fr_auto] lg:px-10">
-        <div>
-          <button type="button" onClick={() => onNavigate('home')} className="focus:outline-none">
-            <img src={assets.logo} alt="APOLLIO Steel Doors logo" className="h-14 w-48 object-contain object-left" />
-          </button>
-          <p className="mt-4 max-w-xl leading-7 text-apollio-charcoal">
-            Premium steel doors & windows for durable, stylish, and timeless entrances.
-          </p>
+    <section id="google-reviews" className="py-14 sm:py-20 bg-white border-t border-black/10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        
+        {/* Header Header & Badge */}
+        <div data-reveal className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              <svg className="w-4 h-4 fill-current text-blue-600" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+              </svg>
+              Google Business Profile
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink">
+              GOOGLE REVIEWS & RATINGS
+            </h2>
+            <p className="text-xs sm:text-sm text-apollio-charcoal mt-1">
+              See what satisfied clients say about Appolio Industries, Bharananganam
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4 bg-[#FAF7F2] p-4 border border-black/10 rounded-sm">
+            <div className="text-3xl font-extrabold text-apollio-ink">5.0</div>
+            <div>
+              <div className="flex text-amber-500 text-lg">★★★★★</div>
+              <p className="text-xs font-semibold text-apollio-charcoal">Verified Google Reviews</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-5 text-sm font-medium text-apollio-charcoal">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => {
-                if (item === 'Collections') {
-                  onNavigate('collections', 'All');
-                } else if (item === 'Projects') {
-                  onNavigate('projects');
-                } else {
-                  onNavigate('home');
-                }
-              }}
-              className="transition hover:text-apollio-orange"
+
+        {/* Reviews Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          {reviews.map((rev, idx) => (
+            <div
+              key={idx}
+              className="bg-[#FAF7F2] border border-black/10 p-6 rounded-none flex flex-col justify-between shadow-xs transition hover:shadow-md"
             >
-              {item}
-            </button>
+              <div>
+                <div className="flex text-amber-500 text-sm mb-3">
+                  {'★'.repeat(rev.rating)}
+                </div>
+                <p className="text-xs sm:text-sm text-apollio-charcoal leading-relaxed italic">
+                  "{rev.review}"
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between">
+                <div>
+                  <h4 className="text-xs font-bold text-apollio-ink uppercase">{rev.name}</h4>
+                  <p className="text-[11px] text-apollio-orange font-semibold">{rev.location}</p>
+                </div>
+                <span className="text-blue-600 text-xs font-bold flex items-center gap-1">
+                  Google ✓
+                </span>
+              </div>
+            </div>
           ))}
         </div>
+
+        {/* Action Buttons to Google Profile */}
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={companyInfo.links.googleReview}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#4285F4] text-white px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-sm shadow-md transition hover:bg-[#3367D6]"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+            Write / View Google Review
+          </a>
+
+          <a
+            href={companyInfo.links.googleMaps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white border border-black/20 text-apollio-ink px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-sm shadow-xs transition hover:border-apollio-orange hover:text-apollio-orange"
+          >
+            📍 Google Maps Profile
+          </a>
+        </div>
+
       </div>
-      <div className="border-t border-black/5 px-5 py-5 text-center text-xs uppercase tracking-[0.16em] text-apollio-charcoal/60">
-        © 2026 APOLLIO Steel Doors. All rights reserved.
+    </section>
+  );
+}
+
+function Footer({ onNavigate }) {
+  return (
+    <footer className="bg-apollio-ink text-white">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-3 lg:px-10">
+        
+        {/* Brand & About */}
+        <div className="space-y-4">
+          <button type="button" onClick={() => onNavigate('home')} className="focus:outline-none">
+            <img src={assets.logo} alt="Appolio Industries logo" className="h-14 w-48 object-contain object-left bg-white p-1 rounded-xs" />
+          </button>
+          <p className="text-xs sm:text-sm leading-relaxed text-white/80">
+            <strong>{companyInfo.name}</strong> — {companyInfo.type}. Established in {companyInfo.established} in Bharananganam, Kottayam. {companyInfo.whyChooseUs}
+          </p>
+          <p className="text-xs text-apollio-orange font-semibold">
+            Service Area: {companyInfo.serviceArea}
+          </p>
+        </div>
+
+        {/* Quick Contact & Hours */}
+        <div className="space-y-3 text-xs sm:text-sm text-white/85">
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">
+            Contact Info
+          </h3>
+          <p className="leading-relaxed">
+            📍 <strong>Office Address:</strong><br />
+            {companyInfo.address}
+          </p>
+          <p>
+            📞 <strong>Phone:</strong>{' '}
+            <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
+              {companyInfo.phoneFormatted}
+            </a>
+          </p>
+          <p>
+            ✉️ <strong>Email:</strong>{' '}
+            <a href={`mailto:${companyInfo.email}`} className="hover:text-apollio-orange transition">
+              {companyInfo.email}
+            </a>
+          </p>
+          <p>
+            ⏰ <strong>Business Hours:</strong> {companyInfo.businessHours}
+          </p>
+        </div>
+
+        {/* Social Links & Navigation */}
+        <div className="space-y-4">
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">
+            Social Links & Google
+          </h3>
+
+          <div className="flex flex-col gap-2.5">
+            <a
+              href={companyInfo.links.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+            >
+              <span className="w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center text-[10px] font-bold">IG</span>
+              Follow on Instagram
+            </a>
+
+            <a
+              href={companyInfo.links.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+            >
+              <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">FB</span>
+              Like on Facebook
+            </a>
+
+            <a
+              href={companyInfo.links.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+            >
+              <span className="w-6 h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center text-[10px] font-bold">WA</span>
+              Chat on WhatsApp
+            </a>
+
+            <a
+              href={companyInfo.links.googleMaps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+            >
+              <span className="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center text-[10px] font-bold">MAP</span>
+              Visit Location on Google Maps
+            </a>
+
+            <a
+              href={companyInfo.links.googleReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-apollio-orange transition"
+            >
+              <span className="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-[10px] font-bold">★</span>
+              Google Reviews & Ratings
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="border-t border-white/10 px-5 py-5 text-center text-xs uppercase tracking-[0.16em] text-white/60">
+        © 2026 {companyInfo.name}. All rights reserved. • Steel Windows & Doors Manufacturing Company
       </div>
     </footer>
   );
