@@ -645,15 +645,15 @@ function CollectionsHomeSection({ onOpenCollections }) {
         </div>
 
         <div className="space-y-4">
-          {/* Main Steel Doors Collection Image (SD 410 MOS) */}
+          {/* Main Steel Doors Collection Image */}
           <div
             onClick={() => onOpenCollections('Steel Doors')}
-            className="group relative cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm p-4 flex items-center justify-center"
+            className="group relative cursor-pointer overflow-hidden rounded-sm bg-black/5 border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm"
           >
             <img
-              src="/assets/steel-doors/steel-door-sd-410-mos.png"
-              alt="Steel Doors Collection - SD 410 MOS"
-              className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-lg"
+              src={assets.steelDoorGallery}
+              alt="Steel Doors Collection"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute top-3 left-3 bg-apollio-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 shadow-sm">
               Steel Doors Collection
@@ -663,20 +663,20 @@ function CollectionsHomeSection({ onOpenCollections }) {
           {/* 4 Category Grid Cards: UPVC Doors, Aluminium Doors, Algeria Doors, Windows */}
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
-              { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
-              { src: assets.showcaseElevate, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
-              { src: '/assets/steel-doors/steel-door-sd-503-rose-gold.png', alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
-              { src: '/assets/windows/app-21.png', alt: 'Windows', category: 'Windows', label: 'Windows' },
+              { src: assets.upvcDoorGallery, alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
+              { src: assets.showcaseModern, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
+              { src: assets.showcaseTransform, alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
+              { src: assets.steelWindowsGallery, alt: 'Windows', category: 'Windows', label: 'Windows' },
             ].map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => onOpenCollections(item.category)}
-                className="group relative cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 aspect-square transition hover:scale-[1.01] shadow-sm p-3 flex items-center justify-center"
+                className="group relative cursor-pointer overflow-hidden rounded-sm bg-black/5 border border-black/10 aspect-square transition hover:scale-[1.01] shadow-sm"
               >
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute top-2 left-2 bg-apollio-orange text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shadow-sm">
                   {item.label}
