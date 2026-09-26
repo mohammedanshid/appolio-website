@@ -411,17 +411,17 @@ function Hero({ onOpenCollections, onOpenCatalog }) {
   return (
     <section id="home" className="relative bg-apollio-amber overflow-hidden">
       <div className="hero-stage relative mx-auto max-w-[1920px]">
-        {/* Top-Right Catalog Redirect Button (Positioned in marked red area) */}
-        <div className="absolute top-4 right-4 sm:top-6 sm:right-8 z-40 pointer-events-auto">
+        {/* Top-Right Catalogue Redirect Button */}
+        <div className="absolute top-3.5 right-3.5 sm:top-5 sm:right-6 z-40 pointer-events-auto">
           <button
             type="button"
             onClick={onOpenCatalog}
-            className="inline-flex items-center gap-1.5 rounded-sm bg-apollio-orange text-white px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-2xl border-2 border-white transition-all duration-300 hover:bg-[#dd6816] hover:scale-105 cursor-pointer ring-2 ring-apollio-orange/50"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-apollio-orange text-white px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider shadow-lg border border-white/30 transition-all duration-300 hover:bg-[#dd6816] hover:scale-105 cursor-pointer"
           >
-            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+            <span>Catalogue</span>
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-            Catalog / Brochure
           </button>
         </div>
         <div className="hero-images-wrapper relative w-full aspect-[3/4] md:aspect-[16/9] min-h-[480px] sm:min-h-[580px] md:min-h-0">
