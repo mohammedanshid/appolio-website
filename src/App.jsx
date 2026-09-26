@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { doorsData } from './data/doorsData.js';
+import { windowsData } from './data/windowsData.js';
 
 const assets = {
   logo: '/assets/apollio-logo.png',
@@ -37,7 +39,7 @@ const companyInfo = {
   },
 };
 
-const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Projects', 'FAQ', 'Contact'];
+const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Projects', 'FAQ', 'Contact'];
 
 // Product Collections Data
 const collectionsPhotos = [
@@ -63,10 +65,16 @@ const projectsPhotos = [
 
 const products = [
   {
-    title: 'Steel Windows & Doors',
-    category: 'Steel Windows & Doors',
-    image: assets.heroMobile,
-    description: 'Customised heavy-duty steel doors and window frames engineered for durability and security.',
+    title: 'Steel Doors Collection (76 Models)',
+    category: 'Steel Doors',
+    image: '/assets/doors/sd-501-maharaja.png',
+    description: '76+ Customised heavy-duty steel doors engineered for security and architectural luxury.',
+  },
+  {
+    title: 'UPVC Doors Collection (18 Models)',
+    category: 'UPVC Doors',
+    image: '/assets/doors/sd-24-mobh.png',
+    description: '18+ Weatherproof, noise-insulating UPVC door systems with thermal efficiency.',
   },
   {
     title: 'Folding Windows',
@@ -121,8 +129,27 @@ const strengths = [
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeView, setActiveView] = useState('home'); // 'home' | 'collections' | 'projects'
+  const [activeView, setActiveView] = useState(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash === 'collections' || hash === 'projects' || hash === 'catalog') {
+      return hash;
+    }
+    return 'home';
+  });
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('All');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'collections' || hash === 'projects' || hash === 'catalog') {
+        setActiveView(hash);
+      } else if (!hash || hash === 'home') {
+        setActiveView('home');
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     const revealItems = document.querySelectorAll('[data-reveal]');
@@ -156,6 +183,7 @@ function App() {
       setSelectedCategoryFilter(category);
     }
     setActiveView(viewName);
+    window.location.hash = viewName === 'home' ? '' : viewName;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -174,14 +202,20 @@ function App() {
           <CollectionsPage initialFilter={selectedCategoryFilter} onClose={() => navigateTo('home')} />
         ) : activeView === 'projects' ? (
           <ProjectsPage onClose={() => navigateTo('home')} />
+        ) : activeView === 'catalog' ? (
+          <CatalogPage onClose={() => navigateTo('home')} />
         ) : (
           <>
-            <Hero onOpenCollections={(cat) => navigateTo('collections', cat)} />
+            <Hero
+              onOpenCollections={(cat) => navigateTo('collections', cat)}
+              onOpenCatalog={() => navigateTo('catalog')}
+            />
             <MovingBanner />
             <Introduction />
             <Stats />
             <CollectionsHomeSection onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <DoorFeaturesSection />
+            <UltraModernBanner onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <ProjectsHomeSection onOpenProjects={() => navigateTo('projects')} />
             <Products onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <WhyChoose />
@@ -236,6 +270,8 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
                   onNavigate('collections', 'All');
                 } else if (item === 'Projects') {
                   onNavigate('projects');
+                } else if (item === 'Catalog') {
+                  onNavigate('catalog');
                 } else {
                   onNavigate('home');
                   setTimeout(() => {
@@ -302,6 +338,8 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
                   onNavigate('collections', 'All');
                 } else if (item === 'Projects') {
                   onNavigate('projects');
+                } else if (item === 'Catalog') {
+                  onNavigate('catalog');
                 } else {
                   onNavigate('home');
                   setTimeout(() => {
@@ -360,7 +398,7 @@ const heroSlides = [
   },
 ];
 
-function Hero({ onOpenCollections }) {
+function Hero({ onOpenCollections, onOpenCatalog }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -373,6 +411,19 @@ function Hero({ onOpenCollections }) {
   return (
     <section id="home" className="relative bg-apollio-amber overflow-hidden">
       <div className="hero-stage relative mx-auto max-w-[1920px]">
+        {/* Top-Right Catalog Redirect Button (Positioned in marked red area) */}
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-8 z-40 pointer-events-auto">
+          <button
+            type="button"
+            onClick={onOpenCatalog}
+            className="inline-flex items-center gap-1.5 rounded-sm bg-apollio-orange text-white px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-2xl border-2 border-white transition-all duration-300 hover:bg-[#dd6816] hover:scale-105 cursor-pointer ring-2 ring-apollio-orange/50"
+          >
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+            </svg>
+            Catalog / Brochure
+          </button>
+        </div>
         <div className="hero-images-wrapper relative w-full aspect-[3/4] md:aspect-[16/9] min-h-[480px] sm:min-h-[580px] md:min-h-0">
           {heroSlides.map((s, idx) => (
             <picture
@@ -594,42 +645,73 @@ function CollectionsHomeSection({ onOpenCollections }) {
         </div>
 
         <div className="space-y-4">
+          {/* Main Steel Doors Collection Image (SD 410 MOS) */}
           <div
-            onClick={() => onOpenCollections('Steel Windows & Doors')}
-            className="group relative cursor-pointer overflow-hidden rounded-none bg-black/5 border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm"
+            onClick={() => onOpenCollections('Steel Doors')}
+            className="group relative cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm p-4 flex items-center justify-center"
           >
             <img
-              src={assets.steelDoorGallery}
-              alt="Steel Windows & Doors"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="/assets/steel-doors/steel-door-sd-410-mos.png"
+              alt="Steel Doors Collection - SD 410 MOS"
+              className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-lg"
             />
             <div className="absolute top-3 left-3 bg-apollio-orange text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 shadow-sm">
-              Steel Windows & Doors
+              Steel Doors Collection
             </div>
           </div>
 
+          {/* 4 Category Grid Cards: UPVC Doors, Aluminium Doors, Algeria Doors, Windows */}
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
-              { src: assets.upvcDoorGallery, alt: 'UPVC Windows', category: 'UPVC Windows' },
-              { src: assets.steelWindowsGallery, alt: 'Folding Windows', category: 'Folding Windows' },
-              { src: assets.showcaseModern, alt: 'Sliding Windows', category: 'Sliding Windows' },
-              { src: '/assets/hero-mobile-slide-2.jpg', alt: 'Laser Cutting', category: 'Laser Cutting' },
+              { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
+              { src: assets.showcaseElevate, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
+              { src: '/assets/steel-doors/steel-door-sd-503-rose-gold.png', alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
+              { src: '/assets/windows/app-21.png', alt: 'Windows', category: 'Windows', label: 'Windows' },
             ].map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => onOpenCollections(item.category)}
-                className="group relative cursor-pointer overflow-hidden rounded-none bg-black/5 border border-black/10 aspect-square transition hover:scale-[1.01] shadow-sm"
+                className="group relative cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 aspect-square transition hover:scale-[1.01] shadow-sm p-3 flex items-center justify-center"
               >
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
                 />
                 <div className="absolute top-2 left-2 bg-apollio-orange text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shadow-sm">
-                  {item.category}
+                  {item.label}
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function UltraModernBanner({ onOpenCollections }) {
+  return (
+    <section className="relative w-full bg-[#FAF7F2] py-6 sm:py-10 border-b border-black/5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        <div
+          onClick={() => onOpenCollections('Steel Doors')}
+          className="group relative cursor-pointer overflow-hidden rounded-sm shadow-md border border-black/10 transition-all duration-500 hover:shadow-2xl"
+        >
+          <img
+            src="/assets/ultra-modern-banner.png"
+            alt="Ultra-Modern Steel Doors & Windows Backed By The Latest Technology - Appolio Industries"
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+          <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 z-10">
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 rounded-sm bg-apollio-orange px-4 py-2 sm:px-6 sm:py-3 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white shadow-lg transition duration-300 hover:bg-[#dd6816]"
+            >
+              Explore Steel Doors & Windows →
+            </button>
           </div>
         </div>
       </div>
@@ -756,101 +838,357 @@ function ProjectsHomeSection({ onOpenProjects }) {
 
 function CollectionsPage({ initialFilter = 'All', onClose }) {
   const [activeFilter, setActiveFilter] = useState(initialFilter);
-  const [activeImageModal, setActiveImageModal] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeModalItem, setActiveModalItem] = useState(null);
 
   useEffect(() => {
     setActiveFilter(initialFilter);
   }, [initialFilter]);
 
+  const steelDoorsCount = doorsData.filter((d) => d.category === 'Steel Doors').length;
+  const upvcDoorsCount = doorsData.filter((d) => d.category === 'UPVC Doors').length;
+  const alumDoorsCount = doorsData.filter((d) => d.category === 'Aluminium Doors').length;
+  const algeriaDoorsCount = doorsData.filter((d) => d.category === 'Algeria Doors').length;
+  const windowsCount = windowsData.length;
+  const totalCatalogCount = doorsData.length + windowsData.length;
+
   const filterCategories = [
-    'All',
-    'Steel Windows & Doors',
-    'Folding Windows',
-    'UPVC Windows',
-    'Sliding Windows',
-    'Laser Cutting',
-    'Aluminium Section Windows',
+    { name: 'All', label: `All Collections (${totalCatalogCount})` },
+    { name: 'Steel Doors', label: `Steel Doors (${steelDoorsCount})` },
+    { name: 'UPVC Doors', label: `UPVC Doors (${upvcDoorsCount})` },
+    { name: 'Aluminium Doors', label: `Aluminium Doors (${alumDoorsCount})` },
+    { name: 'Algeria Doors', label: `Algeria Doors (${algeriaDoorsCount})` },
+    { name: 'Windows', label: `Windows (${windowsCount})` },
   ];
 
-  const filteredPhotos = activeFilter === 'All'
-    ? collectionsPhotos
-    : collectionsPhotos.filter((p) => p.category.toLowerCase() === activeFilter.toLowerCase());
+  const allCatalogProducts = [...doorsData, ...windowsData];
+
+  // Filter products based on category and search query
+  const filteredProducts = allCatalogProducts.filter((product) => {
+    const activeLower = activeFilter.toLowerCase();
+    const matchesCategory =
+      activeFilter === 'All' ||
+      product.category.toLowerCase() === activeLower ||
+      (activeFilter === 'Windows' && (product.category.includes('Window') || product.category === 'Steel Windows' || product.category === 'Folding Windows' || product.category === 'Sliding Windows' || product.category === 'Laser Cutting'));
+    const matchesSearch =
+      searchQuery.trim() === '' ||
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  // Additional legacy gallery photos for non-catalog categories
+  const showLegacyPhotos =
+    activeFilter !== 'Steel Doors' &&
+    activeFilter !== 'UPVC Doors' &&
+    activeFilter !== 'Steel Windows' &&
+    activeFilter !== 'Folding Windows' &&
+    searchQuery.trim() === '';
+
+  const filteredLegacyPhotos =
+    activeFilter === 'All'
+      ? collectionsPhotos
+      : collectionsPhotos.filter(
+          (p) => p.category.toLowerCase() === activeFilter.toLowerCase()
+        );
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen py-8 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="flex items-center justify-between border-b border-black/10 pb-5 mb-6">
+        
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-black/10 pb-5 mb-6 gap-4">
           <div>
-            <h1 className="text-xl sm:text-3xl font-extrabold uppercase tracking-tight text-apollio-orange">
-              Manufacturing Services & Collections
+            <div className="inline-flex items-center gap-2 bg-apollio-orange/10 text-apollio-orange text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Official Catalog • 94 Doors & 15 Windows
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink">
+              PRODUCT COLLECTIONS — DOORS & WINDOWS
             </h1>
-            <p className="text-xs sm:text-sm text-apollio-charcoal/80 mt-0.5">
-              Browse Appolio Industries product line by service type and finish.
+            <p className="text-xs sm:text-sm text-apollio-charcoal mt-1">
+              Browse Appolio Industries 76 Steel Doors, 18 UPVC Doors, and 15 Steel/Folding Window Systems cropped directly from our catalog.
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center gap-1.5 rounded-sm bg-apollio-orange text-white px-3.5 py-2 text-xs font-bold uppercase tracking-wider shadow-sm transition hover:bg-[#dd6816] flex-shrink-0"
+            className="inline-flex items-center gap-1.5 rounded-sm bg-apollio-orange text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wider shadow-sm transition hover:bg-[#dd6816] flex-shrink-0 self-start md:self-auto"
           >
             ← Back to Home
           </button>
         </div>
 
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
-          {filterCategories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setActiveFilter(cat)}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 ${
-                activeFilter === cat
-                  ? 'bg-[#2B384E] text-white shadow-md'
-                  : 'bg-white border border-black/15 text-apollio-charcoal hover:border-apollio-orange hover:text-apollio-orange shadow-xs'
-              }`}
+        {/* Filter Tabs & Search Bar */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div className="flex flex-wrap gap-2">
+            {filterCategories.map((cat) => (
+              <button
+                key={cat.name}
+                type="button"
+                onClick={() => setActiveFilter(cat.name)}
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 ${
+                  activeFilter === cat.name
+                    ? 'bg-apollio-orange text-white shadow-md'
+                    : 'bg-white border border-black/15 text-apollio-charcoal hover:border-apollio-orange hover:text-apollio-orange shadow-xs'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Real-time Model Search Box */}
+          <div className="relative min-w-[240px] sm:min-w-[280px]">
+            <input
+              type="text"
+              placeholder="Search model (e.g. APP 01, APP 15, SD 501, 403, 21)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white border border-black/20 rounded-full px-4 py-2 pl-9 text-xs sm:text-sm font-semibold text-apollio-ink placeholder-apollio-charcoal/50 focus:outline-none focus:border-apollio-orange shadow-xs"
+            />
+            <svg
+              className="w-4 h-4 text-apollio-charcoal/60 absolute left-3 top-2.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              {cat}
-            </button>
-          ))}
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-2.5 text-xs text-apollio-charcoal hover:text-apollio-orange font-bold"
+              >
+                ✕
+              </button>
+            )}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {filteredPhotos.map((photo) => (
-            <div
-              key={photo.id}
-              onClick={() => setActiveImageModal(photo.src)}
-              className="group cursor-pointer overflow-hidden rounded-none bg-white border border-black/10 aspect-square transition-all duration-300 hover:shadow-lg hover:scale-[1.01] relative"
-            >
-              <img
-                src={photo.src}
-                alt={photo.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute top-2 left-2 bg-apollio-orange text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shadow-sm">
-                {photo.category}
+        {/* Section Heading Banners */}
+        {activeFilter === 'Steel Doors' && (
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              Steel Doors Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Heavy-duty steel entrance doors, grand double-leaf doors, bar handle series, and laser cut architectural doors.
+            </p>
+          </div>
+        )}
+
+        {activeFilter === 'UPVC Doors' && (
+          <div className="bg-white border-l-4 border-[#2B384E] p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              UPVC Doors Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Weatherproof, soundproof multi-chamber UPVC profile door systems with glass sidelights and custom panel finishes.
+            </p>
+          </div>
+        )}
+
+        {(activeFilter === 'Steel Windows' || activeFilter === 'Folding Windows') && (
+          <div className="bg-white border-l-4 border-sky-700 p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              {activeFilter} Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Appolio APP series heavy-duty steel windows, multi-panel bi-fold windows, ventilator sashes, and security grill systems.
+            </p>
+          </div>
+        )}
+
+        {/* Products Grid Display */}
+        {filteredProducts.length > 0 ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5 mb-12">
+            {filteredProducts.map((product) => (
+              <div
+                key={`${product.category}-${product.id}-${product.name}`}
+                onClick={() => setActiveModalItem(product)}
+                className="group cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 shadow-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between"
+              >
+                <div className="aspect-[3/4] bg-[#FAF7F2] p-3 flex items-center justify-center relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2 left-2">
+                    <span
+                      className={`text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 shadow-xs rounded-xs text-white ${
+                        product.category === 'Steel Doors'
+                          ? 'bg-apollio-orange'
+                          : product.category === 'UPVC Doors'
+                          ? 'bg-[#2B384E]'
+                          : 'bg-sky-700'
+                      }`}
+                    >
+                      {product.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-white border-t border-black/5 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-xs sm:text-sm font-extrabold text-apollio-ink uppercase tracking-tight group-hover:text-apollio-orange transition-colors">
+                      {product.name}
+                    </h3>
+                    <p className="text-[10px] text-apollio-charcoal/70 font-semibold mt-0.5">
+                      Customised Production
+                    </p>
+                  </div>
+                  <div className="mt-2 pt-2 border-t border-black/5 flex items-center justify-between text-[11px] font-bold text-apollio-orange uppercase tracking-wider">
+                    <span>View Model</span>
+                    <span className="text-sm leading-none transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+        ) : (
+          <div className="bg-white p-12 text-center border border-black/10 rounded-sm mb-12">
+            <p className="text-base font-bold text-apollio-ink">No models matching "{searchQuery}"</p>
+            <p className="text-xs text-apollio-charcoal mt-1">Try searching for model numbers like APP 01, APP 15, APP 21, SD 501, or clear filters.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery('');
+                setActiveFilter('All');
+              }}
+              className="mt-4 bg-apollio-orange text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-sm"
+            >
+              Reset Search & Filters
+            </button>
+          </div>
+        )}
+
+        {/* Additional Window & Gallery Collections */}
+        {showLegacyPhotos && filteredLegacyPhotos.length > 0 && (
+          <div className="mt-12 pt-8 border-t border-black/10">
+            <h3 className="text-lg font-extrabold uppercase text-apollio-ink mb-4">
+              WINDOW SYSTEMS & ARCHITECTURAL FINISHES
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+              {filteredLegacyPhotos.map((photo) => (
+                <div
+                  key={photo.id}
+                  onClick={() =>
+                    setActiveModalItem({
+                      name: photo.title,
+                      image: photo.src,
+                      category: photo.category,
+                      description: `Customised ${photo.title} by Appolio Industries.`,
+                    })
+                  }
+                  className="group cursor-pointer overflow-hidden rounded-sm bg-white border border-black/10 aspect-square transition-all duration-300 hover:shadow-lg hover:scale-[1.01] relative"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-2 left-2 bg-apollio-orange text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shadow-sm">
+                    {photo.category}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
 
-      {activeImageModal && (
+      {/* Lightbox / Door Detail Modal */}
+      {activeModalItem && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm cursor-pointer"
-          onClick={() => setActiveImageModal(null)}
+          className="fixed inset-0 z-50 bg-black/85 flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm"
+          onClick={() => setActiveModalItem(null)}
         >
-          <button
-            type="button"
-            onClick={() => setActiveImageModal(null)}
-            className="absolute top-5 right-5 text-white bg-white/20 hover:bg-white/40 w-10 h-10 rounded-sm flex items-center justify-center text-xl font-bold"
+          <div
+            className="bg-white max-w-2xl w-full rounded-sm overflow-hidden shadow-2xl border border-black/20 flex flex-col md:flex-row relative max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
           >
-            ✕
-          </button>
-          <img
-            src={activeImageModal}
-            alt="Collection view"
-            className="max-w-full max-h-[90vh] rounded-none object-contain shadow-2xl"
-          />
+            <button
+              type="button"
+              onClick={() => setActiveModalItem(null)}
+              className="absolute top-3 right-3 z-20 text-apollio-ink bg-white/80 hover:bg-white w-9 h-9 rounded-full flex items-center justify-center text-lg font-bold shadow-md transition"
+            >
+              ✕
+            </button>
+
+            {/* Door Image View */}
+            <div className="md:w-1/2 bg-[#FAF7F2] p-6 flex items-center justify-center border-b md:border-b-0 md:border-r border-black/10 min-h-[280px]">
+              <img
+                src={activeModalItem.image}
+                alt={activeModalItem.name}
+                className="max-h-[65vh] max-w-full object-contain drop-shadow-xl"
+              />
+            </div>
+
+            {/* Door Details & Action */}
+            <div className="md:w-1/2 p-6 flex flex-col justify-between bg-white overflow-y-auto">
+              <div className="space-y-4">
+                <div>
+                  <span
+                    className={`inline-block text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 text-white rounded-xs mb-2 ${
+                      activeModalItem.category === 'Steel Doors' ? 'bg-apollio-orange' : 'bg-[#2B384E]'
+                    }`}
+                  >
+                    {activeModalItem.category}
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-extrabold uppercase text-apollio-ink tracking-tight">
+                    {activeModalItem.name}
+                  </h2>
+                  <p className="text-xs text-apollio-orange font-bold uppercase tracking-wider mt-1">
+                    Appolio Industries Official Model
+                  </p>
+                </div>
+
+                <p className="text-xs sm:text-sm text-apollio-charcoal leading-relaxed">
+                  {activeModalItem.description}
+                </p>
+
+                <div className="space-y-2 pt-2 border-t border-black/10 text-xs text-apollio-charcoal">
+                  <div className="flex items-center gap-2">
+                    <span className="text-apollio-orange font-bold">✓</span>
+                    <span><strong>100% Customised Production:</strong> Tailored to your exact size specifications.</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-apollio-orange font-bold">✓</span>
+                    <span><strong>Premium Finish:</strong> Heavy-duty, weather-resistant coating and hardware.</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-apollio-orange font-bold">✓</span>
+                    <span><strong>All India Service:</strong> Manufacturing & installation delivery nationwide.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-black/10 flex flex-col gap-2">
+                <a
+                  href={`https://wa.me/916374188018?text=${encodeURIComponent(
+                    `Hello Appolio Industries, I am interested in inquiring about Door Model: ${activeModalItem.name} (${activeModalItem.category}). Please share details and pricing.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-bold uppercase tracking-wider py-3 rounded-sm text-center shadow-md transition flex items-center justify-center gap-2"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                  </svg>
+                  Inquire Model {activeModalItem.name} on WhatsApp
+                </a>
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="w-full bg-white border border-black/20 text-apollio-ink hover:text-apollio-orange text-xs font-bold uppercase tracking-wider py-2.5 rounded-sm text-center transition"
+                >
+                  📞 Call Us: {companyInfo.phoneFormatted}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
@@ -923,6 +1261,166 @@ function ProjectsPage({ onClose }) {
           />
         </div>
       )}
+    </div>
+  );
+}
+
+function CatalogPage({ onClose }) {
+  const catalogs = [
+    {
+      id: 1,
+      title: 'Appolio Steel Windows & Doors Catalog',
+      volume: 'Volume 1 — Official Edition',
+      description: 'Comprehensive product catalog featuring 76+ custom steel door designs, Maharaja series, executive profiles, security specs, and frame dimensions.',
+      pdfUrl: '/assets/appoliopdf/appolio-steel-doors-catalog-v1.pdf',
+      downloadName: 'Appolio-Steel-Doors-Catalog-v1.pdf',
+      badge: 'Steel Doors',
+      fileSize: 'Official PDF',
+      features: ['76+ Steel Door Models', 'Custom Dimensions & Gauges', 'Maharaja & Executive Series', 'Security & Lock Specifications'],
+    },
+    {
+      id: 2,
+      title: 'Appolio UPVC Windows & Doors Catalog',
+      volume: 'Volume 2 — Official Edition',
+      description: 'Official product catalog featuring 18+ UPVC door models, noise-insulating sliding windows, bi-fold systems, thermal efficiency, and profile colors.',
+      pdfUrl: '/assets/appoliopdf/appolio-upvc-windows-catalog-v2.pdf',
+      downloadName: 'Appolio-UPVC-Windows-Catalog-v2.pdf',
+      badge: 'UPVC Systems',
+      fileSize: 'Official PDF',
+      features: ['18+ UPVC Door & Window Models', 'Thermal & Sound Insulation', 'Sliding & Bi-Fold Systems', 'Weatherproof Engineering'],
+    },
+  ];
+
+  return (
+    <div className="bg-[#FAF7F2] min-h-screen py-8 sm:py-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        {/* Header Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/10 pb-6 mb-8 gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-apollio-orange/10 text-apollio-orange text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm mb-2">
+              📄 Official Downloads & E-Brochures
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink">
+              Appolio Product Catalogs
+            </h1>
+            <p className="text-xs sm:text-base text-apollio-charcoal/80 mt-1 max-w-2xl">
+              Download our official PDF catalogs or view them directly online to explore technical details, dimensions, and complete product ranges.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex items-center gap-1.5 rounded-sm bg-apollio-orange text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wider shadow-md transition hover:bg-[#dd6816] self-start sm:self-center flex-shrink-0"
+          >
+            ← Back to Home
+          </button>
+        </div>
+
+        {/* PDF Catalogs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {catalogs.map((cat) => (
+            <div
+              key={cat.id}
+              className="bg-white border border-black/10 rounded-sm shadow-md overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-xl"
+            >
+              <div>
+                {/* Header Banner */}
+                <div className="bg-gradient-to-r from-apollio-ink to-apollio-charcoal text-white p-5 sm:p-6 relative">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="bg-apollio-orange text-white text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-xs">
+                      {cat.badge}
+                    </span>
+                    <span className="text-[11px] font-medium text-white/70 uppercase tracking-wider">
+                      {cat.fileSize}
+                    </span>
+                  </div>
+                  <h2 className="text-lg sm:text-xl font-extrabold uppercase tracking-tight leading-snug">
+                    {cat.title}
+                  </h2>
+                  <p className="text-xs text-apollio-orange font-semibold mt-1">
+                    {cat.volume}
+                  </p>
+                </div>
+
+                {/* Content & Features */}
+                <div className="p-5 sm:p-6 space-y-4">
+                  <p className="text-xs sm:text-sm text-apollio-charcoal leading-relaxed">
+                    {cat.description}
+                  </p>
+
+                  <div className="border-t border-black/5 pt-4">
+                    <p className="text-xs font-bold text-apollio-ink uppercase tracking-wider mb-2.5">
+                      Included Highlights:
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-apollio-charcoal">
+                      {cat.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-center gap-2">
+                          <span className="text-apollio-orange font-bold">✓</span>
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Download & Action Buttons */}
+              <div className="p-5 sm:p-6 bg-[#FAF7F2] border-t border-black/10 flex flex-col sm:flex-row items-center gap-3">
+                <a
+                  href={cat.pdfUrl}
+                  download={cat.downloadName}
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-apollio-orange text-white px-5 py-3 text-xs font-extrabold uppercase tracking-wider rounded-sm shadow-md transition hover:bg-[#dd6816] text-center"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                  </svg>
+                  Download PDF
+                </a>
+                <a
+                  href={cat.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border border-black/20 text-apollio-ink px-5 py-3 text-xs font-bold uppercase tracking-wider rounded-sm transition hover:border-apollio-orange hover:text-apollio-orange text-center"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                  </svg>
+                  View Online
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Custom Order Callout */}
+        <div className="bg-apollio-ink text-white p-6 sm:p-8 rounded-sm shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-lg sm:text-xl font-extrabold uppercase tracking-tight text-white">
+              Need a Customised Production Quote?
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
+              We manufacture steel doors, windows, laser cutting panels, and UPVC systems according to your custom measurements and requirements.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+            <a
+              href={companyInfo.links.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 text-xs font-bold uppercase tracking-wider rounded-sm shadow-md transition hover:bg-[#20ba5a]"
+            >
+              WhatsApp Support
+            </a>
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 md:flex-none inline-flex items-center justify-center bg-apollio-orange text-white px-5 py-3 text-xs font-bold uppercase tracking-wider rounded-sm shadow-md transition hover:bg-[#dd6816]"
+            >
+              Back to Products
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
