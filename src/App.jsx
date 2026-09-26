@@ -1275,7 +1275,7 @@ function CatalogPage({ onClose }) {
       pdfUrl: '/assets/appoliopdf/appolio-steel-doors-catalog-v1.pdf',
       downloadName: 'Appolio-Steel-Doors-Catalog-v1.pdf',
       badge: 'Steel Doors',
-      fileSize: 'Official PDF',
+      fileSize: '21 MB PDF',
       features: ['76+ Steel Door Models', 'Custom Dimensions & Gauges', 'Maharaja & Executive Series', 'Security & Lock Specifications'],
     },
     {
@@ -1286,7 +1286,7 @@ function CatalogPage({ onClose }) {
       pdfUrl: '/assets/appoliopdf/appolio-upvc-windows-catalog-v2.pdf',
       downloadName: 'Appolio-UPVC-Windows-Catalog-v2.pdf',
       badge: 'UPVC Systems',
-      fileSize: 'Official PDF',
+      fileSize: '26 MB PDF',
       features: ['18+ UPVC Door & Window Models', 'Thermal & Sound Insulation', 'Sliding & Bi-Fold Systems', 'Weatherproof Engineering'],
     },
   ];
