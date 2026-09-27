@@ -148,5 +148,35 @@ export const windowsData = [
     "description": "Precision engineered heavy-duty steel window system (APP 18) with durable finish and custom dimensions.",
     "width": 405,
     "height": 420
+  },
+  {
+    "id": 101,
+    "name": "UPVC Casement Window System",
+    "filename": "upvc-casement-window.png",
+    "image": "/assets/projects/project-7.png",
+    "category": "UPVC Windows",
+    "description": "Premium multi-chamber weatherproof UPVC double casement window system with internal security grills.",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 102,
+    "name": "UPVC Sliding Window System",
+    "filename": "upvc-sliding-window.jpg",
+    "image": "/assets/hero-mobile-slide-2.jpg",
+    "category": "UPVC Windows",
+    "description": "High-insulation smooth gliding UPVC sliding window with multi-locking security hardware.",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 103,
+    "name": "UPVC Bi-Fold Louver Window System",
+    "filename": "upvc-bifold-window.jpg",
+    "image": "/assets/hero-mobile-slide-3.jpg",
+    "category": "UPVC Windows",
+    "description": "Multi-sash UPVC bi-fold architectural window with integrated ventilation louvers and noise insulation.",
+    "width": 500,
+    "height": 500
   }
 ];

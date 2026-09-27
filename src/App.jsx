@@ -854,7 +854,8 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
   const upvcDoorsCount = doorsData.filter((d) => d.category === 'UPVC Doors').length;
   const alumDoorsCount = doorsData.filter((d) => d.category === 'Aluminium Doors').length;
   const algeriaDoorsCount = doorsData.filter((d) => d.category === 'Algeria Doors').length;
-  const windowsCount = windowsData.length;
+  const steelWindowsCount = windowsData.filter((w) => w.category === 'Steel Windows' || w.category === 'Folding Windows' || w.category === 'Sliding Windows' || w.category === 'Laser Cutting').length;
+  const upvcWindowsCount = windowsData.filter((w) => w.category === 'UPVC Windows').length;
   const totalCatalogCount = doorsData.length + windowsData.length;
 
   const filterCategories = [
@@ -863,7 +864,8 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
     { name: 'UPVC Doors', label: `UPVC Doors (${upvcDoorsCount})` },
     { name: 'Aluminium Doors', label: `Aluminium Doors (${alumDoorsCount})` },
     { name: 'Algeria Doors', label: `Algeria Doors (${algeriaDoorsCount})` },
-    { name: 'Windows', label: `Windows (${windowsCount})` },
+    { name: 'Steel Windows', label: `Steel Windows (${steelWindowsCount})` },
+    { name: 'UPVC Windows', label: `UPVC Windows (${upvcWindowsCount})` },
   ];
 
   const allCatalogProducts = [...doorsData, ...windowsData];
@@ -874,7 +876,8 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
     const matchesCategory =
       activeFilter === 'All' ||
       product.category.toLowerCase() === activeLower ||
-      (activeFilter === 'Windows' && (product.category.includes('Window') || product.category === 'Steel Windows' || product.category === 'Folding Windows' || product.category === 'Sliding Windows' || product.category === 'Laser Cutting'));
+      (activeFilter === 'Steel Windows' && (product.category.includes('Steel Window') || product.category === 'Folding Windows' || product.category === 'Sliding Windows' || product.category === 'Laser Cutting')) ||
+      (activeFilter === 'UPVC Windows' && product.category === 'UPVC Windows');
     const matchesSearch =
       searchQuery.trim() === '' ||
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -886,7 +889,10 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
   const showLegacyPhotos =
     activeFilter !== 'Steel Doors' &&
     activeFilter !== 'UPVC Doors' &&
+    activeFilter !== 'Aluminium Doors' &&
+    activeFilter !== 'Algeria Doors' &&
     activeFilter !== 'Steel Windows' &&
+    activeFilter !== 'UPVC Windows' &&
     activeFilter !== 'Folding Windows' &&
     searchQuery.trim() === '';
 
@@ -905,13 +911,13 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-black/10 pb-5 mb-6 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 bg-apollio-orange/10 text-apollio-orange text-xs font-bold px-3 py-1 rounded-full mb-2">
-              Official Catalog • 94 Doors & 15 Windows
+              Official Catalog • 94 Doors & 18 Windows
             </div>
             <h1 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink">
               PRODUCT COLLECTIONS — DOORS & WINDOWS
             </h1>
             <p className="text-xs sm:text-sm text-apollio-charcoal mt-1">
-              Browse Appolio Industries 76 Steel Doors, 18 UPVC Doors, and 15 Steel/Folding Window Systems cropped directly from our catalog.
+              Browse Appolio Industries Steel Doors, UPVC Doors, Aluminium Section Doors, Steel Windows, and UPVC Windows.
             </p>
           </div>
           <button
@@ -984,7 +990,7 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
         )}
 
         {activeFilter === 'UPVC Doors' && (
-          <div className="bg-white border-l-4 border-[#2B384E] p-4 mb-6 shadow-xs rounded-r-sm">
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
             <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
               UPVC Doors Section ({filteredProducts.length} Models)
             </h2>
@@ -995,7 +1001,7 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
         )}
 
         {activeFilter === 'Aluminium Doors' && (
-          <div className="bg-white border-l-4 border-emerald-600 p-4 mb-6 shadow-xs rounded-r-sm">
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
             <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
               Aluminium Doors Section ({filteredProducts.length} Models)
             </h2>
@@ -1006,7 +1012,7 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
         )}
 
         {activeFilter === 'Algeria Doors' && (
-          <div className="bg-white border-l-4 border-amber-600 p-4 mb-6 shadow-xs rounded-r-sm">
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
             <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
               Algeria Doors Section ({filteredProducts.length} Models)
             </h2>
@@ -1016,13 +1022,24 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
           </div>
         )}
 
-        {(activeFilter === 'Steel Windows' || activeFilter === 'Folding Windows') && (
-          <div className="bg-white border-l-4 border-sky-700 p-4 mb-6 shadow-xs rounded-r-sm">
+        {activeFilter === 'Steel Windows' && (
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
             <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
-              {activeFilter} Section ({filteredProducts.length} Models)
+              Steel Windows Section ({filteredProducts.length} Models)
             </h2>
             <p className="text-xs text-apollio-charcoal mt-0.5">
               Appolio APP series heavy-duty steel windows, multi-panel bi-fold windows, ventilator sashes, and security grill systems.
+            </p>
+          </div>
+        )}
+
+        {activeFilter === 'UPVC Windows' && (
+          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              UPVC Windows Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Weatherproof, noise-insulating UPVC window systems with thermal efficiency, smooth casements, and sliding profiles.
             </p>
           </div>
         )}
@@ -1044,15 +1061,7 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
                     loading="lazy"
                   />
                   <div className="absolute top-2 left-2">
-                    <span
-                      className={`text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 shadow-xs rounded-xs text-white ${
-                        product.category === 'Steel Doors'
-                          ? 'bg-apollio-orange'
-                          : product.category === 'UPVC Doors'
-                          ? 'bg-[#2B384E]'
-                          : 'bg-sky-700'
-                      }`}
-                    >
+                    <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 shadow-xs rounded-xs text-white bg-apollio-orange">
                       {product.category}
                     </span>
                   </div>
