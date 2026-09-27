@@ -50,6 +50,56 @@ export const doorsData = [
     "height": 557
   },
   {
+    "id": 51,
+    "name": "SD 510 Art-Deco Gold",
+    "filename": "steel-door-art-deco-gold.png",
+    "image": "/assets/steel-doors/steel-door-art-deco-gold.png",
+    "category": "Steel Doors",
+    "description": "Architectural Art-Deco geometric gold & textured charcoal double steel entrance door with smart biometric lock.",
+    "width": 600,
+    "height": 700
+  },
+  {
+    "id": 52,
+    "name": "SD 512 Grand Maharaja",
+    "filename": "steel-door-grand-maharaja-sunburst.png",
+    "image": "/assets/steel-doors/steel-door-grand-maharaja-sunburst.png",
+    "category": "Steel Doors",
+    "description": "Royal Maharaja series gold sunburst medallion double steel door with ornate carved arch architrave frame.",
+    "width": 650,
+    "height": 750
+  },
+  {
+    "id": 53,
+    "name": "SD 515 Two-Tone Timber",
+    "filename": "steel-door-two-tone-timber.png",
+    "image": "/assets/steel-doors/steel-door-two-tone-timber.png",
+    "category": "Steel Doors",
+    "description": "Modern executive two-tone charcoal fluted panel & natural teak wood steel entrance door with smart handle.",
+    "width": 550,
+    "height": 700
+  },
+  {
+    "id": 54,
+    "name": "SD 520 Matte Black Horizontal",
+    "filename": "steel-door-matte-black-bronze-stripe.png",
+    "image": "/assets/steel-doors/steel-door-matte-black-bronze-stripe.png",
+    "category": "Steel Doors",
+    "description": "Minimalist matte black double steel entrance door with central champagne bronze horizontal band and integrated digital lock.",
+    "width": 550,
+    "height": 700
+  },
+  {
+    "id": 55,
+    "name": "SD 525 Bronze Executive",
+    "filename": "steel-door-bronze-minimalist.png",
+    "image": "/assets/steel-doors/steel-door-bronze-minimalist.png",
+    "category": "Steel Doors",
+    "description": "Sleek architectural metallic bronze steel door featuring dark vertical accent strip and smart lever handle.",
+    "width": 500,
+    "height": 700
+  },
+  {
     "id": 11,
     "name": "French Patio UPVC Double Door with Sidelights",
     "filename": "upvc-door-french-patio-sidelights.png",
