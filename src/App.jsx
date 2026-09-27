@@ -17,6 +17,7 @@ const assets = {
   upvcDoorGallery: '/assets/upvc-door-gallery.jpg',
   steelWindowsGallery: '/assets/steel-windows-gallery.jpg',
   aluminiumDoorGallery: '/assets/aluminium-doors/aluminium-door-1.png',
+  algeriaDoorGallery: '/assets/algeria-doors/algeria-door-1.jpg',
 };
 
 // Official Company Contact & Profile Links (Extracted from https://trazi.store/linktree/dnl-1457/ and filled form)
@@ -669,7 +670,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
             {[
               { src: assets.upvcDoorGallery, alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
               { src: assets.aluminiumDoorGallery, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
-              { src: assets.showcaseTransform, alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
+              { src: assets.algeriaDoorGallery, alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
               { src: assets.steelWindowsGallery, alt: 'Windows', category: 'Windows', label: 'Windows' },
             ].map((item, idx) => (
               <div
@@ -1000,6 +1001,17 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
             </h2>
             <p className="text-xs text-apollio-charcoal mt-0.5">
               Ultra-modern matte black geometric chevron pivot door systems, architectural aluminium entrance doors, and custom profile finishes.
+            </p>
+          </div>
+        )}
+
+        {activeFilter === 'Algeria Doors' && (
+          <div className="bg-white border-l-4 border-amber-600 p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              Algeria Doors Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Premium Algeria style teak wood finish doors, heritage double entrance doors, and glass patio door systems.
             </p>
           </div>
         )}

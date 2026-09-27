@@ -141,12 +141,12 @@ export const doorsData = [
   },
   {
     "id": 8,
-    "name": "Algeria Carved Heritage Double Door",
-    "filename": "algeria-carved-door.png",
-    "image": "/assets/showcase-transform.png",
+    "name": "Algeria Style Timber Glass Double Patio Door",
+    "filename": "algeria-door-1.jpg",
+    "image": "/assets/algeria-doors/algeria-door-1.jpg",
     "category": "Algeria Doors",
-    "description": "Intricate Algeria style carved heritage double entrance door with copper sunburst medallion.",
-    "width": 548,
-    "height": 557
+    "description": "Premium Algeria style teak wood finish double glass entrance door with sidelight panels and full-view safety glazing.",
+    "width": 600,
+    "height": 500
   }
 ];
