@@ -16,6 +16,7 @@ const assets = {
   steelDoorGallery: '/assets/steel-door-gallery.jpg',
   upvcDoorGallery: '/assets/upvc-door-gallery.jpg',
   steelWindowsGallery: '/assets/steel-windows-gallery.jpg',
+  aluminiumDoorGallery: '/assets/aluminium-doors/aluminium-door-1.png',
 };
 
 // Official Company Contact & Profile Links (Extracted from https://trazi.store/linktree/dnl-1457/ and filled form)
@@ -55,12 +56,15 @@ const collectionsPhotos = [
 
 // Completed Projects / Installations Data
 const projectsPhotos = [
-  { id: 1, src: '/assets/portfolio-1.jpg', title: 'Private Villa Steel Windows & Doors', location: 'Kottayam Installation' },
-  { id: 2, src: '/assets/portfolio-2.jpg', title: 'Custom Folding Window Project', location: 'Pala Residence' },
-  { id: 3, src: '/assets/portfolio-3.jpg', title: 'Laser Cutting Entrance Gate & Door', location: 'Bharananganam Site' },
-  { id: 4, src: assets.heroDesktop, title: 'Commercial UPVC & Aluminium Windows', location: 'Meenachil Taluk Project' },
-  { id: 5, src: assets.introDoor, title: 'Custom Double Entry Steel Door', location: 'Kerala Estate' },
-  { id: 6, src: assets.mobilePanel, title: 'Sliding Window & Patio Installation', location: 'Residential Elevation' },
+  { id: 1, src: '/assets/projects/project-1.jpg', title: 'Custom Folding Steel Grill Door System', location: 'Appolio Factory Installation' },
+  { id: 2, src: '/assets/projects/project-2.jpg', title: 'Heavy-Gauge Steel Window Grill Frame', location: 'Kottayam Site Installation' },
+  { id: 3, src: '/assets/projects/project-3.jpg', title: 'Executive Fluted Timber Double Entrance Door', location: 'Pala Residence Project' },
+  { id: 4, src: '/assets/projects/project-4.png', title: 'Custom Timber Louver Window with Ventilator', location: 'Kerala Architectural Villa' },
+  { id: 5, src: '/assets/projects/project-5.png', title: 'Precision Modular Steel Window & Louver Panel', location: 'Bharananganam Commercial Site' },
+  { id: 6, src: '/assets/projects/project-6.jpg', title: 'Grand 4-Panel Louver & Geo-Grill Entrance Unit', location: 'Manufacturing Workshop Site' },
+  { id: 7, src: '/assets/projects/project-7.png', title: 'Minimalist White UPVC Double Casement Window', location: 'Residential Elevation Installation' },
+  { id: 8, src: '/assets/projects/project-8.jpg', title: 'Industrial Dark Grey 3-Sash Ventilator Window', location: 'Kottayam Project Site' },
+  { id: 9, src: '/assets/projects/project-9.png', title: 'Dark Timber Steel Balcony French Door System', location: 'Meenachil Villa Project' },
 ];
 
 const products = [
@@ -664,7 +668,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
               { src: assets.upvcDoorGallery, alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
-              { src: assets.showcaseModern, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
+              { src: assets.aluminiumDoorGallery, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
               { src: assets.showcaseTransform, alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
               { src: assets.steelWindowsGallery, alt: 'Windows', category: 'Windows', label: 'Windows' },
             ].map((item, idx) => (
@@ -788,7 +792,7 @@ function DoorFeaturesSection() {
 }
 
 function ProjectsHomeSection({ onOpenProjects }) {
-  const displayItems = [...projectsPhotos, ...projectsPhotos];
+  const displayItems = [...projectsPhotos, ...projectsPhotos, ...projectsPhotos];
 
   return (
     <section id="projects" className="py-14 sm:py-20 bg-white border-b border-black/5">
@@ -985,6 +989,17 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
             </h2>
             <p className="text-xs text-apollio-charcoal mt-0.5">
               Weatherproof, soundproof multi-chamber UPVC profile door systems with glass sidelights and custom panel finishes.
+            </p>
+          </div>
+        )}
+
+        {activeFilter === 'Aluminium Doors' && (
+          <div className="bg-white border-l-4 border-emerald-600 p-4 mb-6 shadow-xs rounded-r-sm">
+            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
+              Aluminium Doors Section ({filteredProducts.length} Models)
+            </h2>
+            <p className="text-xs text-apollio-charcoal mt-0.5">
+              Ultra-modern matte black geometric chevron pivot door systems, architectural aluminium entrance doors, and custom profile finishes.
             </p>
           </div>
         )}

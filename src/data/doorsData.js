@@ -81,13 +81,63 @@ export const doorsData = [
   },
   {
     "id": 7,
-    "name": "Aluminium Section Entrance Door",
-    "filename": "aluminium-section-door.png",
-    "image": "/assets/showcase-modern.png",
+    "name": "Modern Aluminium Geometric Pivot Door",
+    "filename": "aluminium-door-1.png",
+    "image": "/assets/aluminium-doors/aluminium-door-1.png",
     "category": "Aluminium Doors",
-    "description": "Lightweight rust-proof aluminium section architectural entrance door.",
+    "description": "Ultra-modern matte black geometric chevron pivot door with integrated smart lock, vertical bar handle, and side transom glass.",
     "width": 500,
-    "height": 500
+    "height": 700
+  },
+  {
+    "id": 71,
+    "name": "Aluminium Corner Louver & Grill Window System",
+    "filename": "aluminium-corner-louver-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-corner-louver-window.jpg",
+    "category": "Aluminium Doors",
+    "description": "High-strength architectural aluminium corner window frame with multi-grid security grill and integrated vertical ventilation louvers.",
+    "width": 600,
+    "height": 800
+  },
+  {
+    "id": 72,
+    "name": "Architectural Elevation Aluminium Section Window",
+    "filename": "aluminium-elevation-window-system.jpg",
+    "image": "/assets/aluminium-doors/aluminium-elevation-window-system.jpg",
+    "category": "Aluminium Doors",
+    "description": "Multi-level dark grey aluminium section window system with integrated safety grills for modern villa elevations.",
+    "width": 600,
+    "height": 900
+  },
+  {
+    "id": 73,
+    "name": "Executive Recessed Frame Aluminium Section Window",
+    "filename": "aluminium-recessed-box-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-recessed-box-window.jpg",
+    "category": "Aluminium Doors",
+    "description": "Sleek cream & dark blue recessed architectural frame window system with multi-bar protective horizontal grills and spotlight recess.",
+    "width": 700,
+    "height": 600
+  },
+  {
+    "id": 74,
+    "name": "4-Track Heavy Duty Aluminium Sliding Patio Window",
+    "filename": "aluminium-sliding-patio-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-sliding-patio-window.jpg",
+    "category": "Aluminium Doors",
+    "description": "Wide-span 4-panel aluminium sliding patio door & window system with built-in horizontal security grills.",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": 75,
+    "name": "3-Leaf Aluminium Section Window & Door System",
+    "filename": "aluminium-hinged-3panel-door-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-hinged-3panel-door-window.jpg",
+    "category": "Aluminium Doors",
+    "description": "Sage green 3-leaf hinged architectural aluminium section window-door with heavy-duty lever handles and security grill bars.",
+    "width": 600,
+    "height": 800
   },
   {
     "id": 8,
