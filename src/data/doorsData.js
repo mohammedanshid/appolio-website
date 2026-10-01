@@ -130,6 +130,96 @@ export const doorsData = [
     "height": 837
   },
   {
+    "id": 14,
+    "name": "UPVC Multi-Panel Sliding Patio Door (White)",
+    "filename": "upvc-sliding-patio-white.png",
+    "image": "/assets/upvc-doors/upvc-sliding-patio-white.png",
+    "category": "UPVC Doors",
+    "description": "High-efficiency thermal multi-panel white UPVC sliding patio door system with expansive double-glazed glass.",
+    "width": 600,
+    "height": 450
+  },
+  {
+    "id": 15,
+    "name": "Architectural UPVC Dark Glass Deck Patio Door",
+    "filename": "upvc-sliding-patio-dark-deck.png",
+    "image": "/assets/upvc-doors/upvc-sliding-patio-dark-deck.png",
+    "category": "UPVC Doors",
+    "description": "Architectural dark frame UPVC sliding glass door system ideal for modern balconies and outdoor terrace decks.",
+    "width": 600,
+    "height": 450
+  },
+  {
+    "id": 16,
+    "name": "Modern UPVC Anthracite Double Sliding Patio Door",
+    "filename": "upvc-sliding-patio-dark-brick.png",
+    "image": "/assets/upvc-doors/upvc-sliding-patio-dark-brick.png",
+    "category": "UPVC Doors",
+    "description": "Sleek anthracite UPVC 2-track sliding patio door with noise-reduction insulation and multi-point locking.",
+    "width": 600,
+    "height": 450
+  },
+  {
+    "id": 17,
+    "name": "Executive Weatherproof UPVC Panoramic Patio Door",
+    "filename": "upvc-sliding-patio-gallery.jpg",
+    "image": "/assets/upvc-doors/upvc-sliding-patio-gallery.jpg",
+    "category": "UPVC Doors",
+    "description": "Full-span architectural UPVC panoramic glass entrance and patio door system.",
+    "width": 600,
+    "height": 450
+  },
+  {
+    "id": 18,
+    "name": "Minimalist White UPVC Frosted Glass Interior Door",
+    "filename": "upvc-single-white-frosted-glass.png",
+    "image": "/assets/upvc-doors/upvc-single-white-frosted-glass.png",
+    "category": "UPVC Doors",
+    "description": "Clean minimalist white UPVC door featuring 4-pane frosted privacy glass panels and ergonomic lever handle.",
+    "width": 450,
+    "height": 600
+  },
+  {
+    "id": 19,
+    "name": "Architectural Black UPVC Grid Bi-Fold Patio Door",
+    "filename": "upvc-black-bifold-patio-door.png",
+    "image": "/assets/upvc-doors/upvc-black-bifold-patio-door.png",
+    "category": "UPVC Doors",
+    "description": "Multi-sash black UPVC bi-folding glass patio door system with architectural grid glazing.",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": 20,
+    "name": "Heritage Sage Green UPVC French Double Door with Sidelights",
+    "filename": "upvc-sage-green-french-door.png",
+    "image": "/assets/upvc-doors/upvc-sage-green-french-door.png",
+    "category": "UPVC Doors",
+    "description": "Classic sage green UPVC French double entrance door featuring multi-pane glass grids and twin side transom windows.",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": 21,
+    "name": "Modern Anthracite UPVC 2-Track Sliding Patio Door",
+    "filename": "upvc-anthracite-sliding-patio-door.png",
+    "image": "/assets/upvc-doors/upvc-anthracite-sliding-patio-door.png",
+    "category": "UPVC Doors",
+    "description": "High-insulation dark anthracite UPVC sliding glass patio door offering panoramic garden views.",
+    "width": 500,
+    "height": 650
+  },
+  {
+    "id": 22,
+    "name": "Rosewood Timber Finish UPVC Sliding Patio Door",
+    "filename": "upvc-rosewood-sliding-patio-door.png",
+    "image": "/assets/upvc-doors/upvc-rosewood-sliding-patio-door.png",
+    "category": "UPVC Doors",
+    "description": "Rich rosewood woodgrain finish UPVC double sliding patio door with gold lever handle accent.",
+    "width": 550,
+    "height": 600
+  },
+  {
     "id": 7,
     "name": "Modern Aluminium Geometric Pivot Door",
     "filename": "aluminium-door-1.png",
@@ -140,54 +230,34 @@ export const doorsData = [
     "height": 700
   },
   {
-    "id": 71,
-    "name": "Aluminium Corner Louver & Grill Window System",
-    "filename": "aluminium-corner-louver-window.jpg",
-    "image": "/assets/aluminium-doors/aluminium-corner-louver-window.jpg",
+    "id": 76,
+    "name": "Bronze Aluminium Triple Glass Accent Entrance Door",
+    "filename": "aluminium-door-horizontal-strip-glass.png",
+    "image": "/assets/aluminium-doors/aluminium-door-horizontal-strip-glass.png",
     "category": "Aluminium Doors",
-    "description": "High-strength architectural aluminium corner window frame with multi-grid security grill and integrated vertical ventilation louvers.",
-    "width": 600,
-    "height": 800
+    "description": "Architectural dark bronze aluminium entrance door featuring triple horizontal frosted glass inserts and brushed steel bar pull handle.",
+    "width": 500,
+    "height": 700
   },
   {
-    "id": 72,
-    "name": "Architectural Elevation Aluminium Section Window",
-    "filename": "aluminium-elevation-window-system.jpg",
-    "image": "/assets/aluminium-doors/aluminium-elevation-window-system.jpg",
+    "id": 77,
+    "name": "Architectural Grey Aluminium Door with Twin Sidelights",
+    "filename": "aluminium-door-grey-sidelights.png",
+    "image": "/assets/aluminium-doors/aluminium-door-grey-sidelights.png",
     "category": "Aluminium Doors",
-    "description": "Multi-level dark grey aluminium section window system with integrated safety grills for modern villa elevations.",
-    "width": 600,
-    "height": 900
+    "description": "Modern matte grey aluminium front entrance door system flanked by dual full-height glass sidelights and long vertical pull bar.",
+    "width": 550,
+    "height": 700
   },
   {
-    "id": 73,
-    "name": "Executive Recessed Frame Aluminium Section Window",
-    "filename": "aluminium-recessed-box-window.jpg",
-    "image": "/assets/aluminium-doors/aluminium-recessed-box-window.jpg",
+    "id": 78,
+    "name": "Anthracite Aluminium Panel Door with Vertical Vision Glass",
+    "filename": "aluminium-door-anthracite-glass-insert.png",
+    "image": "/assets/aluminium-doors/aluminium-door-anthracite-glass-insert.png",
     "category": "Aluminium Doors",
-    "description": "Sleek cream & dark blue recessed architectural frame window system with multi-bar protective horizontal grills and spotlight recess.",
-    "width": 700,
-    "height": 600
-  },
-  {
-    "id": 74,
-    "name": "4-Track Heavy Duty Aluminium Sliding Patio Window",
-    "filename": "aluminium-sliding-patio-window.jpg",
-    "image": "/assets/aluminium-doors/aluminium-sliding-patio-window.jpg",
-    "category": "Aluminium Doors",
-    "description": "Wide-span 4-panel aluminium sliding patio door & window system with built-in horizontal security grills.",
-    "width": 800,
-    "height": 600
-  },
-  {
-    "id": 75,
-    "name": "3-Leaf Aluminium Section Window & Door System",
-    "filename": "aluminium-hinged-3panel-door-window.jpg",
-    "image": "/assets/aluminium-doors/aluminium-hinged-3panel-door-window.jpg",
-    "category": "Aluminium Doors",
-    "description": "Sage green 3-leaf hinged architectural aluminium section window-door with heavy-duty lever handles and security grill bars.",
-    "width": 600,
-    "height": 800
+    "description": "Sleek dark blue-grey aluminium entrance door with horizontal grooved panels, narrow vertical clear glass insert, and ergonomic bar handle.",
+    "width": 500,
+    "height": 700
   },
   {
     "id": 8,
@@ -198,5 +268,45 @@ export const doorsData = [
     "description": "Premium Algeria style teak wood finish double glass entrance door with sidelight panels and full-view safety glazing.",
     "width": 600,
     "height": 500
+  },
+  {
+    "id": 81,
+    "name": "Algeria 4-Panel Louver Blinds Sliding Glass Door",
+    "filename": "algeria-door-louver-blinds-sliding.png",
+    "image": "/assets/algeria-doors/algeria-door-louver-blinds-sliding.png",
+    "category": "Algeria Doors",
+    "description": "Luxury 4-panel grey frame sliding patio door system featuring integrated internal ventilation louver blinds.",
+    "width": 600,
+    "height": 550
+  },
+  {
+    "id": 82,
+    "name": "Algeria Modern Grey 2-Leaf Interior Sliding Door",
+    "filename": "algeria-door-grey-2panel-sliding.png",
+    "image": "/assets/algeria-doors/algeria-door-grey-2panel-sliding.png",
+    "category": "Algeria Doors",
+    "description": "Minimalist grey frame 2-leaf sliding glass door system with full-height transparency and ergonomic pull handle.",
+    "width": 500,
+    "height": 600
+  },
+  {
+    "id": 83,
+    "name": "Algeria Panoramic 4-Panel Riverview Glass Sliding Door",
+    "filename": "algeria-door-panoramic-riverview-sliding.png",
+    "image": "/assets/algeria-doors/algeria-door-panoramic-riverview-sliding.png",
+    "category": "Algeria Doors",
+    "description": "Ultra-wide 4-panel panoramic glass terrace sliding door system ideal for scenic waterfront villas.",
+    "width": 700,
+    "height": 550
+  },
+  {
+    "id": 84,
+    "name": "Algeria Oceanfront 3-Track White Sliding Glass Door",
+    "filename": "algeria-door-white-oceanfront-sliding.png",
+    "image": "/assets/algeria-doors/algeria-door-white-oceanfront-sliding.png",
+    "category": "Algeria Doors",
+    "description": "Heavy-duty white profile 3-track sliding patio glass door system with weather-sealed insulation.",
+    "width": 650,
+    "height": 550
   }
 ];

@@ -94,7 +94,7 @@ a {
   }
 
   .nav-link {
-    @apply relative text-sm font-semibold uppercase tracking-[0.16em] text-apollio-charcoal transition hover:text-apollio-orange focus:outline-none focus-visible:text-apollio-orange;
+    @apply relative text-[13px] sm:text-sm font-semibold uppercase tracking-[0.14em] text-apollio-charcoal transition hover:text-apollio-orange focus:outline-none focus-visible:text-apollio-orange whitespace-nowrap flex-shrink-0;
   }
 
   .nav-link::after {

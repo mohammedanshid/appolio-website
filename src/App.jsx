@@ -10,11 +10,11 @@ const assets = {
   introDoor: '/assets/product-panel-portrait.png',
   mobileCircular: '/assets/mobile-circular-collection.png',
   mobilePanel: '/assets/mobile-panel-collection.png',
-  showcaseModern: '/assets/showcase-modern.png',
-  showcaseElevate: '/assets/showcase-elevate.png',
-  showcaseTransform: '/assets/showcase-transform.png',
+  showcaseModern: '/assets/steel-doors/steel-door-sd-402-laser.png',
+  showcaseElevate: '/assets/aluminium-doors/aluminium-elevation-window-system.jpg',
+  showcaseTransform: '/assets/steel-doors/steel-door-grand-maharaja-sunburst.png',
   steelDoorGallery: '/assets/steel-door-gallery.jpg',
-  upvcDoorGallery: '/assets/upvc-door-gallery.jpg',
+  upvcDoorGallery: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png',
   steelWindowsGallery: '/assets/steel-windows-gallery.jpg',
   aluminiumDoorGallery: '/assets/aluminium-doors/aluminium-door-1.png',
   algeriaDoorGallery: '/assets/algeria-doors/algeria-door-1.jpg',
@@ -30,7 +30,15 @@ const companyInfo = {
   email: 'kkengineeringkottayam@gmail.com',
   address: 'Bharananganam, Meenachil Taluk, Pala, Kottayam, Kerala - 686578',
   businessHours: '9:00 AM to 7:00 PM',
-  serviceArea: 'All India',
+  serviceArea: 'Pala, Bharananganam | Malappuram | Trivandrum | Thrissur',
+  branches: ['Pala, Bharananganam', 'Malappuram', 'Trivandrum', 'Thrissur'],
+  contactNumbers: [
+    '8714 838 808',
+    '6238 976 634',
+    '9778 238 550',
+    '8943 455 577',
+    'Dealership: 6374 188 018'
+  ],
   whyChooseUs: 'We provide customised production.',
   links: {
     instagram: 'https://www.instagram.com/appoliokottayam?igsi=azc5NmxmMmU1MzZj',
@@ -46,13 +54,13 @@ const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Pro
 // Product Collections Data
 const collectionsPhotos = [
   { id: 1, src: assets.steelDoorGallery, title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
-  { id: 2, src: assets.upvcDoorGallery, title: 'UPVC Window Systems', category: 'UPVC Windows' },
+  { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
   { id: 3, src: assets.steelWindowsGallery, title: 'Architectural Folding Windows', category: 'Folding Windows' },
-  { id: 4, src: '/assets/hero-mobile-slide-2.jpg', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
-  { id: 5, src: assets.showcaseModern, title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
-  { id: 6, src: assets.showcaseElevate, title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
-  { id: 7, src: assets.showcaseTransform, title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
-  { id: 8, src: assets.heroMobile, title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
+  { id: 4, src: '/assets/windows/upvc-charcoal-elevation-window-system.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
+  { id: 5, src: '/assets/steel-doors/steel-door-sd-402-laser.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
+  { id: 6, src: '/assets/aluminium-doors/aluminium-elevation-window-system.jpg', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
+  { id: 7, src: '/assets/steel-doors/steel-door-grand-maharaja-sunburst.png', title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
+  { id: 8, src: '/assets/windows/upvc-anthracite-venetian-blinds-window.png', title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
 ];
 
 // Completed Projects / Installations Data
@@ -72,43 +80,43 @@ const products = [
   {
     title: 'Steel Doors Collection (76 Models)',
     category: 'Steel Doors',
-    image: '/assets/doors/sd-501-maharaja.png',
+    image: '/assets/steel-doors/steel-door-grand-maharaja-sunburst.png',
     description: '76+ Customised heavy-duty steel doors engineered for security and architectural luxury.',
   },
   {
     title: 'UPVC Doors Collection (18 Models)',
     category: 'UPVC Doors',
-    image: '/assets/doors/sd-24-mobh.png',
+    image: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png',
     description: '18+ Weatherproof, noise-insulating UPVC door systems with thermal efficiency.',
   },
   {
     title: 'Folding Windows',
     category: 'Folding Windows',
-    image: '/assets/hero-mobile-slide-2.jpg',
+    image: '/assets/projects/project-1.jpg',
     description: 'Sleek bi-fold and multi-panel folding windows for seamless indoor-outdoor architectural spaces.',
   },
   {
     title: 'UPVC Windows',
     category: 'UPVC Windows',
-    image: '/assets/hero-mobile-slide-3.jpg',
+    image: '/assets/projects/project-7.png',
     description: 'Weatherproof, noise-insulating UPVC window systems with thermal efficiency.',
   },
   {
     title: 'Sliding Windows',
     category: 'Sliding Windows',
-    image: assets.showcaseModern,
+    image: '/assets/windows/upvc-charcoal-elevation-window-system.png',
     description: 'Smooth-gliding sliding windows with minimalist frames and secure multi-locking points.',
   },
   {
     title: 'Laser Cutting Designs',
     category: 'Laser Cutting',
-    image: assets.showcaseElevate,
+    image: '/assets/steel-doors/steel-door-sd-402-laser.png',
     description: 'Intricate CNC laser cutting for custom steel door grills, panels, and elevation highlights.',
   },
   {
     title: 'Aluminium Section Windows',
     category: 'Aluminium Section Windows',
-    image: assets.showcaseTransform,
+    image: '/assets/aluminium-doors/aluminium-elevation-window-system.jpg',
     description: 'Lightweight, rust-resistant aluminium section windows tailored for modern structures.',
   },
 ];
@@ -204,7 +212,11 @@ function App() {
 
       <main>
         {activeView === 'collections' ? (
-          <CollectionsPage initialFilter={selectedCategoryFilter} onClose={() => navigateTo('home')} />
+          <CollectionsPage
+            initialFilter={selectedCategoryFilter}
+            onClose={() => navigateTo('home')}
+            onOpenCatalog={() => navigateTo('catalog')}
+          />
         ) : activeView === 'projects' ? (
           <ProjectsPage onClose={() => navigateTo('home')} />
         ) : activeView === 'catalog' ? (
@@ -222,7 +234,10 @@ function App() {
             <DoorFeaturesSection />
             <UltraModernBanner onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <ProjectsHomeSection onOpenProjects={() => navigateTo('projects')} />
-            <Products onOpenCollections={(cat) => navigateTo('collections', cat)} />
+            <Products
+              onOpenCollections={(cat) => navigateTo('collections', cat)}
+              onOpenCatalog={() => navigateTo('catalog')}
+            />
             <WhyChoose />
             <FaqSection />
           </>
@@ -253,19 +268,19 @@ function App() {
 function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+      <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <button
           type="button"
           onClick={() => {
             onNavigate('home');
             closeMenu();
           }}
-          className="flex min-w-0 items-center text-left focus:outline-none"
+          className="flex flex-shrink-0 items-center text-left focus:outline-none"
         >
-          <img src={assets.logo} alt="Appolio Industries logo" className="h-12 w-40 object-contain object-left sm:h-14 sm:w-48" />
+          <img src={assets.logo} alt="Appolio Industries logo" className="h-10 w-auto object-contain object-left sm:h-12 flex-shrink-0" />
         </button>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-3.5 lg:gap-4 xl:gap-6 lg:flex flex-shrink-0">
           {navItems.map((item) => (
             <button
               key={item}
@@ -285,19 +300,19 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
                   }, 50);
                 }
               }}
-              className="nav-link"
+              className="nav-link whitespace-nowrap flex-shrink-0"
             >
               {item}
             </button>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
           <a
             href={companyInfo.links.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm bg-[#25D366] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#20ba5a]"
+            className="inline-flex items-center gap-1.5 rounded-sm bg-[#25D366] px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#20ba5a] whitespace-nowrap flex-shrink-0"
           >
             WhatsApp
           </a>
@@ -310,7 +325,7 @@ function Header({ menuOpen, setMenuOpen, closeMenu, onNavigate }) {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }, 50);
             }}
-            className="rounded-sm bg-apollio-orange px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition hover:bg-[#dd6816]"
+            className="rounded-sm bg-apollio-orange px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-sm transition hover:bg-[#dd6816] whitespace-nowrap flex-shrink-0"
           >
             Get a Quote
           </a>
@@ -385,7 +400,7 @@ const heroSlides = [
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
-    mobileImage: '/assets/hero-mobile-slide-2.jpg',
+    mobileImage: '/assets/hero-mobile-clean.jpg',
     eyebrow: 'STATEMENT',
     titleLine1: 'BRONZE &',
     titleLine2: 'STEEL',
@@ -394,7 +409,7 @@ const heroSlides = [
   },
   {
     desktopImage: '/assets/hero-desktop-clean.jpg',
-    mobileImage: '/assets/hero-mobile-slide-3.jpg',
+    mobileImage: '/assets/hero-mobile-premium.png',
     eyebrow: 'EXECUTIVE',
     titleLine1: 'MODERN',
     titleLine2: 'SERIES',
@@ -841,7 +856,7 @@ function ProjectsHomeSection({ onOpenProjects }) {
   );
 }
 
-function CollectionsPage({ initialFilter = 'All', onClose }) {
+function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
   const [activeFilter, setActiveFilter] = useState(initialFilter);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeModalItem, setActiveModalItem] = useState(null);
@@ -1100,6 +1115,23 @@ function CollectionsPage({ initialFilter = 'All', onClose }) {
             </button>
           </div>
         )}
+
+        {/* Hero-Styled 'Our Catalog' Redirect Button Banner (In the gap under product images grid right before reviews space) */}
+        <div className="flex flex-col items-center justify-center my-10 py-6 px-4 bg-white border border-black/10 rounded-sm shadow-xs text-center gap-3">
+          <p className="text-xs sm:text-sm font-bold text-apollio-ink uppercase tracking-wider">
+            Want to View Technical Specs & Download PDF Catalogs?
+          </p>
+          <button
+            type="button"
+            onClick={onOpenCatalog}
+            className="inline-flex items-center gap-2.5 rounded-lg bg-apollio-orange text-white px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.16em] shadow-lg border border-white/30 transition-all duration-300 hover:bg-[#dd6816] hover:scale-105 cursor-pointer"
+          >
+            <span>Our Catalog</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
 
         {/* Additional Window & Gallery Collections */}
         {showLegacyPhotos && filteredLegacyPhotos.length > 0 && (
@@ -1461,7 +1493,7 @@ function CatalogPage({ onClose }) {
   );
 }
 
-function Products({ onOpenCollections }) {
+function Products({ onOpenCollections, onOpenCatalog }) {
   const scrollRef = useRef(null);
   const [activeCard, setActiveCard] = useState(0);
 
@@ -1760,6 +1792,57 @@ function GoogleReviews() {
 function Footer({ onNavigate }) {
   return (
     <footer id="footer-contact" className="bg-apollio-ink text-white">
+      {/* Orange Locations & Contact Banner (Matching Official Signage & replacing Calicut with Trivandrum) */}
+      <div className="bg-gradient-to-r from-[#d9480f] via-apollio-orange to-[#d9480f] text-white py-6 px-4 shadow-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto text-center space-y-3">
+          
+          {/* Logo / Tagline */}
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase drop-shadow-xs">
+              Appolio
+            </span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest bg-white/20 text-white px-2 py-0.5 rounded font-bold">
+              Steel Windows & Doors
+            </span>
+          </div>
+
+          {/* Locations Line */}
+          <div className="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-widest text-white flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1">
+            <span>PALA, BHARANANGANAM</span>
+            <span className="text-white/60">|</span>
+            <span>MALAPPURAM</span>
+            <span className="text-white/60">|</span>
+            <span>TRIVANDRUM</span>
+            <span className="text-white/60">|</span>
+            <span>THRISSUR</span>
+          </div>
+
+          {/* White Horizontal Divider Line */}
+          <div className="w-full max-w-5xl mx-auto border-t border-white/40 my-2"></div>
+
+          {/* Phone Numbers Line */}
+          <div className="text-xs sm:text-sm md:text-base font-bold text-white flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1.5">
+            <div className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-white flex-shrink-0 fill-current inline-block" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <a href="tel:8714838808" className="hover:underline hover:text-white/90 transition">8714 838 808</a>
+            </div>
+            <span className="text-white/60">|</span>
+            <a href="tel:6238976634" className="hover:underline hover:text-white/90 transition">6238 976 634</a>
+            <span className="text-white/60">|</span>
+            <a href="tel:9778238550" className="hover:underline hover:text-white/90 transition">9778 238 550</a>
+            <span className="text-white/60">|</span>
+            <a href="tel:8943455577" className="hover:underline hover:text-white/90 transition">8943 455 577</a>
+            <span className="text-white/60">|</span>
+            <a href="tel:6374188018" className="hover:underline hover:text-white/90 transition bg-white/20 px-2 py-0.5 rounded font-extrabold text-white inline-block">
+              Dealership: 6374 188 018
+            </a>
+          </div>
+
+        </div>
+      </div>
+
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-3 lg:px-10">
         
         {/* Brand & About (Logo with background removed) */}
@@ -1771,7 +1854,7 @@ function Footer({ onNavigate }) {
             <strong>{companyInfo.name}</strong> — {companyInfo.type}. Established in {companyInfo.established} in Bharananganam, Kottayam. {companyInfo.whyChooseUs}
           </p>
           <p className="text-xs text-apollio-orange font-semibold">
-            Service Area: {companyInfo.serviceArea}
+            Branches & Service Area: {companyInfo.serviceArea}
           </p>
         </div>
 
@@ -1796,10 +1879,15 @@ function Footer({ onNavigate }) {
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
             </svg>
             <div>
-              <strong className="block text-white text-[11px] uppercase tracking-wider">Phone:</strong>
-              <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition">
-                {companyInfo.phoneFormatted}
-              </a>
+              <strong className="block text-white text-[11px] uppercase tracking-wider">Helpline & Dealership:</strong>
+              <div className="space-y-0.5 mt-0.5">
+                <a href={`tel:${companyInfo.phone}`} className="hover:text-apollio-orange transition block font-bold text-apollio-orange">
+                  Dealership: {companyInfo.phoneFormatted}
+                </a>
+                <span className="text-xs text-white/70 block">
+                  Branch Helplines: 8714 838 808 | 6238 976 634 | 9778 238 550 | 8943 455 577
+                </span>
+              </div>
             </div>
           </div>
 

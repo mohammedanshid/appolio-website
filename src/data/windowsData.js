@@ -162,8 +162,8 @@ export const windowsData = [
   {
     "id": 102,
     "name": "UPVC Sliding Window System",
-    "filename": "upvc-sliding-window.jpg",
-    "image": "/assets/hero-mobile-slide-2.jpg",
+    "filename": "upvc-sliding-window.png",
+    "image": "/assets/windows/upvc-charcoal-elevation-window-system.png",
     "category": "UPVC Windows",
     "description": "High-insulation smooth gliding UPVC sliding window with multi-locking security hardware.",
     "width": 500,
@@ -172,11 +172,111 @@ export const windowsData = [
   {
     "id": 103,
     "name": "UPVC Bi-Fold Louver Window System",
-    "filename": "upvc-bifold-window.jpg",
-    "image": "/assets/hero-mobile-slide-3.jpg",
+    "filename": "upvc-bifold-window.png",
+    "image": "/assets/windows/upvc-livingroom-geometric-grill-window.png",
     "category": "UPVC Windows",
     "description": "Multi-sash UPVC bi-fold architectural window with integrated ventilation louvers and noise insulation.",
     "width": 500,
     "height": 500
+  },
+  {
+    "id": 104,
+    "name": "White UPVC Top-Hung Awning Window",
+    "filename": "upvc-awning-casement-window.png",
+    "image": "/assets/windows/upvc-awning-casement-window.png",
+    "category": "UPVC Windows",
+    "description": "Weatherproof white UPVC top-hinged awning casement window system with friction stay arm mechanism.",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 105,
+    "name": "Architectural UPVC Picture & Casement Combination Window",
+    "filename": "upvc-kitchen-picture-casement-window.png",
+    "image": "/assets/windows/upvc-kitchen-picture-casement-window.png",
+    "category": "UPVC Windows",
+    "description": "Wide-span white UPVC central fixed picture window flanked by dual operating side casement sashes.",
+    "width": 600,
+    "height": 450
+  },
+  {
+    "id": 106,
+    "name": "UPVC Living Room Multi-Sash Window with Geometric Grill Inlay",
+    "filename": "upvc-livingroom-geometric-grill-window.png",
+    "image": "/assets/windows/upvc-livingroom-geometric-grill-window.png",
+    "category": "UPVC Windows",
+    "description": "Elegant white UPVC multi-sash window system featuring decorative internal geometric security grill work.",
+    "width": 600,
+    "height": 550
+  },
+  {
+    "id": 107,
+    "name": "Anthracite Black UPVC Double Casement Window with Integrated Venetian Blinds",
+    "filename": "upvc-anthracite-venetian-blinds-window.png",
+    "image": "/assets/windows/upvc-anthracite-venetian-blinds-window.png",
+    "category": "UPVC Windows",
+    "description": "Modern matte anthracite UPVC double casement window featuring integrated dust-free glass venetian blinds.",
+    "width": 550,
+    "height": 500
+  },
+  {
+    "id": 108,
+    "name": "Charcoal UPVC Upper Floor Elevation Sliding Window System",
+    "filename": "upvc-charcoal-elevation-window-system.png",
+    "image": "/assets/windows/upvc-charcoal-elevation-window-system.png",
+    "category": "UPVC Windows",
+    "description": "Architectural multi-panel charcoal UPVC sliding window system for modern exterior villa elevations.",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": 71,
+    "name": "Aluminium Corner Louver & Grill Window System",
+    "filename": "aluminium-corner-louver-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-corner-louver-window.jpg",
+    "category": "Steel Windows",
+    "description": "High-strength architectural aluminium corner window frame with multi-grid security grill and integrated vertical ventilation louvers.",
+    "width": 600,
+    "height": 800
+  },
+  {
+    "id": 72,
+    "name": "Architectural Elevation Aluminium Section Window",
+    "filename": "aluminium-elevation-window-system.jpg",
+    "image": "/assets/aluminium-doors/aluminium-elevation-window-system.jpg",
+    "category": "Steel Windows",
+    "description": "Multi-level dark grey aluminium section window system with integrated safety grills for modern villa elevations.",
+    "width": 600,
+    "height": 900
+  },
+  {
+    "id": 73,
+    "name": "Executive Recessed Frame Aluminium Section Window",
+    "filename": "aluminium-recessed-box-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-recessed-box-window.jpg",
+    "category": "Steel Windows",
+    "description": "Sleek cream & dark blue recessed architectural frame window system with multi-bar protective horizontal grills and spotlight recess.",
+    "width": 700,
+    "height": 600
+  },
+  {
+    "id": 74,
+    "name": "4-Track Heavy Duty Aluminium Sliding Patio Window",
+    "filename": "aluminium-sliding-patio-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-sliding-patio-window.jpg",
+    "category": "Steel Windows",
+    "description": "Wide-span 4-panel aluminium sliding patio door & window system with built-in horizontal security grills.",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": 75,
+    "name": "3-Leaf Aluminium Section Window & Door System",
+    "filename": "aluminium-hinged-3panel-door-window.jpg",
+    "image": "/assets/aluminium-doors/aluminium-hinged-3panel-door-window.jpg",
+    "category": "Steel Windows",
+    "description": "Sage green 3-leaf hinged architectural aluminium section window-door with heavy-duty lever handles and security grill bars.",
+    "width": 600,
+    "height": 800
   }
 ];
