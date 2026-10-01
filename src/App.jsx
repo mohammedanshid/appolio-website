@@ -52,15 +52,16 @@ const companyInfo = {
 const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Projects', 'FAQ', 'Contact'];
 
 // Product Collections Data
+// Product Collections Data
 const collectionsPhotos = [
-  { id: 1, src: assets.steelDoorGallery, title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
+  { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
   { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
-  { id: 3, src: assets.steelWindowsGallery, title: 'Architectural Folding Windows', category: 'Folding Windows' },
-  { id: 4, src: '/assets/windows/upvc-charcoal-elevation-window-system.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
-  { id: 5, src: '/assets/steel-doors/steel-door-sd-402-laser.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
-  { id: 6, src: '/assets/aluminium-doors/aluminium-elevation-window-system.jpg', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
-  { id: 7, src: '/assets/steel-doors/steel-door-grand-maharaja-sunburst.png', title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
-  { id: 8, src: '/assets/windows/upvc-anthracite-venetian-blinds-window.png', title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
+  { id: 3, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
+  { id: 4, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
+  { id: 5, src: '/assets/windows/app-17.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
+  { id: 6, src: '/assets/aluminium-doors/aluminium-door-1.png', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
+  { id: 7, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
+  { id: 8, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
 ];
 
 // Completed Projects / Installations Data
@@ -80,7 +81,7 @@ const products = [
   {
     title: 'Steel Doors Collection (76 Models)',
     category: 'Steel Doors',
-    image: '/assets/steel-doors/steel-door-grand-maharaja-sunburst.png',
+    image: '/assets/steel-doors/steel-door-sd-410-mos.png',
     description: '76+ Customised heavy-duty steel doors engineered for security and architectural luxury.',
   },
   {
@@ -92,7 +93,7 @@ const products = [
   {
     title: 'Folding Windows',
     category: 'Folding Windows',
-    image: '/assets/projects/project-1.jpg',
+    image: '/assets/windows/app-21.png',
     description: 'Sleek bi-fold and multi-panel folding windows for seamless indoor-outdoor architectural spaces.',
   },
   {
@@ -104,19 +105,19 @@ const products = [
   {
     title: 'Sliding Windows',
     category: 'Sliding Windows',
-    image: '/assets/windows/upvc-charcoal-elevation-window-system.png',
+    image: '/assets/windows/app-06.png',
     description: 'Smooth-gliding sliding windows with minimalist frames and secure multi-locking points.',
   },
   {
     title: 'Laser Cutting Designs',
     category: 'Laser Cutting',
-    image: '/assets/steel-doors/steel-door-sd-402-laser.png',
+    image: '/assets/windows/app-17.png',
     description: 'Intricate CNC laser cutting for custom steel door grills, panels, and elevation highlights.',
   },
   {
     title: 'Aluminium Section Windows',
     category: 'Aluminium Section Windows',
-    image: '/assets/aluminium-doors/aluminium-elevation-window-system.jpg',
+    image: '/assets/aluminium-doors/aluminium-door-1.png',
     description: 'Lightweight, rust-resistant aluminium section windows tailored for modern structures.',
   },
 ];
@@ -671,7 +672,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
             className="group relative cursor-pointer overflow-hidden rounded-sm bg-black/5 border border-black/10 aspect-[4/3] sm:aspect-[16/10] transition hover:opacity-95 shadow-sm"
           >
             <img
-              src={assets.steelDoorGallery}
+              src="/assets/steel-doors/steel-door-sd-410-mos.png"
               alt="Steel Doors Collection"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
@@ -683,10 +684,10 @@ function CollectionsHomeSection({ onOpenCollections }) {
           {/* 4 Category Grid Cards: UPVC Doors, Aluminium Doors, Algeria Doors, Windows */}
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {[
-              { src: assets.upvcDoorGallery, alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
-              { src: assets.aluminiumDoorGallery, alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
-              { src: assets.algeriaDoorGallery, alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
-              { src: assets.steelWindowsGallery, alt: 'Windows', category: 'Windows', label: 'Windows' },
+              { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
+              { src: '/assets/aluminium-doors/aluminium-door-1.png', alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
+              { src: '/assets/algeria-doors/algeria-door-1.jpg', alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
+              { src: '/assets/windows/app-19.png', alt: 'Windows', category: 'Steel Windows', label: 'Windows' },
             ].map((item, idx) => (
               <div
                 key={idx}
