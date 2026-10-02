@@ -308,5 +308,45 @@ export const doorsData = [
     "description": "Heavy-duty white profile 3-track sliding patio glass door system with weather-sealed insulation.",
     "width": 650,
     "height": 550
+  },
+  {
+    "id": 91,
+    "name": "Custom Geometric Welded Steel Main Gate",
+    "filename": "welding-work-steel-gate.jpg",
+    "image": "/assets/welding-works/welding-work-steel-gate.jpg",
+    "category": "Welding Works",
+    "description": "Heavy-duty custom welded matte black steel entrance gate with modern geometric metal fabrication.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 92,
+    "name": "Architectural Welded Steel Pergola & Structural Beams",
+    "filename": "welding-work-steel-pergola.jpg",
+    "image": "/assets/welding-works/welding-work-steel-pergola.jpg",
+    "category": "Welding Works",
+    "description": "Custom welded structural steel I-beam patio pergola framework and metalwork engineering.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 93,
+    "name": "Industrial Welded Steel Window Grill & Louver System",
+    "filename": "welding-work-steel-grill.jpg",
+    "image": "/assets/welding-works/welding-work-steel-grill.jpg",
+    "category": "Welding Works",
+    "description": "Precision welded steel window safety grills and architectural ventilation louvers for elevations.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 94,
+    "name": "CNC Laser Cut Welded Steel Elevation Screen",
+    "filename": "welding-work-elevation-panel.jpg",
+    "image": "/assets/welding-works/welding-work-elevation-panel.jpg",
+    "category": "Welding Works",
+    "description": "Custom welded steel architectural panel screen featuring intricate laser-cut geometric patterns.",
+    "width": 600,
+    "height": 500
   }
 ];

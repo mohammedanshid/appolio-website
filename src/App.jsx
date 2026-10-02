@@ -56,12 +56,12 @@ const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Pro
 const collectionsPhotos = [
   { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
   { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
-  { id: 3, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
-  { id: 4, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
-  { id: 5, src: '/assets/windows/app-17.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
-  { id: 6, src: '/assets/aluminium-doors/aluminium-door-1.png', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
-  { id: 7, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Custom Steel Entry Doors', category: 'Steel Windows & Doors' },
-  { id: 8, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'Customised UPVC & Steel Profiles', category: 'UPVC Windows' },
+  { id: 3, src: '/assets/windows/modern-steel-window-system.jpg', title: 'Architectural Windows', category: 'Steel Windows' },
+  { id: 4, src: '/assets/welding-works/welding-work-steel-gate.jpg', title: 'Welding Works & Fabrication', category: 'Welding Works' },
+  { id: 5, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
+  { id: 6, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
+  { id: 7, src: '/assets/windows/app-17.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
+  { id: 8, src: '/assets/aluminium-doors/aluminium-door-1.png', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
 ];
 
 // Completed Projects / Installations Data
@@ -89,6 +89,18 @@ const products = [
     category: 'UPVC Doors',
     image: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png',
     description: '18+ Weatherproof, noise-insulating UPVC door systems with thermal efficiency.',
+  },
+  {
+    title: 'Steel & Architectural Windows',
+    category: 'Steel Windows',
+    image: '/assets/windows/modern-steel-window-system.jpg',
+    description: 'Custom luxury steel casement and elevation windows engineered for structural durability.',
+  },
+  {
+    title: 'Welding Works & Fabrication (4 Models)',
+    category: 'Welding Works',
+    image: '/assets/welding-works/welding-work-steel-gate.jpg',
+    description: 'Heavy custom welded steel main entrance gates, structural pergolas, grills, and elevation screens.',
   },
   {
     title: 'Folding Windows',
@@ -681,13 +693,13 @@ function CollectionsHomeSection({ onOpenCollections }) {
             </div>
           </div>
 
-          {/* 4 Category Grid Cards: UPVC Doors, Aluminium Doors, Algeria Doors, Windows */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          {/* Category Grid Cards: UPVC Doors, Aluminium Doors, Steel Windows, Welding Works */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {[
               { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
               { src: '/assets/aluminium-doors/aluminium-door-1.png', alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
-              { src: '/assets/algeria-doors/algeria-door-1.jpg', alt: 'Algeria Doors', category: 'Algeria Doors', label: 'Algeria Doors' },
-              { src: '/assets/windows/app-19.png', alt: 'Windows', category: 'Steel Windows', label: 'Windows' },
+              { src: '/assets/windows/modern-steel-window-system.jpg', alt: 'Steel Windows', category: 'Steel Windows', label: 'Steel Windows' },
+              { src: '/assets/welding-works/welding-work-steel-gate.jpg', alt: 'Welding Works', category: 'Welding Works', label: 'Welding Works' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -870,6 +882,7 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
   const upvcDoorsCount = doorsData.filter((d) => d.category === 'UPVC Doors').length;
   const alumDoorsCount = doorsData.filter((d) => d.category === 'Aluminium Doors').length;
   const algeriaDoorsCount = doorsData.filter((d) => d.category === 'Algeria Doors').length;
+  const weldingWorksCount = doorsData.filter((d) => d.category === 'Welding Works').length;
   const steelWindowsCount = windowsData.filter((w) => w.category === 'Steel Windows' || w.category === 'Folding Windows' || w.category === 'Sliding Windows' || w.category === 'Laser Cutting').length;
   const upvcWindowsCount = windowsData.filter((w) => w.category === 'UPVC Windows').length;
   const totalCatalogCount = doorsData.length + windowsData.length;
@@ -878,6 +891,7 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
     { name: 'All', label: `All Collections (${totalCatalogCount})` },
     { name: 'Steel Doors', label: `Steel Doors (${steelDoorsCount})` },
     { name: 'UPVC Doors', label: `UPVC Doors (${upvcDoorsCount})` },
+    { name: 'Welding Works', label: `Welding Works (${weldingWorksCount})` },
     { name: 'Aluminium Doors', label: `Aluminium Doors (${alumDoorsCount})` },
     { name: 'Algeria Doors', label: `Algeria Doors (${algeriaDoorsCount})` },
     { name: 'Steel Windows', label: `Steel Windows (${steelWindowsCount})` },
@@ -893,7 +907,8 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
       activeFilter === 'All' ||
       product.category.toLowerCase() === activeLower ||
       (activeFilter === 'Steel Windows' && (product.category.includes('Steel Window') || product.category === 'Folding Windows' || product.category === 'Sliding Windows' || product.category === 'Laser Cutting')) ||
-      (activeFilter === 'UPVC Windows' && product.category === 'UPVC Windows');
+      (activeFilter === 'UPVC Windows' && product.category === 'UPVC Windows') ||
+      (activeFilter === 'Welding Works' && product.category === 'Welding Works');
     const matchesSearch =
       searchQuery.trim() === '' ||
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -907,6 +922,7 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
     activeFilter !== 'UPVC Doors' &&
     activeFilter !== 'Aluminium Doors' &&
     activeFilter !== 'Algeria Doors' &&
+    activeFilter !== 'Welding Works' &&
     activeFilter !== 'Steel Windows' &&
     activeFilter !== 'UPVC Windows' &&
     activeFilter !== 'Folding Windows' &&
