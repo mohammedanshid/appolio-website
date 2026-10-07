@@ -57,7 +57,7 @@ const collectionsPhotos = [
   { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
   { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
   { id: 3, src: '/assets/windows/modern-steel-window-system.png', title: 'Architectural Windows', category: 'Steel Windows' },
-  { id: 4, src: '/assets/welding-works/welding-work-steel-gate.jpg', title: 'Welding Works & Fabrication', category: 'Welding Works' },
+  { id: 4, src: '/assets/welding-works/welding-work-metal-cutting-main.png', title: 'Welding Works & Fabrication', category: 'Welding Works' },
   { id: 5, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
   { id: 6, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
   { id: 7, src: '/assets/windows/app-17.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
@@ -97,10 +97,10 @@ const products = [
     description: 'Custom luxury steel casement and elevation windows engineered for structural durability.',
   },
   {
-    title: 'Welding Works & Fabrication (4 Models)',
+    title: 'Welding Works & Fabrication (9 Models)',
     category: 'Welding Works',
-    image: '/assets/welding-works/welding-work-steel-gate.jpg',
-    description: 'Heavy custom welded steel main entrance gates, structural pergolas, grills, and elevation screens.',
+    image: '/assets/welding-works/welding-work-metal-cutting-main.png',
+    description: 'Heavy custom welded steel entrance gates, structural pergolas, grills, laser screens, arc welding, and section fabrication.',
   },
   {
     title: 'Folding Windows',
@@ -699,7 +699,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
               { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
               { src: '/assets/aluminium-doors/aluminium-door-1.png', alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
               { src: '/assets/windows/modern-steel-window-system.png', alt: 'Steel Windows', category: 'Steel Windows', label: 'Steel Windows' },
-              { src: '/assets/welding-works/welding-work-steel-gate.jpg', alt: 'Welding Works', category: 'Welding Works', label: 'Welding Works' },
+              { src: '/assets/welding-works/welding-work-metal-cutting-main.png', alt: 'Welding Works', category: 'Welding Works', label: 'Welding Works' },
             ].map((item, idx) => (
               <div
                 key={idx}

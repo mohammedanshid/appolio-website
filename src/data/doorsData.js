@@ -310,6 +310,56 @@ export const doorsData = [
     "height": 550
   },
   {
+    "id": 95,
+    "name": "Industrial Precision Metal Cutting & Fabrication",
+    "filename": "welding-work-metal-cutting-main.png",
+    "image": "/assets/welding-works/welding-work-metal-cutting-main.png",
+    "category": "Welding Works",
+    "description": "Heavy industrial high-speed metal section cutting, section profiling, and custom steel fabrication.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 96,
+    "name": "High-Intensity Arc Welding & Structural Fabrication",
+    "filename": "welding-work-arc-welding.png",
+    "image": "/assets/welding-works/welding-work-arc-welding.png",
+    "category": "Welding Works",
+    "description": "Precision hand arc welding, joint reinforcement, and heavy structural metal alignment.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 97,
+    "name": "Heavy Steel Frame Assembly & Welding",
+    "filename": "welding-work-frame-fabrication.png",
+    "image": "/assets/welding-works/welding-work-frame-fabrication.png",
+    "category": "Welding Works",
+    "description": "Custom steel door and window frame welding, corner squaring, and heavy structural assembly.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 98,
+    "name": "Precision TIG/MIG Frame Joint Welding",
+    "filename": "welding-work-precision-welding.png",
+    "image": "/assets/welding-works/welding-work-precision-welding.png",
+    "category": "Welding Works",
+    "description": "Advanced precision TIG/MIG welding process for seamless metal joints and smooth finish.",
+    "width": 600,
+    "height": 500
+  },
+  {
+    "id": 99,
+    "name": "Appolio CNC Press Brake Sheet Metal Bending",
+    "filename": "welding-work-factory-bending.png",
+    "image": "/assets/welding-works/welding-work-factory-bending.png",
+    "category": "Welding Works",
+    "description": "High-capacity automated CNC press brake sheet metal bending and factory steel section fabrication.",
+    "width": 600,
+    "height": 500
+  },
+  {
     "id": 91,
     "name": "Custom Geometric Welded Steel Main Gate",
     "filename": "welding-work-steel-gate.jpg",
