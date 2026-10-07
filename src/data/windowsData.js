@@ -2,8 +2,8 @@ export const windowsData = [
   {
     "id": 1,
     "name": "Luxury Architectural Steel Casement Window",
-    "filename": "modern-steel-window-system.jpg",
-    "image": "/assets/windows/modern-steel-window-system.jpg",
+    "filename": "modern-steel-window-system.png",
+    "image": "/assets/windows/modern-steel-window-system.png",
     "category": "Steel Windows",
     "description": "Custom luxury steel casement window with slim architectural steel frames and clear thermal glazing.",
     "width": 600,

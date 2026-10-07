@@ -56,7 +56,7 @@ const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Pro
 const collectionsPhotos = [
   { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
   { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
-  { id: 3, src: '/assets/windows/modern-steel-window-system.jpg', title: 'Architectural Windows', category: 'Steel Windows' },
+  { id: 3, src: '/assets/windows/modern-steel-window-system.png', title: 'Architectural Windows', category: 'Steel Windows' },
   { id: 4, src: '/assets/welding-works/welding-work-steel-gate.jpg', title: 'Welding Works & Fabrication', category: 'Welding Works' },
   { id: 5, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
   { id: 6, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
@@ -93,7 +93,7 @@ const products = [
   {
     title: 'Steel & Architectural Windows',
     category: 'Steel Windows',
-    image: '/assets/windows/modern-steel-window-system.jpg',
+    image: '/assets/windows/modern-steel-window-system.png',
     description: 'Custom luxury steel casement and elevation windows engineered for structural durability.',
   },
   {
@@ -698,7 +698,7 @@ function CollectionsHomeSection({ onOpenCollections }) {
             {[
               { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
               { src: '/assets/aluminium-doors/aluminium-door-1.png', alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
-              { src: '/assets/windows/modern-steel-window-system.jpg', alt: 'Steel Windows', category: 'Steel Windows', label: 'Steel Windows' },
+              { src: '/assets/windows/modern-steel-window-system.png', alt: 'Steel Windows', category: 'Steel Windows', label: 'Steel Windows' },
               { src: '/assets/welding-works/welding-work-steel-gate.jpg', alt: 'Welding Works', category: 'Welding Works', label: 'Welding Works' },
             ].map((item, idx) => (
               <div
