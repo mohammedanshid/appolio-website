@@ -1,5 +1,15 @@
 export const windowsData = [
   {
+    "id": 100,
+    "name": "Architectural Sliding & Folding Window Elevation System",
+    "filename": "sliding-folding-windows-elevation.png",
+    "image": "/assets/windows/sliding-folding-windows-elevation.png",
+    "category": "Steel Windows",
+    "description": "Multi-sash modern exterior villa window elevation combining smooth gliding sliding sash, tilt-turn casement, and awning ventilation units.",
+    "width": 600,
+    "height": 450
+  },
+  {
     "id": 1,
     "name": "Luxury Architectural Steel Casement Window",
     "filename": "modern-steel-window-system.png",
@@ -24,7 +34,7 @@ export const windowsData = [
     "name": "APP 21",
     "filename": "app-21.png",
     "image": "/assets/windows/app-21.png",
-    "category": "Folding Windows",
+    "category": "Steel Windows",
     "description": "Multi-panel architectural folding window system (APP 21) with heavy-gauge steel frame and smooth bi-fold hinge design.",
     "width": 391,
     "height": 366
@@ -54,7 +64,7 @@ export const windowsData = [
     "name": "APP 15",
     "filename": "app-15.png",
     "image": "/assets/windows/app-15.png",
-    "category": "Folding Windows",
+    "category": "Steel Windows",
     "description": "Multi-panel architectural folding window system (APP 15) with heavy-gauge steel frame and smooth bi-fold hinge design.",
     "width": 505,
     "height": 321
@@ -94,7 +104,7 @@ export const windowsData = [
     "name": "APP 03",
     "filename": "app-03.png",
     "image": "/assets/windows/app-03.png",
-    "category": "Folding Windows",
+    "category": "Steel Windows",
     "description": "Multi-panel architectural folding window system (APP 03) with heavy-gauge steel frame and smooth bi-fold hinge design.",
     "width": 383,
     "height": 324
@@ -104,7 +114,7 @@ export const windowsData = [
     "name": "APP 04",
     "filename": "app-04.png",
     "image": "/assets/windows/app-04.png",
-    "category": "Folding Windows",
+    "category": "Steel Windows",
     "description": "Multi-panel architectural folding window system (APP 04) with heavy-gauge steel frame and smooth bi-fold hinge design.",
     "width": 289,
     "height": 253
@@ -114,7 +124,7 @@ export const windowsData = [
     "name": "APP 05",
     "filename": "app-05.png",
     "image": "/assets/windows/app-05.png",
-    "category": "Folding Windows",
+    "category": "Steel Windows",
     "description": "Multi-panel architectural folding window system (APP 05) with heavy-gauge steel frame and smooth bi-fold hinge design.",
     "width": 277,
     "height": 252
@@ -124,7 +134,7 @@ export const windowsData = [
     "name": "APP 06",
     "filename": "app-06.png",
     "image": "/assets/windows/app-06.png",
-    "category": "Sliding Windows",
+    "category": "Steel Windows",
     "description": "Smooth-gliding steel sliding window system (APP 06) with secure multi-locking points.",
     "width": 239,
     "height": 253
@@ -134,7 +144,7 @@ export const windowsData = [
     "name": "APP 17",
     "filename": "app-17.png",
     "image": "/assets/windows/app-17.png",
-    "category": "Laser Cutting",
+    "category": "Steel Windows",
     "description": "Intricate CNC laser-cut decorative transom steel window system (APP 17).",
     "width": 395,
     "height": 377

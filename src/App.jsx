@@ -18,6 +18,7 @@ const assets = {
   steelWindowsGallery: '/assets/steel-windows-gallery.jpg',
   aluminiumDoorGallery: '/assets/aluminium-doors/aluminium-door-1.png',
   algeriaDoorGallery: '/assets/algeria-doors/algeria-door-1.jpg',
+  upvcPoster: '/assets/upvc-doors-poster.png',
 };
 
 // Official Company Contact & Profile Links (Extracted from https://trazi.store/linktree/dnl-1457/ and filled form)
@@ -52,16 +53,13 @@ const companyInfo = {
 const navItems = ['Home', 'About Us', 'Services', 'Collections', 'Catalog', 'Projects', 'FAQ', 'Contact'];
 
 // Product Collections Data
-// Product Collections Data
 const collectionsPhotos = [
-  { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Windows & Doors', category: 'Steel Windows & Doors' },
-  { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Windows' },
-  { id: 3, src: '/assets/windows/modern-steel-window-system.png', title: 'Architectural Windows', category: 'Steel Windows' },
-  { id: 4, src: '/assets/welding-works/welding-work-metal-cutting-main.png', title: 'Welding Works & Fabrication', category: 'Welding Works' },
-  { id: 5, src: '/assets/windows/app-21.png', title: 'Architectural Folding Windows', category: 'Folding Windows' },
-  { id: 6, src: '/assets/windows/app-06.png', title: 'Modern Sliding Window Systems', category: 'Sliding Windows' },
-  { id: 7, src: '/assets/windows/app-17.png', title: 'Precision Laser Cutting Designs', category: 'Laser Cutting' },
-  { id: 8, src: '/assets/aluminium-doors/aluminium-door-1.png', title: 'Aluminium Section Windows', category: 'Aluminium Section Windows' },
+  { id: 1, src: '/assets/steel-doors/steel-door-sd-410-mos.png', title: 'Steel Doors Collection', category: 'Steel Doors' },
+  { id: 2, src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', title: 'UPVC Window & Door Systems', category: 'UPVC Doors' },
+  { id: 3, src: '/assets/windows/modern-steel-window-system.png', title: 'Steel Windows & Ventilators', category: 'Steel Windows' },
+  { id: 4, src: '/assets/projects/project-7.png', title: 'UPVC Windows', category: 'UPVC Windows' },
+  { id: 5, src: '/assets/aluminium-doors/aluminium-door-1.png', title: 'Aluminium Section Windows', category: 'Aluminium Doors' },
+  { id: 6, src: '/assets/algeria-doors/algeria-door-1.jpg', title: 'Algeria Style Doors', category: 'Algeria Doors' },
 ];
 
 // Completed Projects / Installations Data
@@ -79,16 +77,16 @@ const projectsPhotos = [
 
 const products = [
   {
-    title: 'Steel Doors Collection (76 Models)',
+    title: 'Steel Doors Collection',
     category: 'Steel Doors',
     image: '/assets/steel-doors/steel-door-sd-410-mos.png',
-    description: '76+ Customised heavy-duty steel doors engineered for security and architectural luxury.',
+    description: 'Customised heavy-duty steel doors engineered for security and architectural luxury.',
   },
   {
-    title: 'UPVC Doors Collection (18 Models)',
+    title: 'UPVC Doors Collection',
     category: 'UPVC Doors',
     image: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png',
-    description: '18+ Weatherproof, noise-insulating UPVC door systems with thermal efficiency.',
+    description: 'Weatherproof, noise-insulating UPVC door systems with thermal efficiency.',
   },
   {
     title: 'Steel & Architectural Windows',
@@ -97,16 +95,10 @@ const products = [
     description: 'Custom luxury steel casement and elevation windows engineered for structural durability.',
   },
   {
-    title: 'Welding Works & Fabrication (9 Models)',
-    category: 'Welding Works',
-    image: '/assets/welding-works/welding-work-metal-cutting-main.png',
-    description: 'Heavy custom welded steel entrance gates, structural pergolas, grills, laser screens, arc welding, and section fabrication.',
-  },
-  {
-    title: 'Folding Windows',
-    category: 'Folding Windows',
-    image: '/assets/windows/app-21.png',
-    description: 'Sleek bi-fold and multi-panel folding windows for seamless indoor-outdoor architectural spaces.',
+    title: 'Sliding & Folding Window Systems',
+    category: 'Sliding & Folding Windows',
+    image: '/assets/windows/sliding-folding-windows-elevation.png',
+    description: 'Precision architectural sliding windows, bi-fold systems, and modern elevation ventilation profiles.',
   },
   {
     title: 'UPVC Windows',
@@ -115,29 +107,17 @@ const products = [
     description: 'Weatherproof, noise-insulating UPVC window systems with thermal efficiency.',
   },
   {
-    title: 'Sliding Windows',
-    category: 'Sliding Windows',
-    image: '/assets/windows/app-06.png',
-    description: 'Smooth-gliding sliding windows with minimalist frames and secure multi-locking points.',
-  },
-  {
-    title: 'Laser Cutting Designs',
-    category: 'Laser Cutting',
-    image: '/assets/windows/app-17.png',
-    description: 'Intricate CNC laser cutting for custom steel door grills, panels, and elevation highlights.',
-  },
-  {
     title: 'Aluminium Section Windows',
-    category: 'Aluminium Section Windows',
+    category: 'Aluminium Doors',
     image: '/assets/aluminium-doors/aluminium-door-1.png',
-    description: 'Lightweight, rust-resistant aluminium section windows tailored for modern structures.',
+    description: 'Lightweight, rust-resistant aluminium section systems tailored for modern structures.',
   },
 ];
 
 const strengths = [
   {
     title: 'Customised Production',
-    copy: 'We provide customised production for all steel doors, windows, laser cutting, and profiles tailored to your exact measurements.',
+    copy: 'We provide customised production for all steel doors, windows, and profiles tailored to your exact measurements.',
   },
   {
     title: 'Est. 2023 Experience',
@@ -145,7 +125,7 @@ const strengths = [
   },
   {
     title: 'Complete Services',
-    copy: 'Offering Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting, and Aluminium Section Windows.',
+    copy: 'Offering Steel Windows & Doors, UPVC Doors & Windows, and Aluminium Section Systems.',
   },
   {
     title: 'All India Service Area',
@@ -156,20 +136,35 @@ const strengths = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeView, setActiveView] = useState(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash === 'collections' || hash === 'projects' || hash === 'catalog') {
-      return hash;
+    const rawHash = window.location.hash.replace('#', '');
+    if (rawHash === 'upvc-doors' || rawHash.includes('upvc-doors')) {
+      return 'collections';
+    }
+    if (rawHash.startsWith('collections') || rawHash === 'projects' || rawHash === 'catalog') {
+      return rawHash.startsWith('collections') ? 'collections' : rawHash;
     }
     return 'home';
   });
-  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('All');
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState(() => {
+    const rawHash = window.location.hash.replace('#', '');
+    if (rawHash === 'upvc-doors' || rawHash.includes('upvc-doors')) {
+      return 'UPVC Doors';
+    }
+    return 'All';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'collections' || hash === 'projects' || hash === 'catalog') {
-        setActiveView(hash);
-      } else if (!hash || hash === 'home') {
+      const rawHash = window.location.hash.replace('#', '');
+      if (rawHash === 'upvc-doors' || rawHash.includes('upvc-doors')) {
+        setSelectedCategoryFilter('UPVC Doors');
+        setActiveView('collections');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (rawHash.startsWith('collections')) {
+        setActiveView('collections');
+      } else if (rawHash === 'projects' || rawHash === 'catalog') {
+        setActiveView(rawHash);
+      } else if (!rawHash || rawHash === 'home') {
         setActiveView('home');
       }
     };
@@ -207,9 +202,17 @@ function App() {
   const navigateTo = (viewName, category = 'All') => {
     if (viewName === 'collections') {
       setSelectedCategoryFilter(category);
+      if (category === 'UPVC Doors') {
+        window.location.hash = 'upvc-doors';
+      } else if (category !== 'All') {
+        window.location.hash = `collections-${category.toLowerCase().replace(/\s+/g, '-')}`;
+      } else {
+        window.location.hash = 'collections';
+      }
+    } else {
+      window.location.hash = viewName === 'home' ? '' : viewName;
     }
     setActiveView(viewName);
-    window.location.hash = viewName === 'home' ? '' : viewName;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -245,6 +248,7 @@ function App() {
             <Stats />
             <CollectionsHomeSection onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <DoorFeaturesSection />
+            <UpvcDoorsPosterSection onOpenUpvcDoors={() => navigateTo('collections', 'UPVC Doors')} />
             <UltraModernBanner onOpenCollections={(cat) => navigateTo('collections', cat)} />
             <ProjectsHomeSection onOpenProjects={() => navigateTo('projects')} />
             <Products
@@ -412,8 +416,8 @@ const heroSlides = [
     description: 'Doors that add strength, style and value to every space.',
   },
   {
-    desktopImage: '/assets/hero-desktop-clean.jpg',
-    mobileImage: '/assets/hero-mobile-clean.jpg',
+    desktopImage: '/assets/hero-desktop-slide-2.jpg',
+    mobileImage: '/assets/hero-mobile-slide-2.jpg',
     eyebrow: 'STATEMENT',
     titleLine1: 'BRONZE &',
     titleLine2: 'STEEL',
@@ -421,8 +425,8 @@ const heroSlides = [
     description: 'A sculptural double-door profile designed for luxury entrances.',
   },
   {
-    desktopImage: '/assets/hero-desktop-clean.jpg',
-    mobileImage: '/assets/hero-mobile-premium.png',
+    desktopImage: '/assets/hero-desktop-slide-3.jpg',
+    mobileImage: '/assets/hero-mobile-slide-3.jpg',
     eyebrow: 'EXECUTIVE',
     titleLine1: 'MODERN',
     titleLine2: 'SERIES',
@@ -457,28 +461,31 @@ function Hero({ onOpenCollections, onOpenCatalog }) {
             </svg>
           </button>
         </div>
-        <div className="hero-images-wrapper relative w-full aspect-[3/4] md:aspect-[16/9] min-h-[480px] sm:min-h-[580px] md:min-h-0">
-          {heroSlides.map((s, idx) => (
-            <picture
-              key={idx}
-              className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ease-in-out ${
-                currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-              }`}
-            >
-              <source media="(max-width: 767px)" srcSet={s.mobileImage} />
-              <img
-                src={s.desktopImage}
-                alt={`Appolio Industries slide ${idx + 1}`}
-                className="hero-image w-full h-full object-cover"
-                fetchPriority={idx === 0 ? 'high' : 'auto'}
-              />
-            </picture>
-          ))}
+        <div className="hero-images-wrapper relative w-full aspect-[3/4] md:aspect-[16/9] min-h-[480px] sm:min-h-[580px] md:min-h-0 overflow-hidden">
+          {heroSlides.map((s, idx) => {
+            const isActive = currentSlide === idx;
+            return (
+              <picture
+                key={`${idx}-${currentSlide}`}
+                className={`absolute inset-0 w-full h-full block ${
+                  isActive ? 'opacity-100 z-10 hero-image-rise' : 'opacity-0 z-0 pointer-events-none'
+                }`}
+              >
+                <source media="(max-width: 767px)" srcSet={s.mobileImage} />
+                <img
+                  src={s.desktopImage}
+                  alt={`Appolio Industries slide ${idx + 1}`}
+                  className="hero-image w-full h-full object-cover"
+                  fetchPriority={idx === 0 ? 'high' : 'auto'}
+                />
+              </picture>
+            );
+          })}
         </div>
 
         <div
-          key={currentSlide}
-          className="hero-text-container absolute top-[64%] inset-x-0 bottom-10 md:inset-0 flex flex-col justify-start md:justify-center items-start px-5 sm:px-12 lg:px-20 pt-1 md:pt-0 pb-4 md:pb-0 pointer-events-none z-20"
+          key={`hero-text-${currentSlide}`}
+          className="hero-text-container absolute inset-x-0 bottom-8 sm:bottom-10 md:inset-0 flex flex-col justify-end md:justify-center items-start px-5 sm:px-12 lg:px-20 pb-2 md:pb-0 pointer-events-none z-20"
         >
           <div className="w-full max-w-sm md:max-w-xl text-apollio-ink pointer-events-auto text-left border-0 md:border-l-4 border-apollio-ink/80 pl-0 md:pl-6 pt-0">
             <p className="eyebrow text-[10px] sm:text-sm tracking-[0.25em] font-semibold text-apollio-charcoal uppercase mb-0.5 sm:mb-2 hero-text-rise hero-text-rise-delay-1">
@@ -530,13 +537,11 @@ function Hero({ onOpenCollections, onOpenCatalog }) {
 function MovingBanner() {
   const tickerItems = [
     'APPOLIO INDUSTRIES',
-    'STEEL WINDOWS & DOORS',
+    'STEEL DOORS & WINDOWS',
     'WE PROVIDE CUSTOMISED PRODUCTION',
-    'FOLDING WINDOWS',
-    'UPVC WINDOWS',
-    'SLIDING WINDOWS',
-    'LASER CUTTING',
-    'ALUMINIUM SECTION WINDOWS',
+    'UPVC DOORS & WINDOWS',
+    'ALUMINIUM DOORS & WINDOWS',
+    'ALGERIA STYLE DOORS',
     'BUSINESS HOURS: 9 AM TO 7 PM',
     'SERVICE AREA: ALL INDIA',
   ];
@@ -693,13 +698,13 @@ function CollectionsHomeSection({ onOpenCollections }) {
             </div>
           </div>
 
-          {/* Category Grid Cards: UPVC Doors, Aluminium Doors, Steel Windows, Welding Works */}
+          {/* Category Grid Cards: UPVC Doors, Aluminium Doors, Steel Windows, UPVC Windows */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {[
               { src: '/assets/upvc-doors/upvc-door-french-patio-sidelights.png', alt: 'UPVC Doors', category: 'UPVC Doors', label: 'UPVC Doors' },
               { src: '/assets/aluminium-doors/aluminium-door-1.png', alt: 'Aluminium Doors', category: 'Aluminium Doors', label: 'Aluminium Doors' },
               { src: '/assets/windows/modern-steel-window-system.png', alt: 'Steel Windows', category: 'Steel Windows', label: 'Steel Windows' },
-              { src: '/assets/welding-works/welding-work-metal-cutting-main.png', alt: 'Welding Works', category: 'Welding Works', label: 'Welding Works' },
+              { src: '/assets/projects/project-7.png', alt: 'UPVC Windows', category: 'UPVC Windows', label: 'UPVC Windows' },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -716,6 +721,79 @@ function CollectionsHomeSection({ onOpenCollections }) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function UpvcDoorsPosterSection({ onOpenUpvcDoors }) {
+  const upvcDoorsCount = doorsData.filter((d) => d.category === 'UPVC Doors').length;
+
+  return (
+    <section id="campaign-poster" className="relative w-full bg-[#FAF7F2] py-12 sm:py-16 md:py-20 border-b border-black/5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 bg-apollio-orange/10 text-apollio-orange text-[10px] sm:text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest mb-3">
+            <span className="w-2 h-2 rounded-full bg-apollio-orange animate-ping" />
+            <span>Official Campaign Poster • Pan-India Presence</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-apollio-ink">
+            Building Or Renovating?
+          </h2>
+          <p className="text-xs sm:text-base text-apollio-charcoal mt-2.5 max-w-xl mx-auto leading-relaxed">
+            Choose the right windows & doors engineered with premium European technology for Indian conditions. <strong>Click the poster below to explore our uPVC Doors Section.</strong>
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <div
+            onClick={onOpenUpvcDoors}
+            role="button"
+            tabIndex={0}
+            aria-label="Click to explore uPVC Doors Section page"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onOpenUpvcDoors();
+              }
+            }}
+            className="group relative cursor-pointer overflow-hidden rounded-2xl border border-black/10 bg-white shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 max-w-2xl w-full"
+          >
+            {/* Clean, Pristine Poster Image with Hover Effect */}
+            <div className="relative overflow-hidden bg-[#FAF7F2]">
+              <img
+                src={assets.upvcPoster}
+                alt="Building or renovating? Choose The Right Windows & Doors - Appolio Industries Pan India Presence"
+                className="w-full h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none" />
+            </div>
+
+            {/* Dedicated Action Bar / Card Footer */}
+            <div className="p-4 sm:p-6 bg-white border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-apollio-orange uppercase tracking-wider mb-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Interactive Campaign Poster
+                </div>
+                <h3 className="text-base sm:text-lg font-extrabold text-apollio-ink leading-tight group-hover:text-apollio-orange transition-colors">
+                  Explore uPVC Doors Section ({upvcDoorsCount} Models)
+                </h3>
+                <p className="text-xs text-apollio-charcoal mt-0.5">
+                  Sliding Patio Doors • French Doors • Sidelights • Weatherproof & Noise Insulating
+                </p>
+              </div>
+
+              <div className="flex-shrink-0 w-full sm:w-auto">
+                <span className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-apollio-orange px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-md transition-all duration-300 group-hover:bg-[#dd6816] group-hover:scale-105 active:scale-95">
+                  <span>View uPVC Doors</span>
+                  <span className="text-base leading-none transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -765,14 +843,14 @@ function DoorFeaturesSection() {
       desc: 'Heavy-gauge steel engineering for durable, long-term security.',
     },
     {
-      titleMobile: 'Folding & Sliding',
-      title: 'Folding & Sliding Windows',
-      desc: 'Modern multi-panel folding and smooth sliding window mechanisms.',
+      titleMobile: 'Architectural Design',
+      title: 'Architectural Window Systems',
+      desc: 'Precision casement and elevation windows engineered for structural elegance.',
     },
     {
-      titleMobile: 'Laser Cutting',
-      title: 'Precision Laser Cutting',
-      desc: 'Custom CNC laser-cut patterns for steel panels, doors, and grills.',
+      titleMobile: 'Thermal Insulation',
+      title: 'Weatherproof & Soundproof',
+      desc: 'Advanced multi-chamber thermal efficiency and noise insulation engineering.',
     },
     {
       titleMobile: 'UPVC & Aluminium',
@@ -882,19 +960,25 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
   const upvcDoorsCount = doorsData.filter((d) => d.category === 'UPVC Doors').length;
   const alumDoorsCount = doorsData.filter((d) => d.category === 'Aluminium Doors').length;
   const algeriaDoorsCount = doorsData.filter((d) => d.category === 'Algeria Doors').length;
-  const weldingWorksCount = doorsData.filter((d) => d.category === 'Welding Works').length;
-  const steelWindowsCount = windowsData.filter((w) => w.category === 'Steel Windows' || w.category === 'Folding Windows' || w.category === 'Sliding Windows' || w.category === 'Laser Cutting').length;
+  const steelWindowsCount = windowsData.filter((w) => w.category === 'Steel Windows').length;
   const upvcWindowsCount = windowsData.filter((w) => w.category === 'UPVC Windows').length;
+  const slidingFoldingCount = windowsData.filter((w) =>
+    w.id === 100 ||
+    w.name.toLowerCase().includes('sliding') ||
+    w.name.toLowerCase().includes('folding') ||
+    w.description.toLowerCase().includes('sliding') ||
+    w.description.toLowerCase().includes('folding')
+  ).length;
   const totalCatalogCount = doorsData.length + windowsData.length;
 
   const filterCategories = [
     { name: 'All', label: `All Collections (${totalCatalogCount})` },
     { name: 'Steel Doors', label: `Steel Doors (${steelDoorsCount})` },
     { name: 'UPVC Doors', label: `UPVC Doors (${upvcDoorsCount})` },
-    { name: 'Welding Works', label: `Welding Works (${weldingWorksCount})` },
     { name: 'Aluminium Doors', label: `Aluminium Doors (${alumDoorsCount})` },
     { name: 'Algeria Doors', label: `Algeria Doors (${algeriaDoorsCount})` },
     { name: 'Steel Windows', label: `Steel Windows (${steelWindowsCount})` },
+    { name: 'Sliding & Folding Windows', label: `Sliding & Folding (${slidingFoldingCount})` },
     { name: 'UPVC Windows', label: `UPVC Windows (${upvcWindowsCount})` },
   ];
 
@@ -906,9 +990,15 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
     const matchesCategory =
       activeFilter === 'All' ||
       product.category.toLowerCase() === activeLower ||
-      (activeFilter === 'Steel Windows' && (product.category.includes('Steel Window') || product.category === 'Folding Windows' || product.category === 'Sliding Windows' || product.category === 'Laser Cutting')) ||
+      (activeFilter === 'Steel Windows' && product.category === 'Steel Windows') ||
       (activeFilter === 'UPVC Windows' && product.category === 'UPVC Windows') ||
-      (activeFilter === 'Welding Works' && product.category === 'Welding Works');
+      (activeFilter === 'Sliding & Folding Windows' && (
+        product.id === 100 ||
+        product.name.toLowerCase().includes('sliding') ||
+        product.name.toLowerCase().includes('folding') ||
+        product.description.toLowerCase().includes('sliding') ||
+        product.description.toLowerCase().includes('folding')
+      ));
     const matchesSearch =
       searchQuery.trim() === '' ||
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -922,10 +1012,9 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
     activeFilter !== 'UPVC Doors' &&
     activeFilter !== 'Aluminium Doors' &&
     activeFilter !== 'Algeria Doors' &&
-    activeFilter !== 'Welding Works' &&
     activeFilter !== 'Steel Windows' &&
     activeFilter !== 'UPVC Windows' &&
-    activeFilter !== 'Folding Windows' &&
+    activeFilter !== 'Sliding & Folding Windows' &&
     searchQuery.trim() === '';
 
   const filteredLegacyPhotos =
@@ -943,7 +1032,7 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
         <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-black/10 pb-5 mb-6 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 bg-apollio-orange/10 text-apollio-orange text-xs font-bold px-3 py-1 rounded-full mb-2">
-              Official Catalog • 94 Doors & 18 Windows
+              Official Catalog • {doorsData.length} Doors & {windowsData.length} Windows
             </div>
             <h1 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-apollio-ink">
               PRODUCT COLLECTIONS — DOORS & WINDOWS
@@ -1016,19 +1105,65 @@ function CollectionsPage({ initialFilter = 'All', onClose, onOpenCatalog }) {
               Steel Doors Section ({filteredProducts.length} Models)
             </h2>
             <p className="text-xs text-apollio-charcoal mt-0.5">
-              Heavy-duty steel entrance doors, grand double-leaf doors, bar handle series, and laser cut architectural doors.
+              Heavy-duty steel entrance doors, grand double-leaf doors, bar handle series, and luxury architectural entrance doors.
             </p>
           </div>
         )}
 
         {activeFilter === 'UPVC Doors' && (
-          <div className="bg-white border-l-4 border-apollio-orange p-4 mb-6 shadow-xs rounded-r-sm">
-            <h2 className="text-lg font-extrabold uppercase text-apollio-ink">
-              UPVC Doors Section ({filteredProducts.length} Models)
-            </h2>
-            <p className="text-xs text-apollio-charcoal mt-0.5">
-              Weatherproof, soundproof multi-chamber UPVC profile door systems with glass sidelights and custom panel finishes.
-            </p>
+          <div className="mb-6 space-y-4">
+            <div className="bg-white border-l-4 border-apollio-orange p-4 shadow-xs rounded-r-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-[10px] font-bold text-apollio-orange uppercase tracking-wider bg-apollio-orange/10 px-2.5 py-0.5 rounded-full mb-1.5">
+                  Official Campaign Showcase
+                </div>
+                <h2 className="text-lg sm:text-xl font-extrabold uppercase text-apollio-ink">
+                  UPVC Doors Section ({filteredProducts.length} Models)
+                </h2>
+                <p className="text-xs text-apollio-charcoal mt-0.5">
+                  Weatherproof, soundproof multi-chamber UPVC profile door systems with glass sidelights, sliding patio units, and custom panel finishes.
+                </p>
+              </div>
+            </div>
+
+            {/* Campaign Poster Spotlight Card */}
+            <div className="bg-gradient-to-r from-[#FAF2E6] via-white to-[#F7EDE0] border border-amber-200/80 rounded-lg p-3.5 sm:p-5 shadow-xs flex flex-col sm:flex-row items-center gap-4">
+              <img
+                src={assets.upvcPoster}
+                alt="Appolio uPVC Doors Campaign Poster"
+                className="w-20 sm:w-28 h-auto rounded-md shadow-md border border-black/10 object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+                onClick={() => setActiveModalItem({
+                  name: "Building or Renovating? Official Campaign Poster",
+                  category: "UPVC Doors",
+                  image: assets.upvcPoster,
+                  description: "Official Appolio Industries campaign: Building or renovating? Choose The Right Windows & Doors. Pan India Presence. Featuring System Aluminium Sliding Doors, System Aluminium Folding Doors, uPVC Casement Windows, and uPVC Sliding Doors with European Technology built for Indian conditions."
+                })}
+              />
+              <div className="flex-1 text-center sm:text-left">
+                <span className="text-[10px] uppercase font-extrabold tracking-wider text-apollio-orange bg-apollio-orange/10 px-2.5 py-0.5 rounded-full">
+                  Featured Poster Promotion
+                </span>
+                <h3 className="text-sm sm:text-base font-extrabold text-apollio-ink mt-1">
+                  Building or Renovating? Choose The Right Windows & Doors
+                </h3>
+                <p className="text-xs text-apollio-charcoal mt-0.5">
+                  European Technology • Built For Indian Conditions • Professional Installation
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveModalItem({
+                  name: "Building or Renovating? Official Campaign Poster",
+                  category: "UPVC Doors",
+                  image: assets.upvcPoster,
+                  description: "Official Appolio Industries campaign: Building or renovating? Choose The Right Windows & Doors. Pan India Presence. Featuring System Aluminium Sliding Doors, System Aluminium Folding Doors, uPVC Casement Windows, and uPVC Sliding Doors with European Technology built for Indian conditions."
+                })}
+                className="inline-flex items-center gap-1.5 text-xs font-bold bg-white text-apollio-orange border border-apollio-orange/40 px-3.5 py-2 rounded-sm hover:bg-apollio-orange hover:text-white transition shadow-xs whitespace-nowrap uppercase tracking-wider"
+              >
+                <span>View Full Poster</span>
+                <span>↗</span>
+              </button>
+            </div>
           </div>
         )}
 
@@ -1365,14 +1500,14 @@ function CatalogPage({ onClose }) {
     },
     {
       id: 2,
-      title: 'Appolio UPVC Windows & Doors Catalog',
+      title: 'Appolio Steel Windows & Doors Catalog',
       volume: 'Volume 2 — Official Edition',
-      description: 'Official product catalog featuring 18+ UPVC door models, noise-insulating sliding windows, bi-fold systems, thermal efficiency, and profile colors.',
-      pdfUrl: '/assets/appoliopdf/appolio-upvc-windows-catalog-v2.pdf',
-      downloadName: 'Appolio-UPVC-Windows-Catalog-v2.pdf',
-      badge: 'UPVC Systems',
+      description: 'Official product catalog featuring 18+ steel door models, noise-insulating sliding windows, bi-fold systems, thermal efficiency, and profile colors.',
+      pdfUrl: '/assets/appoliopdf/appolio-steel-doors-catalog-v2.pdf',
+      downloadName: 'Appolio-Steel-Doors-Catalog-v2.pdf',
+      badge: 'Steel Doors',
       fileSize: '26 MB PDF',
-      features: ['18+ UPVC Door & Window Models', 'Thermal & Sound Insulation', 'Sliding & Bi-Fold Systems', 'Weatherproof Engineering'],
+      features: ['18+ Steel Door & Window Models', 'Thermal & Sound Insulation', 'Sliding & Bi-Fold Systems', 'Weatherproof Engineering'],
     },
   ];
 
@@ -1484,7 +1619,7 @@ function CatalogPage({ onClose }) {
               Need a Customised Production Quote?
             </h3>
             <p className="text-xs sm:text-sm text-white/80 mt-1 max-w-xl">
-              We manufacture steel doors, windows, laser cutting panels, and UPVC systems according to your custom measurements and requirements.
+              We manufacture steel doors, UPVC doors, windows, and architectural systems according to your custom measurements and requirements.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
@@ -1539,7 +1674,7 @@ function Products({ onOpenCollections, onOpenCatalog }) {
         <SectionHeading
           eyebrow="Our Manufacturing Services"
           title="Appolio Industries Service Portfolio"
-          copy="We provide customised production across all steel, UPVC, laser cutting, and aluminium window systems."
+          copy="We provide customised production across all steel, UPVC, and aluminium window systems."
         />
 
         <div
@@ -1603,7 +1738,7 @@ function WhyChoose() {
         <SectionHeading
           eyebrow="Why Choose Appolio Industries"
           title="We Provide Customised Production Tailored to Your Specifications."
-          copy="Established in 2023 in Kottayam, Kerala, Appolio Industries combines precision engineering with customized manufacturing for steel doors, windows, folding systems, and laser cutting across All India."
+          copy="Established in 2023 in Kottayam, Kerala, Appolio Industries combines precision engineering with customized manufacturing for premium steel doors, UPVC systems, and architectural windows across All India."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -1627,11 +1762,11 @@ function FaqSection() {
   const faqs = [
     {
       q: 'Do you have customised windows & doors available?',
-      a: 'Yes, absolutely! At Appolio Industries, we provide customised production. Whether you require custom Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Laser Cutting panels, or Aluminium Section Windows, every product is manufactured according to your specified dimensions, colors, and design preferences.',
+      a: 'Yes, absolutely! At Appolio Industries, we provide customised production. Whether you require custom Steel Windows & Doors, UPVC Doors & Windows, or Aluminium Architectural Systems, every product is manufactured according to your specified dimensions, colors, and design preferences.',
     },
     {
       q: 'What manufacturing services do you provide?',
-      a: 'We manufacture Steel Windows & Doors, Folding Windows, UPVC Windows, Sliding Windows, Precision CNC Laser Cutting, and Aluminium Section Windows for residential, commercial, and architectural projects.',
+      a: 'We manufacture Steel Doors & Windows, UPVC Doors & Windows, Algeria Style Doors, and Aluminium Section Systems for residential, commercial, and architectural projects.',
     },
     {
       q: 'What is your service area and business hours?',
@@ -1689,32 +1824,92 @@ function FaqSection() {
 
 // Google Reviews Component (Horizontal Scrolling Flow)
 function GoogleReviews() {
+  const scrollRef = useRef(null);
+  const [activeReviewIdx, setActiveReviewIdx] = useState(0);
+
   const reviews = [
     {
-      name: 'Anish Kumar',
-      location: 'Kottayam, Kerala',
+      id: 1,
+      name: 'Ajeesh',
+      date: '14 Mar',
       rating: 5,
-      review: 'Appolio Industries provided exceptional customized steel windows and doors for our villa. The precision laser cutting and finish quality is top notch! Highly recommended!',
+      tag: 'Variety of products available',
+      review: 'Appolio Steel Windows and Doors offers a great variety of products. They have many styles and sizes to choose from, making it easy to find the perfect fit for your home. The designs are modern and strong, adding beauty and security. Customers can enjoy both function and style with these options. Overall, Appolio provides good choices for everyone!',
+      avatarBg: 'bg-emerald-600',
+      initials: 'A',
     },
     {
-      name: 'Mathew Joseph',
-      location: 'Pala, Kerala',
+      id: 2,
+      name: 'Shoaib Khan',
+      subtitle: '1 review',
+      date: 'a month ago',
       rating: 5,
-      review: 'Best steel doors & UPVC windows manufacturing company in Kottayam. We provided custom measurements and they delivered exact customized production on time.',
+      review: 'Good product and services\nIam satisfied',
+      avatarBg: 'bg-sky-600',
+      initials: 'SK',
     },
     {
-      name: 'Ragesh Nair',
-      location: 'Bharananganam',
+      id: 3,
+      name: 'Naseera Nasi',
+      subtitle: '1 review',
+      date: 'a month ago',
       rating: 5,
-      review: 'Great craftsmanship in folding windows and sliding windows. Appolio Industries team is very professional and their steel door quality is extremely sturdy.',
+      review: 'Quality product',
+      avatarBg: 'bg-teal-600',
+      initials: 'N',
     },
     {
-      name: 'Suresh Menon',
-      location: 'Ernakulam, Kerala',
+      id: 4,
+      name: 'Febin George',
+      subtitle: 'Local Guide · 6 reviews · 17 photos',
+      date: '2 weeks ago',
       rating: 5,
-      review: 'Superior quality aluminium section windows and custom laser cutting grill panels. Delivered right on schedule to our site.',
+      isNew: true,
+      isLocalGuide: true,
+      review: null,
+      avatarBg: 'bg-rose-600',
+      initials: 'FG',
+    },
+    {
+      id: 5,
+      name: 'SHERIN',
+      subtitle: 'Verified Customer',
+      date: '05 Nov 2025',
+      rating: 5,
+      review: null,
+      avatarBg: 'bg-cyan-700',
+      initials: 'S',
+    },
+    {
+      id: 6,
+      name: 'Vaishnav Vinod',
+      subtitle: '1 review',
+      date: 'a month ago',
+      rating: 5,
+      review: null,
+      avatarBg: 'bg-amber-600',
+      initials: 'VV',
     },
   ];
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const cardWidth = 340;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex >= 0 && newIndex < reviews.length) {
+        setActiveReviewIdx(newIndex);
+      }
+    }
+  };
+
+  const scrollToReview = (index) => {
+    setActiveReviewIdx(index);
+    if (scrollRef.current) {
+      const scrollAmount = index * 340;
+      scrollRef.current.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="google-reviews" className="py-12 sm:py-16 bg-white border-t border-black/10">
@@ -1724,11 +1919,11 @@ function GoogleReviews() {
         <div data-reveal className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
-              <svg className="w-4 h-4 fill-current text-blue-600" viewBox="0 0 24 24">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+              <svg className="w-4 h-4" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
               </svg>
               Google Business Profile
             </div>
@@ -1736,7 +1931,7 @@ function GoogleReviews() {
               GOOGLE REVIEWS & RATINGS
             </h2>
             <p className="text-xs sm:text-sm text-apollio-charcoal mt-1">
-              See what satisfied clients say about Appolio Industries, Bharananganam
+              Genuine verified reviews from clients of Appolio Industries, Bharananganam
             </p>
           </div>
 
@@ -1750,25 +1945,89 @@ function GoogleReviews() {
         </div>
 
         {/* Horizontal Flowing Reviews Slider */}
-        <div className="flex gap-5 overflow-x-auto pb-6 pt-1 snap-x snap-mandatory scrollbar-none -mx-5 px-5 sm:mx-0 sm:px-0">
-          {reviews.map((rev, idx) => (
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-5 overflow-x-auto pb-6 pt-1 snap-x snap-mandatory scrollbar-none -mx-5 px-5 sm:mx-0 sm:px-0"
+        >
+          {reviews.map((rev) => (
             <div
-              key={idx}
-              className="flex-shrink-0 w-[290px] sm:w-[340px] snap-start bg-[#FAF7F2] border border-black/10 p-5 rounded-none flex flex-col justify-between shadow-xs transition hover:shadow-md"
+              key={rev.id}
+              className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[370px] snap-start bg-[#FAF7F2] border border-black/10 p-5 rounded-none flex flex-col justify-between shadow-xs transition hover:shadow-md"
             >
               <div>
-                <div className="flex text-amber-500 text-sm mb-3">
-                  {'★'.repeat(rev.rating)}
+                {/* User Header */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className={`w-10 h-10 rounded-full ${rev.avatarBg} text-white font-bold text-sm flex items-center justify-center shadow-xs select-none`}>
+                        {rev.initials}
+                      </div>
+                      {rev.isLocalGuide && (
+                        <span className="absolute -bottom-1 -right-1 bg-amber-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] shadow" title="Local Guide">
+                          ★
+                        </span>
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-xs sm:text-sm font-bold text-apollio-ink">{rev.name}</h4>
+                      {rev.subtitle && (
+                        <p className="text-[11px] text-black/50">{rev.subtitle}</p>
+                      )}
+                    </div>
+                  </div>
+                  <svg className="w-4 h-4 text-black/30" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="5" r="2" />
+                    <circle cx="12" cy="12" r="2" />
+                    <circle cx="12" cy="19" r="2" />
+                  </svg>
                 </div>
-                <p className="text-xs sm:text-sm text-apollio-charcoal leading-relaxed italic">
-                  "{rev.review}"
-                </p>
+
+                {/* Stars & Date */}
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex text-[#FBBC04] text-sm tracking-tight">
+                    {'★'.repeat(rev.rating)}
+                  </div>
+                  <span className="text-[11px] text-black/50">{rev.date}</span>
+                  {rev.isNew && (
+                    <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded-xs">
+                      New
+                    </span>
+                  )}
+                </div>
+
+                {/* Tag Pill if present */}
+                {rev.tag && (
+                  <div className="mt-2 mb-2.5 inline-flex items-center gap-1.5 bg-white border border-black/10 text-black/80 text-[11px] font-medium px-2.5 py-0.5 rounded-full shadow-2xs">
+                    <span className="text-emerald-600">👍</span>
+                    <span>{rev.tag}</span>
+                  </div>
+                )}
+
+                {/* Review Body */}
+                {rev.review ? (
+                  <p className="text-xs sm:text-sm text-apollio-charcoal leading-relaxed whitespace-pre-line mt-2">
+                    “{rev.review}”
+                  </p>
+                ) : (
+                  <div className="mt-3 py-2.5 px-3 bg-white/80 border border-black/5 rounded text-xs text-black/60 flex items-center gap-2">
+                    <span className="text-[#FBBC04]">★★★★★</span>
+                    <span>5.0 Star Rating on Google</span>
+                  </div>
+                )}
               </div>
+
+              {/* Verified Footer */}
               <div className="mt-5 pt-3.5 border-t border-black/10 flex items-center justify-between">
-                <div>
-                  <h4 className="text-xs font-bold text-apollio-ink uppercase">{rev.name}</h4>
-                  <p className="text-[11px] text-apollio-orange font-semibold">{rev.location}</p>
-                </div>
+                <span className="inline-flex items-center gap-1.5 text-[11px] text-black/55 font-medium">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                  </svg>
+                  Google Verified
+                </span>
                 <span className="text-blue-600 text-xs font-bold flex items-center gap-1">
                   Google ✓
                 </span>
@@ -1777,8 +2036,25 @@ function GoogleReviews() {
           ))}
         </div>
 
+        {/* Slider Dots */}
+        <div className="flex items-center justify-center gap-2 mt-2 mb-6">
+          {reviews.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              aria-label={`Go to review ${idx + 1}`}
+              onClick={() => scrollToReview(idx)}
+              className={`transition-all duration-300 ${
+                activeReviewIdx === idx
+                  ? 'w-6 h-2 bg-apollio-orange rounded-full shadow-sm'
+                  : 'w-2 h-2 bg-black/25 hover:bg-apollio-orange/70 rounded-full'
+              }`}
+            />
+          ))}
+        </div>
+
         {/* Action Buttons to Google Profile */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href={companyInfo.links.googleReview}
             target="_blank"
